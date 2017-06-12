@@ -96,3 +96,69 @@ func (k *KeyActor) Events(vec anyvec.Vector) []interface{} {
 
 	return events
 }
+
+// TapActor is an Actor which allows the agent to tap the
+// middle of the screen.
+type TapActor struct {
+	// Screen dimensions.
+	Width  int
+	Height int
+
+	// NoHold, if true, indicates that taps should be
+	// instantaneous; the mouse cannot be held down.
+	NoHold bool
+
+	pressed bool
+}
+
+// ActionSpace returns a Bernoulli action space.
+func (t *TapActor) ActionSpace() ActionSpace {
+	return &anyrl.Bernoulli{}
+}
+
+// ParamLen returns 1.
+func (t *TapActor) ParamLen() int {
+	return 1
+}
+
+// Reset resets the pressed status.
+func (t *TapActor) Reset() {
+	t.pressed = false
+}
+
+// Events generates mouse events.
+func (t *TapActor) Events(vec anyvec.Vector) []interface{} {
+	var events []interface{}
+
+	ops := vec.Creator().NumOps()
+	thresh := vec.Creator().MakeNumeric(0.5)
+	press := ops.Greater(anyvec.Sum(vec.Slice(0, 1)), thresh)
+
+	if t.NoHold && press {
+		evt := chrome.MouseEvent{
+			Type:       chrome.MousePressed,
+			X:          t.Width / 2,
+			Y:          t.Height / 2,
+			Button:     chrome.LeftButton,
+			ClickCount: 1,
+		}
+		evt1 := evt
+		evt1.Type = chrome.MouseReleased
+		events = append(events, &evt, &evt1)
+	} else if !t.NoHold && press != t.pressed {
+		t.pressed = press
+		evt := chrome.MouseEvent{
+			Type:       chrome.MousePressed,
+			X:          t.Width / 2,
+			Y:          t.Height / 2,
+			Button:     chrome.LeftButton,
+			ClickCount: 1,
+		}
+		if !press {
+			evt.Type = chrome.MouseReleased
+		}
+		events = append(events, &evt)
+	}
+
+	return events
+}
