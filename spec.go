@@ -29,8 +29,8 @@ var EnvSpecs = []*EnvSpec{
 	StandardTapSpec("RabbitPunch-v0", true, 0.9, time.Second/8, 512),
 	StandardKeySpec("Twins-v0", false, 0.98, time.Second/10, 2048),
 	StandardKeySpec("RedHead-v0", false, 0.98, time.Second/10, 2048),
-	StandardKeySpec("CartoonFlight-v0", false, 0.9, time.Second/8, 512),
-	StandardKeySpec("CartoonFlight-v1", false, 0.9, time.Second/8, 512),
+	StandardKeySpec("CartoonFlight-v0", false, 0.95, time.Second/8, 512),
+	StandardKeySpec("CartoonFlight-v1", false, 0.95, time.Second/8, 512),
 }
 
 // SpecForName finds a specification in EnvSpecs.
