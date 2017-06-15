@@ -28,6 +28,7 @@ type Flags struct {
 	OutFile     string
 	NumParallel int
 	MaxSteps    int
+	RecordDir   string
 }
 
 func main() {
@@ -38,6 +39,7 @@ func main() {
 	flag.StringVar(&flags.OutFile, "out", "trained_policy", "policy output file")
 	flag.IntVar(&flags.NumParallel, "numparallel", 8, "parallel environments")
 	flag.IntVar(&flags.MaxSteps, "maxsteps", 600, "max time steps per episode")
+	flag.StringVar(&flags.RecordDir, "record", "", "directory to store recordings")
 	flag.Parse()
 
 	if flags.EnvName == "" {
@@ -146,6 +148,12 @@ func gatherRollouts(flags Flags, spec *EnvSpec,
 			env, err := muniverse.NewEnv(spec.EnvSpec)
 			if err != nil {
 				essentials.Die("create environment:", err)
+			}
+			if flags.RecordDir != "" {
+				env, err = muniverse.Record(env, flags.RecordDir)
+				if err != nil {
+					essentials.Die("record environment:", err)
+				}
 			}
 			defer env.Close()
 
