@@ -150,10 +150,7 @@ func gatherRollouts(flags Flags, spec *EnvSpec,
 				essentials.Die("create environment:", err)
 			}
 			if flags.RecordDir != "" {
-				env, err = muniverse.Record(env, flags.RecordDir)
-				if err != nil {
-					essentials.Die("record environment:", err)
-				}
+				env = muniverse.RecordEnv(env, flags.RecordDir)
 			}
 			defer env.Close()
 
