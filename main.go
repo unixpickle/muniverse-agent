@@ -16,7 +16,6 @@ import (
 	"github.com/unixpickle/anyvec/anyvec32"
 	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/lazyseq"
-	"github.com/unixpickle/lazyseq/lazyrnn"
 	"github.com/unixpickle/muniverse"
 	"github.com/unixpickle/rip"
 	"github.com/unixpickle/serializer"
@@ -29,6 +28,9 @@ type Flags struct {
 	NumParallel int
 	MaxSteps    int
 	RecordDir   string
+
+	DemosDir  string
+	DemoBatch int
 }
 
 func main() {
@@ -40,6 +42,8 @@ func main() {
 	flag.IntVar(&flags.NumParallel, "numparallel", 8, "parallel environments")
 	flag.IntVar(&flags.MaxSteps, "maxsteps", 600, "max time steps per episode")
 	flag.StringVar(&flags.RecordDir, "record", "", "directory to store recordings")
+	flag.StringVar(&flags.DemosDir, "demos", "", "supervised demonstrations to train with")
+	flag.IntVar(&flags.DemoBatch, "demobatch", 16, "batch size (supervised only)")
 	flag.Parse()
 
 	if flags.EnvName == "" {
@@ -58,6 +62,12 @@ func main() {
 	} else {
 		log.Println("Loaded policy.")
 	}
+
+	if flags.DemosDir != "" {
+		SupervisedTrain(flags, spec, policy)
+		return
+	}
+
 	actionSpace := spec.MakeActor().ActionSpace()
 
 	roller := &anyrl.RNNRoller{
@@ -84,10 +94,7 @@ func main() {
 				MakeInputTape: roller.MakeInputTape,
 			}).Reduce,
 
-			ApplyPolicy: func(seq lazyseq.Rereader, b anyrnn.Block) lazyseq.Rereader {
-				out := lazyrnn.FixedHSM(30, true, seq, b)
-				return lazyseq.Lazify(lazyseq.Unlazify(out))
-			},
+			ApplyPolicy:  ApplyPolicy,
 			ActionJudger: &anypg.QJudger{Discount: spec.DiscountFactor},
 		},
 		LogLineSearch: func(kl, improvement anyvec.Numeric) {

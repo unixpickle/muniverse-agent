@@ -7,6 +7,8 @@ import (
 	"github.com/unixpickle/anynet/anyconv"
 	"github.com/unixpickle/anynet/anyrnn"
 	"github.com/unixpickle/anyvec"
+	"github.com/unixpickle/lazyseq"
+	"github.com/unixpickle/lazyseq/lazyrnn"
 )
 
 // MakePolicy creates a new policy RNN which is compatible
@@ -35,6 +37,13 @@ func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
 			),
 		},
 	}
+}
+
+// ApplyPolicy applies the policy in a memory-efficient
+// manner.
+func ApplyPolicy(seq lazyseq.Rereader, b anyrnn.Block) lazyseq.Rereader {
+	out := lazyrnn.FixedHSM(30, true, seq, b)
+	return lazyseq.Lazify(lazyseq.Unlazify(out))
 }
 
 func setupVisionLayers(net anynet.Net) anynet.Net {

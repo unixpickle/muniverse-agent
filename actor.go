@@ -37,6 +37,12 @@ type Actor interface {
 	// Events converts a sampled action vector to
 	// muniverse events.
 	Events(actVec anyvec.Vector) []interface{}
+
+	// Vectorize performs the pseudo-inverse of Events.
+	// If no action vector could produce the events, a
+	// reasonable vector should be chosen which would
+	// produce some of the events.
+	Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector
 }
 
 // KeyActor is an Actor which produces keyboard events
@@ -95,6 +101,33 @@ func (k *KeyActor) Events(vec anyvec.Vector) []interface{} {
 	}
 
 	return events
+}
+
+// Vectorize generates a vector for the key events.
+func (k *KeyActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector {
+	if k.NoHold {
+		k.pressed = map[string]bool{}
+	}
+	for _, event := range events {
+		keyEvent, ok := event.(*chrome.KeyEvent)
+		if !ok {
+			continue
+		}
+		if keyEvent.Type == chrome.KeyDown {
+			k.pressed[keyEvent.Code] = true
+		} else if !k.NoHold {
+			if keyEvent.Type == chrome.KeyUp {
+				k.pressed[keyEvent.Code] = false
+			}
+		}
+	}
+	vector := make([]float64, len(k.Keys))
+	for i, key := range k.Keys {
+		if k.pressed[key] {
+			vector[i] = 1
+		}
+	}
+	return c.MakeVectorData(c.MakeNumericList(vector))
 }
 
 // TapActor is an Actor which allows the agent to tap the
@@ -161,4 +194,29 @@ func (t *TapActor) Events(vec anyvec.Vector) []interface{} {
 	}
 
 	return events
+}
+
+// Vectorize generates a vector for the mouse events.
+func (t *TapActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector {
+	if t.NoHold {
+		t.pressed = false
+	}
+	for _, event := range events {
+		mouseEvent, ok := event.(*chrome.MouseEvent)
+		if !ok {
+			continue
+		}
+		if mouseEvent.Type == chrome.MousePressed {
+			t.pressed = true
+		} else if !t.NoHold {
+			if mouseEvent.Type == chrome.MouseReleased {
+				t.pressed = false
+			}
+		}
+	}
+	vec := []float64{0}
+	if t.pressed {
+		vec[0] = 1
+	}
+	return c.MakeVectorData(c.MakeNumericList(vec))
 }
