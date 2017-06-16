@@ -27,6 +27,7 @@ var EnvSpecs = []*EnvSpec{
 	StandardKeySpec("PenguinSkip-v0", true, 0.7, time.Second/5, 512),
 	StandardTapSpec("DontCrash-v0", true, 0.9, time.Second/10, 512),
 	StandardTapSpec("RabbitPunch-v0", true, 0.9, time.Second/8, 512),
+	StandardTapSpec("Babel-v0", true, 0.95, time.Second/10, 512),
 	StandardTapSpec("Basketball-v0", false, 0.95, time.Second/10, 512),
 	StandardKeySpec("Twins-v0", false, 0.98, time.Second/10, 2048),
 	StandardKeySpec("RedHead-v0", false, 0.98, time.Second/10, 2048),
