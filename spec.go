@@ -33,6 +33,7 @@ var EnvSpecs = []*EnvSpec{
 	StandardKeySpec("RedHead-v0", false, 0.98, time.Second/10, 2048),
 	StandardKeySpec("CartoonFlight-v0", false, 0.95, time.Second/8, 512),
 	StandardKeySpec("CartoonFlight-v1", false, 0.95, time.Second/8, 512),
+	StandardMouseSpec("PizzaNinja3-v0", false, 0.95, time.Second/10, 512),
 }
 
 // SpecForName finds a specification in EnvSpecs.
@@ -83,6 +84,21 @@ func StandardTapSpec(name string, noHold bool, discount float64,
 	res := StandardKeySpec(name, noHold, discount, frameTime, batchSize)
 	res.MakeActor = func() Actor {
 		return &TapActor{
+			Width:  res.Width,
+			Height: res.Height,
+			NoHold: noHold,
+		}
+	}
+	return res
+}
+
+// StandardMouseSpec is like StandardKeySpec, except with
+// MouseActor instead of KeyActor.
+func StandardMouseSpec(name string, noHold bool, discount float64,
+	frameTime time.Duration, batchSize int) *EnvSpec {
+	res := StandardKeySpec(name, noHold, discount, frameTime, batchSize)
+	res.MakeActor = func() Actor {
+		return &MouseActor{
 			Width:  res.Width,
 			Height: res.Height,
 			NoHold: noHold,
