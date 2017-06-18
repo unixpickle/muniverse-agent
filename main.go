@@ -156,6 +156,9 @@ func gatherRollouts(flags Flags, spec *EnvSpec,
 			if err != nil {
 				essentials.Die("create environment:", err)
 			}
+			if spec.Wrap != nil {
+				env = spec.Wrap(env)
+			}
 			if flags.RecordDir != "" {
 				env = muniverse.RecordEnv(env, flags.RecordDir)
 			}

@@ -12,6 +12,10 @@ import (
 type EnvSpec struct {
 	*muniverse.EnvSpec
 
+	// Wrap, if non-nil, wraps every environment when
+	// it is created.
+	Wrap func(e muniverse.Env) muniverse.Env
+
 	Observer  Observer
 	MakeActor func() Actor
 
@@ -97,6 +101,7 @@ func StandardTapSpec(name string, noHold bool, discount float64,
 func StandardMouseSpec(name string, noHold bool, discount float64,
 	frameTime time.Duration, batchSize int) *EnvSpec {
 	res := StandardKeySpec(name, noHold, discount, frameTime, batchSize)
+	res.Wrap = muniverse.MouseEnv
 	res.MakeActor = func() Actor {
 		return &MouseActor{
 			Width:  res.Width,
