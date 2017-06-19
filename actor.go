@@ -224,6 +224,11 @@ func (t *TapActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vect
 
 // MouseActor is an Actor which allows the agent to make
 // arbitrary motions with the mouse.
+//
+// Mouse motions are performed relative to the current
+// mouse position.
+// In other words, the agent tells the environment to move
+// the mouse by a given delta x and delta y.
 type MouseActor struct {
 	// Screen dimensions.
 	Width  int
@@ -256,8 +261,8 @@ func (m *MouseActor) ParamLen() int {
 // Reset resets the mouse state.
 func (m *MouseActor) Reset() {
 	m.pressed = false
-	m.lastX = -1
-	m.lastY = -1
+	m.lastX = m.Width / 2
+	m.lastY = m.Height / 2
 }
 
 // Events generates mouse events.
@@ -315,13 +320,14 @@ func (m *MouseActor) Events(vec anyvec.Vector) []interface{} {
 
 // Vectorize generates a vector for the mouse events.
 func (m *MouseActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector {
+	var newX, newY int
 	for _, event := range events {
 		mouseEvent, ok := event.(*chrome.MouseEvent)
 		if !ok {
 			continue
 		}
-		m.lastX = mouseEvent.X
-		m.lastY = mouseEvent.Y
+		newX = mouseEvent.X
+		newY = mouseEvent.Y
 		if mouseEvent.Type == chrome.MousePressed {
 			m.pressed = true
 			if m.NoHold {
@@ -334,8 +340,10 @@ func (m *MouseActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Ve
 			}
 		}
 	}
-	vec := []float64{0, 2*float64(m.lastX)/float64(m.Width) - 1,
-		2*float64(m.lastY)/float64(m.Height) - 1}
+	vec := []float64{0, 4 * float64(newX-m.lastX) / float64(m.Width),
+		4 * float64(newY-m.lastY) / float64(m.Height)}
+	m.lastX = newX
+	m.lastY = newY
 	if m.pressed {
 		vec[0] = 1
 	}
@@ -352,8 +360,8 @@ func (m *MouseActor) mouseCoords(vec anyvec.Vector) (x, y int) {
 	default:
 		panic("unsupported numeric type")
 	}
-	x = int(essentials.Round(float64(m.Width) * (fx + 1) / 2))
-	y = int(essentials.Round(float64(m.Height) * (fy + 1) / 2))
+	x = m.lastX + int(essentials.Round(float64(m.Width)*fx/4))
+	y = m.lastY + int(essentials.Round(float64(m.Height)*fy/4))
 	x = essentials.MaxInt(0, essentials.MinInt(m.Width-1, x))
 	y = essentials.MaxInt(0, essentials.MinInt(m.Height-1, y))
 	return

@@ -101,7 +101,9 @@ func StandardTapSpec(name string, noHold bool, discount float64,
 func StandardMouseSpec(name string, noHold bool, discount float64,
 	frameTime time.Duration, batchSize int) *EnvSpec {
 	res := StandardKeySpec(name, noHold, discount, frameTime, batchSize)
-	res.Wrap = muniverse.MouseEnv
+	res.Wrap = func(e muniverse.Env) muniverse.Env {
+		return muniverse.MouseEnv(e, res.Width/2, res.Height/2)
+	}
 	res.MakeActor = func() Actor {
 		return &MouseActor{
 			Width:  res.Width,
