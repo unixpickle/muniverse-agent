@@ -29,8 +29,9 @@ type Flags struct {
 	MaxSteps    int
 	RecordDir   string
 
-	DemosDir  string
-	DemoBatch int
+	DemosDir       string
+	DemoBatch      int
+	DemoValidation string
 }
 
 func main() {
@@ -43,6 +44,7 @@ func main() {
 	flag.IntVar(&flags.MaxSteps, "maxsteps", 600, "max time steps per episode")
 	flag.StringVar(&flags.RecordDir, "record", "", "directory to store recordings")
 	flag.StringVar(&flags.DemosDir, "demos", "", "supervised demonstrations to train with")
+	flag.StringVar(&flags.DemoValidation, "demovalidation", "", "validation demonstrations")
 	flag.IntVar(&flags.DemoBatch, "demobatch", 16, "batch size (supervised only)")
 	flag.Parse()
 

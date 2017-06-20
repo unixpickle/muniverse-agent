@@ -28,6 +28,13 @@ func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 	if err != nil {
 		essentials.Die(err)
 	}
+	var validation SampleList
+	if flags.DemoValidation != "" {
+		validation, err = ReadSampleList(flags.DemoValidation)
+		if err != nil {
+			essentials.Die(err)
+		}
+	}
 	trainer := &Trainer{
 		Policy: func(seq lazyseq.Rereader) lazyseq.Rereader {
 			return ApplyPolicy(seq, policy)
@@ -46,6 +53,17 @@ func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 		BatchSize:   flags.DemoBatch,
 		StatusFunc: func(b anysgd.Batch) {
 			log.Printf("iteration %d: cost=%v", iter, trainer.LastCost)
+			if iter%4 == 0 && len(validation) > 0 {
+				anysgd.Shuffle(validation)
+				batchSize := essentials.MinInt(validation.Len(), flags.DemoBatch)
+				vbatch, err := trainer.Fetch(validation.Slice(0, batchSize))
+				if err != nil {
+					essentials.Die(err)
+				}
+				cost := trainer.TotalCost(vbatch)
+				log.Printf("iteration %d: val_cost=%f", iter,
+					anyvec.Sum(cost.Output()))
+			}
 			iter++
 		},
 	}
