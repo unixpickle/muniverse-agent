@@ -24,11 +24,16 @@ type DownsampleObserver struct {
 
 	InWidth  int
 	InHeight int
+
+	Color bool
 }
 
 // ObsSize returns the output tensor size.
 func (d *DownsampleObserver) ObsSize() (width, height, depth int) {
 	depth = 1
+	if d.Color {
+		depth = 3
+	}
 	width = d.InWidth / d.StrideX
 	if d.InWidth%d.StrideX != 0 {
 		width += 1
@@ -53,11 +58,17 @@ func (d *DownsampleObserver) ObsVec(c anyvec.Creator,
 	for y := 0; y < d.InHeight; y += d.StrideY {
 		for x := 0; x < d.InWidth; x += d.StrideX {
 			sourceIdx := (y*d.InWidth + x) * 3
-			var value float64
-			for d := 0; d < 3; d++ {
-				value += float64(buffer[sourceIdx+d])
+			if d.Color {
+				for d := 0; d < 3; d++ {
+					data = append(data, float64(buffer[sourceIdx+d]))
+				}
+			} else {
+				var value float64
+				for d := 0; d < 3; d++ {
+					value += float64(buffer[sourceIdx+d])
+				}
+				data = append(data, essentials.Round(value/3))
 			}
-			data = append(data, essentials.Round(value/3))
 		}
 	}
 	return c.MakeVectorData(c.MakeNumericList(data)), nil
