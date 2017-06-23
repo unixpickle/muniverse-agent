@@ -6,14 +6,15 @@ import (
 	"github.com/unixpickle/anynet"
 	"github.com/unixpickle/anynet/anyconv"
 	"github.com/unixpickle/anynet/anyrnn"
+	"github.com/unixpickle/anyrl/anya3c"
 	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/lazyseq"
 	"github.com/unixpickle/lazyseq/lazyrnn"
 )
 
-// MakePolicy creates a new policy RNN which is compatible
-// with the environment specification.
-func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
+// MakeAgent creates a new agent which is compatible with
+// the environment specification.
+func MakeAgent(c anyvec.Creator, e *EnvSpec) *anya3c.Agent {
 	w, h, d := e.Observer.ObsSize()
 	markup := fmt.Sprintf(`
 		Input(w=%d, h=%d, d=%d)
@@ -29,13 +30,17 @@ func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
 	if err != nil {
 		panic(err)
 	}
-	return anyrnn.Stack{
-		&anyrnn.LayerBlock{
-			Layer: append(
-				setupVisionLayers(convNet.(anynet.Net)),
-				anynet.NewFCZero(c, 256, e.MakeActor().ParamLen()),
-			),
+	return &anya3c.Agent{
+		Base: &anyrnn.LayerBlock{
+			Layer: setupVisionLayers(convNet.(anynet.Net)),
 		},
+		Actor: &anyrnn.LayerBlock{
+			Layer: anynet.NewFCZero(c, 256, e.MakeActor().ParamLen()),
+		},
+		Critic: &anyrnn.LayerBlock{
+			Layer: anynet.NewFCZero(c, 256, 1),
+		},
+		ActionSpace: e.MakeActor().ActionSpace(),
 	}
 }
 

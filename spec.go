@@ -22,24 +22,23 @@ type EnvSpec struct {
 	// Training hyper-parameters.
 	DiscountFactor float64
 	FrameTime      time.Duration
-	BatchSize      int
 }
 
 var EnvSpecs = []*EnvSpec{
-	StandardKeySpec("Knightower-v0", true, 0.9, time.Second/8, 512),
-	StandardKeySpec("KumbaKarate-v0", true, 0.7, time.Second/10, 512),
-	StandardKeySpec("PenguinSkip-v0", true, 0.7, time.Second/5, 512),
-	StandardTapSpec("DontCrash-v0", true, 0.9, time.Second/10, 512),
-	StandardTapSpec("RabbitPunch-v0", true, 0.9, time.Second/8, 512),
-	StandardTapSpec("Babel-v0", true, 0.98, time.Second/10, 1024),
-	StandardTapSpec("Basketball-v0", false, 0.95, time.Second/10, 512),
-	StandardTapSpec("TowerMania-v0", false, 0.99, time.Second/10, 512),
-	StandardKeySpec("Twins-v0", false, 0.98, time.Second/10, 512),
-	StandardKeySpec("RedHead-v0", false, 0.98, time.Second/10, 2048),
-	StandardKeySpec("CartoonFlight-v0", false, 0.95, time.Second/8, 512),
-	StandardKeySpec("CartoonFlight-v1", false, 0.95, time.Second/8, 512),
-	StandardMouseSpec("PizzaNinja3-v0", false, 0.95, time.Second/10, 512),
-	Colorize(StandardMouseSpec("Colorpop-v0", false, 0.99, time.Second/10, 512)),
+	StandardKeySpec("Knightower-v0", true, 0.9, time.Second/8),
+	StandardKeySpec("KumbaKarate-v0", true, 0.7, time.Second/10),
+	StandardKeySpec("PenguinSkip-v0", true, 0.7, time.Second/5),
+	StandardTapSpec("DontCrash-v0", true, 0.9, time.Second/10),
+	StandardTapSpec("RabbitPunch-v0", true, 0.9, time.Second/8),
+	StandardTapSpec("Babel-v0", true, 0.98, time.Second/10),
+	StandardTapSpec("Basketball-v0", false, 0.95, time.Second/10),
+	StandardTapSpec("TowerMania-v0", false, 0.99, time.Second/10),
+	StandardKeySpec("Twins-v0", false, 0.98, time.Second/10),
+	StandardKeySpec("RedHead-v0", false, 0.98, time.Second/10),
+	StandardKeySpec("CartoonFlight-v0", false, 0.95, time.Second/8),
+	StandardKeySpec("CartoonFlight-v1", false, 0.95, time.Second/8),
+	StandardMouseSpec("PizzaNinja3-v0", false, 0.95, time.Second/10),
+	Colorize(StandardMouseSpec("Colorpop-v0", false, 0.99, time.Second/10)),
 }
 
 // SpecForName finds a specification in EnvSpecs.
@@ -57,7 +56,7 @@ func SpecForName(name string) *EnvSpec {
 //
 // The environment must rely entirely on keyboard input.
 func StandardKeySpec(name string, noHold bool, discount float64,
-	frameTime time.Duration, batchSize int) *EnvSpec {
+	frameTime time.Duration) *EnvSpec {
 	raw := muniverse.SpecForName(name)
 	if raw == nil {
 		panic("no environment: " + name)
@@ -79,15 +78,14 @@ func StandardKeySpec(name string, noHold bool, discount float64,
 
 		DiscountFactor: discount,
 		FrameTime:      frameTime,
-		BatchSize:      batchSize,
 	}
 }
 
 // StandardTapSpec is like StandardKeySpec, except with
 // TapActor instead of KeyActor.
 func StandardTapSpec(name string, noHold bool, discount float64,
-	frameTime time.Duration, batchSize int) *EnvSpec {
-	res := StandardKeySpec(name, noHold, discount, frameTime, batchSize)
+	frameTime time.Duration) *EnvSpec {
+	res := StandardKeySpec(name, noHold, discount, frameTime)
 	res.MakeActor = func() Actor {
 		return &TapActor{
 			Width:  res.Width,
@@ -101,8 +99,8 @@ func StandardTapSpec(name string, noHold bool, discount float64,
 // StandardMouseSpec is like StandardKeySpec, except with
 // MouseActor instead of KeyActor.
 func StandardMouseSpec(name string, noHold bool, discount float64,
-	frameTime time.Duration, batchSize int) *EnvSpec {
-	res := StandardKeySpec(name, noHold, discount, frameTime, batchSize)
+	frameTime time.Duration) *EnvSpec {
+	res := StandardKeySpec(name, noHold, discount, frameTime)
 	res.Wrap = func(e muniverse.Env) muniverse.Env {
 		return muniverse.CursorEnv(e, res.Width/2, res.Height/2)
 	}

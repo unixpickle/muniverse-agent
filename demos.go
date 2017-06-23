@@ -18,11 +18,11 @@ import (
 	"github.com/unixpickle/lazyseq"
 	"github.com/unixpickle/muniverse"
 	"github.com/unixpickle/rip"
-	"github.com/unixpickle/serializer"
 )
 
 // SupervisedTrain performs supervised training on
 // demonstration data.
+// It does not automatically save the results of training.
 func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 	samples, err := ReadSampleList(flags.DemosDir)
 	if err != nil {
@@ -68,7 +68,6 @@ func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 		},
 	}
 	sgd.Run(rip.NewRIP().Chan())
-	serializer.SaveAny(flags.OutFile, policy)
 }
 
 // A Batch stores a batch of demonstrations in a format
