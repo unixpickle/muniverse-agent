@@ -34,6 +34,7 @@ type Flags struct {
 	DemoValidation string
 
 	ImageName string
+	GamesDir  string
 }
 
 func main() {
@@ -49,10 +50,13 @@ func main() {
 	flag.StringVar(&flags.DemoValidation, "demovalidation", "", "validation demonstrations")
 	flag.IntVar(&flags.DemoBatch, "demobatch", 16, "batch size (supervised only)")
 	flag.StringVar(&flags.ImageName, "image", "", "custom Docker image")
+	flag.StringVar(&flags.GamesDir, "gamesdir", "", "custom games directory")
 	flag.Parse()
 
 	if flags.EnvName == "" {
 		essentials.Die("Missing -env flag. See -help for more.")
+	} else if flags.ImageName != "" && flags.GamesDir != "" {
+		essentials.Die("Cannot use -image and -gamesdir together.")
 	}
 
 	spec := SpecForName(flags.EnvName)
@@ -161,6 +165,8 @@ func gatherRollouts(flags Flags, spec *EnvSpec,
 			var err error
 			if flags.ImageName != "" {
 				env, err = muniverse.NewEnvContainer(flags.ImageName, spec.EnvSpec)
+			} else if flags.GamesDir != "" {
+				env, err = muniverse.NewEnvGamesDir(flags.GamesDir, spec.EnvSpec)
 			} else {
 				env, err = muniverse.NewEnv(spec.EnvSpec)
 			}
