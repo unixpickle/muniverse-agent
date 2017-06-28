@@ -32,6 +32,8 @@ type Flags struct {
 	DemosDir       string
 	DemoBatch      int
 	DemoValidation string
+
+	ImageName string
 }
 
 func main() {
@@ -46,6 +48,7 @@ func main() {
 	flag.StringVar(&flags.DemosDir, "demos", "", "supervised demonstrations to train with")
 	flag.StringVar(&flags.DemoValidation, "demovalidation", "", "validation demonstrations")
 	flag.IntVar(&flags.DemoBatch, "demobatch", 16, "batch size (supervised only)")
+	flag.StringVar(&flags.ImageName, "image", "", "custom Docker image")
 	flag.Parse()
 
 	if flags.EnvName == "" {
@@ -154,7 +157,13 @@ func gatherRollouts(flags Flags, spec *EnvSpec,
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			env, err := muniverse.NewEnv(spec.EnvSpec)
+			var env muniverse.Env
+			var err error
+			if flags.ImageName != "" {
+				env, err = muniverse.NewEnvContainer(flags.ImageName, spec.EnvSpec)
+			} else {
+				env, err = muniverse.NewEnv(spec.EnvSpec)
+			}
 			if err != nil {
 				essentials.Die("create environment:", err)
 			}
