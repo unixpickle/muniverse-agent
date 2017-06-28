@@ -34,6 +34,7 @@ var EnvSpecs = []*EnvSpec{
 	StandardTapSpec("Babel-v0", true, 0.98, time.Second/10, 1024),
 	StandardTapSpec("Basketball-v0", false, 0.95, time.Second/10, 512),
 	StandardTapSpec("TowerMania-v0", false, 0.99, time.Second/10, 512),
+	StandardTapSpec("StackTowerClassic-v0", false, 0.99, time.Second/10, 1024),
 	StandardKeySpec("Twins-v0", false, 0.98, time.Second/10, 512),
 	StandardKeySpec("RedHead-v0", false, 0.98, time.Second/10, 2048),
 	StandardKeySpec("CartoonFlight-v0", false, 0.95, time.Second/8, 512),
