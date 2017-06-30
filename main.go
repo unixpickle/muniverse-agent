@@ -19,6 +19,8 @@ import (
 	"github.com/unixpickle/muniverse"
 	"github.com/unixpickle/rip"
 	"github.com/unixpickle/serializer"
+
+	_ "github.com/unixpickle/anyplugin"
 )
 
 // Flags contains the command-line options.
