@@ -34,6 +34,7 @@ type Flags struct {
 	DemosDir       string
 	DemoBatch      int
 	DemoValidation string
+	DemoL2Reg      float64
 
 	ImageName string
 	GamesDir  string
@@ -51,6 +52,7 @@ func main() {
 	flag.StringVar(&flags.DemosDir, "demos", "", "supervised demonstrations to train with")
 	flag.StringVar(&flags.DemoValidation, "demovalidation", "", "validation demonstrations")
 	flag.IntVar(&flags.DemoBatch, "demobatch", 16, "batch size (supervised only)")
+	flag.Float64Var(&flags.DemoL2Reg, "demol2reg", 0, "L2 regularization (supervised only)")
 	flag.StringVar(&flags.ImageName, "image", "", "custom Docker image")
 	flag.StringVar(&flags.GamesDir, "gamesdir", "", "custom games directory")
 	flag.Parse()
