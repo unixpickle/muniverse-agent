@@ -1,3 +1,5 @@
 muniverse-agent
 trained_policy
+trained_critic
 policies/
+critics/
