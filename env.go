@@ -22,6 +22,40 @@ type Env struct {
 	lastFrame anyvec.Vector
 }
 
+// NewEnv creates an environment according to the flags
+// and specification.
+//
+// It is the caller's responsibility to close RawEnv once
+// it is done using the environment.
+func NewEnv(c anyvec.Creator, flags Flags, spec *EnvSpec) *Env {
+	var env muniverse.Env
+	var err error
+	if flags.ImageName != "" {
+		env, err = muniverse.NewEnvContainer(flags.ImageName, spec.EnvSpec)
+	} else if flags.GamesDir != "" {
+		env, err = muniverse.NewEnvGamesDir(flags.GamesDir, spec.EnvSpec)
+	} else {
+		env, err = muniverse.NewEnv(spec.EnvSpec)
+	}
+	if err != nil {
+		essentials.Die("create environment:", err)
+	}
+	if spec.Wrap != nil {
+		env = spec.Wrap(env)
+	}
+	if flags.RecordDir != "" {
+		env = muniverse.RecordEnv(env, flags.RecordDir)
+	}
+	return &Env{
+		Creator:   c,
+		RawEnv:    env,
+		Actor:     spec.MakeActor(),
+		Observer:  spec.Observer,
+		FrameTime: spec.FrameTime,
+		MaxSteps:  flags.MaxSteps,
+	}
+}
+
 // Reset resets the environment.
 func (e *Env) Reset() (obs anyvec.Vector, err error) {
 	defer essentials.AddCtxTo("reset", &err)

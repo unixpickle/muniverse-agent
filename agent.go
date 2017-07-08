@@ -6,6 +6,7 @@ import (
 	"github.com/unixpickle/anynet"
 	"github.com/unixpickle/anynet/anyconv"
 	"github.com/unixpickle/anynet/anyrnn"
+	"github.com/unixpickle/anyrl/anya3c"
 	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/lazyseq"
 	"github.com/unixpickle/lazyseq/lazyrnn"
@@ -39,11 +40,43 @@ func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
 	}
 }
 
+// MakeCritic creates a critic block for A3C.
+func MakeCritic(c anyvec.Creator) anyrnn.Block {
+	return &anyrnn.LayerBlock{
+		Layer: anynet.NewFC(c, 256, 1),
+	}
+}
+
+// MakeAgent creates an A3C agent for the RNN blocks.
+func MakeAgent(c anyvec.Creator, e *EnvSpec, policy,
+	critic anyrnn.Block) *anya3c.Agent {
+	policyNet := policy.(anyrnn.Stack)[0].(*anyrnn.LayerBlock).Layer.(anynet.Net)
+	baseNet := policyNet[:len(policyNet)-1]
+	actorNet := policyNet[len(policyNet)-1:]
+	return &anya3c.Agent{
+		Base:        &anyrnn.LayerBlock{Layer: baseNet},
+		Actor:       &anyrnn.LayerBlock{Layer: actorNet},
+		Critic:      critic,
+		ActionSpace: e.MakeActor().ActionSpace(),
+	}
+}
+
 // ApplyPolicy applies the policy in a memory-efficient
 // manner.
 func ApplyPolicy(seq lazyseq.Rereader, b anyrnn.Block) lazyseq.Rereader {
 	out := lazyrnn.FixedHSM(30, true, seq, b)
 	return lazyseq.Lazify(lazyseq.Unlazify(out))
+}
+
+// DecomposeAgent decomposes an A3C agent into the policy
+// and the critic.
+func DecomposeAgent(a *anya3c.Agent) (policy, critic anyrnn.Block) {
+	critic = a.Critic
+	baseNet := a.Base.(*anyrnn.LayerBlock).Layer.(anynet.Net)
+	actorNet := a.Actor.(*anyrnn.LayerBlock).Layer.(anynet.Net)
+	policyNet := append(append(anynet.Net{}, baseNet...), actorNet...)
+	policy = anyrnn.Stack{&anyrnn.LayerBlock{Layer: policyNet}}
+	return
 }
 
 func setupVisionLayers(net anynet.Net) anynet.Net {
