@@ -42,6 +42,7 @@ func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 		MakeActor: spec.MakeActor,
 		Observer:  spec.Observer,
 		Params:    anynet.AllParameters(policy),
+		L2Reg:     flags.DemoL2Reg,
 	}
 	var iter int
 	sgd := &anysgd.SGD{
@@ -119,6 +120,7 @@ type Trainer struct {
 	MakeActor func() Actor
 	Observer  Observer
 	Params    []*anydiff.Var
+	L2Reg     float64
 
 	// LastCost is set to the cost after every gradient
 	// computation.
@@ -216,6 +218,13 @@ func (t *Trainer) TotalCost(batch anysgd.Batch) anydiff.Res {
 func (t *Trainer) Gradient(b anysgd.Batch) anydiff.Grad {
 	grad, lc := anysgd.CosterGrad(t, b, t.Params)
 	t.LastCost = lc
+	if t.L2Reg != 0 {
+		for _, param := range t.Params {
+			regTerm := param.Output().Copy()
+			regTerm.Scale(regTerm.Creator().MakeNumeric(t.L2Reg))
+			grad[param].Add(regTerm)
+		}
+	}
 	return grad
 }
 
