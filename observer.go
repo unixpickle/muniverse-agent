@@ -73,3 +73,37 @@ func (d *DownsampleObserver) ObsVec(c anyvec.Creator,
 	}
 	return c.MakeVectorData(c.MakeNumericList(data)), nil
 }
+
+// An ObsJoiner joins together a history of observations.
+type ObsJoiner struct {
+	HistorySize int
+
+	hist []anyvec.Vector
+}
+
+// Reset fills the history with the given frame.
+func (o *ObsJoiner) Reset(obs anyvec.Vector) {
+	o.hist = make([]anyvec.Vector, o.HistorySize)
+	for i := range o.hist {
+		o.hist[i] = obs.Copy()
+	}
+}
+
+// Step updates the history with the new observation and
+// returns the latest joined observation.
+func (o *ObsJoiner) Step(obs anyvec.Vector) anyvec.Vector {
+	joined := joinFrames(o.hist, obs)
+	if len(o.hist) > 0 {
+		copy(o.hist, o.hist[1:])
+		o.hist[len(o.hist)-1] = obs.Copy()
+	}
+	return joined
+}
+
+func joinFrames(hist []anyvec.Vector, current anyvec.Vector) anyvec.Vector {
+	allFrames := append(append([]anyvec.Vector{}, hist...), current)
+	joined := current.Creator().Concat(allFrames...)
+	res := joined.Creator().MakeVector(joined.Len())
+	anyvec.Transpose(joined, res, len(allFrames))
+	return res
+}

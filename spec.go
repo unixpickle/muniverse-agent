@@ -23,6 +23,11 @@ type EnvSpec struct {
 	DiscountFactor float64
 	FrameTime      time.Duration
 	BatchSize      int
+
+	// HistorySize is the number of previous observations
+	// to feed into the network in addition to the current
+	// observation.
+	HistorySize int
 }
 
 var EnvSpecs = []*EnvSpec{
@@ -88,6 +93,8 @@ func StandardKeySpec(name string, noHold bool, discount float64,
 		DiscountFactor: discount,
 		FrameTime:      frameTime,
 		BatchSize:      batchSize,
+
+		HistorySize: 1,
 	}
 }
 
@@ -127,5 +134,11 @@ func StandardMouseSpec(name string, noHold bool, discount float64,
 // Colorize changes a standard spec to use color.
 func Colorize(e *EnvSpec) *EnvSpec {
 	e.Observer.(*DownsampleObserver).Color = true
+	return e
+}
+
+// WithHistSize changes the history size of a spec.
+func WithHistSize(e *EnvSpec, size int) *EnvSpec {
+	e.HistorySize = size
 	return e
 }

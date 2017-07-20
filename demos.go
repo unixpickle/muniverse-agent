@@ -39,10 +39,9 @@ func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 		Policy: func(seq lazyseq.Rereader) lazyseq.Rereader {
 			return ApplyPolicy(seq, policy)
 		},
-		MakeActor: spec.MakeActor,
-		Observer:  spec.Observer,
-		Params:    anynet.AllParameters(policy),
-		L2Reg:     flags.DemoL2Reg,
+		Spec:   spec,
+		Params: anynet.AllParameters(policy),
+		L2Reg:  flags.DemoL2Reg,
 	}
 	var iter int
 	sgd := &anysgd.SGD{
@@ -116,11 +115,10 @@ func (s SampleList) Slice(i, j int) anysgd.SampleList {
 // A Trainer is used to train a policy to immitate
 // demonstration data.
 type Trainer struct {
-	Policy    func(lazyseq.Rereader) lazyseq.Rereader
-	MakeActor func() Actor
-	Observer  Observer
-	Params    []*anydiff.Var
-	L2Reg     float64
+	Policy func(lazyseq.Rereader) lazyseq.Rereader
+	Spec   *EnvSpec
+	Params []*anydiff.Var
+	L2Reg  float64
 
 	// LastCost is set to the cost after every gradient
 	// computation.
@@ -144,14 +142,17 @@ func (t *Trainer) Fetch(s anysgd.SampleList) (batch anysgd.Batch, err error) {
 			return nil, err
 		}
 		recordings[i] = recording
-		actors[i] = t.MakeActor()
+		actors[i] = t.Spec.MakeActor()
 		actors[i].Reset()
 	}
 	inTape, inWriter := lazyseq.CompressedUint8Tape(flate.DefaultCompression)
 	outTape, outWriter := lazyseq.ReferenceTape()
 	defer close(inWriter)
 	defer close(outWriter)
-	lastFrames := make([]anyvec.Vector, s.Len())
+	obsJoiners := make([]*ObsJoiner, s.Len())
+	for i := range obsJoiners {
+		obsJoiners[i] = &ObsJoiner{HistorySize: t.Spec.HistorySize}
+	}
 	for i := 0; true; i++ {
 		var inVecs []anyvec.Vector
 		var outVecs []anyvec.Vector
@@ -170,15 +171,14 @@ func (t *Trainer) Fetch(s anysgd.SampleList) (batch anysgd.Batch, err error) {
 			if err != nil {
 				return nil, err
 			}
-			vec, err := t.Observer.ObsVec(t.creator(), obs)
+			vec, err := t.Spec.Observer.ObsVec(t.creator(), obs)
 			if err != nil {
 				return nil, err
 			}
-			if lastFrames[j] == nil {
-				lastFrames[j] = vec.Copy()
+			if i == 0 {
+				obsJoiners[j].Reset(vec)
 			}
-			inVecs = append(inVecs, joinFrames(lastFrames[j], vec))
-			lastFrames[j] = vec
+			inVecs = append(inVecs, obsJoiners[j].Step(vec))
 			vec = actors[j].Vectorize(t.creator(), step.Events)
 			outVecs = append(outVecs, vec)
 		}
@@ -207,7 +207,7 @@ func (t *Trainer) TotalCost(batch anysgd.Batch) anydiff.Res {
 	inSeq := lazyseq.TapeRereader(t.creator(), b.Observations)
 	desired := lazyseq.TapeRereader(t.creator(), b.Actions)
 	actual := t.Policy(inSeq)
-	space := t.MakeActor().ActionSpace()
+	space := t.Spec.MakeActor().ActionSpace()
 	logLikelihood := lazyseq.MapN(func(n int, v ...anydiff.Res) anydiff.Res {
 		return space.LogProb(v[0], v[1].Output(), n)
 	}, actual, desired)
