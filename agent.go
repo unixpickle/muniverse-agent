@@ -25,7 +25,7 @@ func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
 		Tanh
 		FC(out=256)
 		Tanh
-	`, w, h, d*2)
+	`, w, h, d*(1+e.HistorySize))
 	convNet, err := anyconv.FromMarkup(c, markup)
 	if err != nil {
 		panic(err)
