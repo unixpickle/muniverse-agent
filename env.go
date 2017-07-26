@@ -28,15 +28,14 @@ type Env struct {
 // It is the caller's responsibility to close RawEnv once
 // it is done using the environment.
 func NewEnv(c anyvec.Creator, flags Flags, spec *EnvSpec) *Env {
-	var env muniverse.Env
-	var err error
+	opts := &muniverse.Options{}
 	if flags.ImageName != "" {
-		env, err = muniverse.NewEnvContainer(flags.ImageName, spec.EnvSpec)
-	} else if flags.GamesDir != "" {
-		env, err = muniverse.NewEnvGamesDir(flags.GamesDir, spec.EnvSpec)
-	} else {
-		env, err = muniverse.NewEnv(spec.EnvSpec)
+		opts.CustomImage = flags.ImageName
 	}
+	if flags.GamesDir != "" {
+		opts.GamesDir = flags.GamesDir
+	}
+	env, err := muniverse.NewEnvOptions(spec.EnvSpec, opts)
 	if err != nil {
 		essentials.Die("create environment:", err)
 	}
