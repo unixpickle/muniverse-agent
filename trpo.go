@@ -53,7 +53,7 @@ func TRPO(c anyvec.Creator, args []string) {
 				MakeInputTape: roller.MakeInputTape,
 			}).Reduce,
 
-			ApplyPolicy:  ApplyPolicy,
+			ApplyPolicy:  ApplyBlock,
 			ActionJudger: &anypg.QJudger{Discount: spec.DiscountFactor},
 		},
 		LogLineSearch: func(kl, improvement anyvec.Numeric) {

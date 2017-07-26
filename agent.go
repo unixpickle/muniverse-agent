@@ -10,7 +10,6 @@ import (
 	"github.com/unixpickle/anyrl/anya3c"
 	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/lazyseq"
-	"github.com/unixpickle/lazyseq/lazyrnn"
 	"github.com/unixpickle/serializer"
 )
 
@@ -88,11 +87,20 @@ func MakeAgent(c anyvec.Creator, e *EnvSpec, policy,
 	}
 }
 
-// ApplyPolicy applies the policy in a memory-efficient
+// ApplyBlock applies the block in a memory-efficient
 // manner.
-func ApplyPolicy(seq lazyseq.Rereader, b anyrnn.Block) lazyseq.Rereader {
-	out := lazyrnn.FixedHSM(30, true, seq, b)
-	return lazyseq.Lazify(lazyseq.Unlazify(out))
+func ApplyBlock(seq lazyseq.Rereader, b anyrnn.Block) lazyseq.Rereader {
+	switch b := b.(type) {
+	case anyrnn.Stack:
+		if len(b) != 1 {
+			panic("expected one entry")
+		}
+		return ApplyBlock(seq, b[0])
+	case *anyrnn.LayerBlock:
+		return lazyseq.Map(seq, b.Layer.Apply)
+	default:
+		panic(fmt.Sprintf("unexpected block type: %T", b))
+	}
 }
 
 // DecomposeAgent decomposes an A3C agent into the policy

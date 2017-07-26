@@ -63,7 +63,7 @@ func Clone(c anyvec.Creator, args []string) {
 	}
 	trainer := &Trainer{
 		Policy: func(seq lazyseq.Rereader) lazyseq.Rereader {
-			return ApplyPolicy(seq, policy)
+			return ApplyBlock(seq, policy)
 		},
 		Spec:   spec,
 		Params: anynet.AllParameters(policy),

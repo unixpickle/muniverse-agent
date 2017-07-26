@@ -54,6 +54,8 @@ func main() {
 	switch os.Args[1] {
 	case "trpo":
 		TRPO(creator, os.Args[2:])
+	case "ppo":
+		PPO(creator, os.Args[2:])
 	case "a3c":
 		A3C(creator, os.Args[2:])
 	case "clone":
@@ -69,6 +71,7 @@ func dieUsage() {
 		"",
 		"Available sub-commands:",
 		" trpo      train a policy with TRPO",
+		" ppo       train a policy with PPO",
 		" a3c       train a policy and critic with A3C",
 		" clone     clone a policy from demonstrations",
 	}
