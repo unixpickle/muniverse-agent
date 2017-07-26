@@ -35,9 +35,16 @@ func NewEnv(c anyvec.Creator, flags Flags, spec *EnvSpec) *Env {
 	if flags.GamesDir != "" {
 		opts.GamesDir = flags.GamesDir
 	}
+	if flags.Compression >= 0 {
+		if flags.Compression > 100 {
+			essentials.Die("invalid compression level:", flags.Compression)
+		}
+		opts.Compression = true
+		opts.CompressionQuality = flags.Compression
+	}
 	env, err := muniverse.NewEnvOptions(spec.EnvSpec, opts)
 	if err != nil {
-		essentials.Die("create environment:", err)
+		essentials.Die(err)
 	}
 	if spec.Wrap != nil {
 		env = spec.Wrap(env)

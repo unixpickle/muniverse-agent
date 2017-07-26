@@ -33,8 +33,9 @@ type Flags struct {
 	DemoValidation string
 	DemoL2Reg      float64
 
-	ImageName string
-	GamesDir  string
+	ImageName   string
+	GamesDir    string
+	Compression int
 }
 
 func main() {
@@ -58,6 +59,7 @@ func main() {
 	flag.Float64Var(&flags.DemoL2Reg, "demol2reg", 0, "L2 regularization (supervised only)")
 	flag.StringVar(&flags.ImageName, "image", "", "custom Docker image")
 	flag.StringVar(&flags.GamesDir, "gamesdir", "", "custom games directory")
+	flag.IntVar(&flags.Compression, "compression", -1, "screen image compression (0-100)")
 	flag.Parse()
 
 	if flags.EnvName == "" {
