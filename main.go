@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"log"
+	"os"
 	"time"
 
 	"github.com/unixpickle/anynet/anyrnn"
@@ -65,6 +66,8 @@ func main() {
 	if flags.EnvName == "" {
 		essentials.Die("Missing -env flag. See -help for more.")
 	}
+
+	log.Println("Running with arguments:", os.Args[1:])
 
 	spec := SpecForName(flags.EnvName)
 	if spec == nil {
