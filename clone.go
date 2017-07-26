@@ -3,6 +3,7 @@ package main
 import (
 	"compress/flate"
 	"errors"
+	"flag"
 	"io/ioutil"
 	"log"
 	"path/filepath"
@@ -11,7 +12,6 @@ import (
 	"github.com/unixpickle/anydiff"
 	"github.com/unixpickle/anydiff/anyseq"
 	"github.com/unixpickle/anynet"
-	"github.com/unixpickle/anynet/anyrnn"
 	"github.com/unixpickle/anynet/anysgd"
 	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/essentials"
@@ -21,16 +21,42 @@ import (
 	"github.com/unixpickle/serializer"
 )
 
-// SupervisedTrain performs supervised training on
-// demonstration data.
-func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
-	samples, err := ReadSampleList(flags.DemosDir)
+// CloneFlags are flags for behavior cloning.
+type CloneFlags struct {
+	GeneralFlags
+
+	Dir        string
+	Batch      int
+	Validation string
+	L2Reg      float64
+}
+
+// Add adds the flags to a flag set.
+func (c *CloneFlags) Add(fs *flag.FlagSet) {
+	c.GeneralFlags.Add(fs)
+	fs.StringVar(&c.Dir, "dir", "", "training sample directory")
+	fs.StringVar(&c.Validation, "validation", "", "validation sample directory")
+	fs.IntVar(&c.Batch, "batch", 16, "batch size")
+	fs.Float64Var(&c.L2Reg, "l2reg", 0, "L2 regularization")
+}
+
+// Clone performs behavior cloning.
+func Clone(c anyvec.Creator, args []string) {
+	fs := flag.NewFlagSet("clone", flag.ExitOnError)
+	flags := &CloneFlags{}
+	flags.Add(fs)
+	fs.Parse(args)
+
+	spec := MustSpecForName(flags.EnvName)
+	policy, _ := LoadOrMakeAgent(c, spec, flags.PolicyFile, "", false)
+
+	samples, err := ReadSampleList(flags.Dir)
 	if err != nil {
 		essentials.Die(err)
 	}
 	var validation SampleList
-	if flags.DemoValidation != "" {
-		validation, err = ReadSampleList(flags.DemoValidation)
+	if flags.Validation != "" {
+		validation, err = ReadSampleList(flags.Validation)
 		if err != nil {
 			essentials.Die(err)
 		}
@@ -41,7 +67,7 @@ func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 		},
 		Spec:   spec,
 		Params: anynet.AllParameters(policy),
-		L2Reg:  flags.DemoL2Reg,
+		L2Reg:  flags.L2Reg,
 	}
 	var iter int
 	sgd := &anysgd.SGD{
@@ -50,12 +76,12 @@ func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 		Transformer: &anysgd.Adam{},
 		Samples:     samples,
 		Rater:       anysgd.ConstRater(0.001),
-		BatchSize:   flags.DemoBatch,
+		BatchSize:   flags.Batch,
 		StatusFunc: func(b anysgd.Batch) {
 			log.Printf("iteration %d: cost=%v", iter, trainer.LastCost)
 			if iter%4 == 0 && len(validation) > 0 {
 				anysgd.Shuffle(validation)
-				batchSize := essentials.MinInt(validation.Len(), flags.DemoBatch)
+				batchSize := essentials.MinInt(validation.Len(), flags.Batch)
 				vbatch, err := trainer.Fetch(validation.Slice(0, batchSize))
 				if err != nil {
 					essentials.Die(err)
@@ -68,7 +94,7 @@ func SupervisedTrain(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 		},
 	}
 	sgd.Run(rip.NewRIP().Chan())
-	serializer.SaveAny(flags.OutFile, policy)
+	serializer.SaveAny(flags.PolicyFile, policy)
 }
 
 // A Batch stores a batch of demonstrations in a format

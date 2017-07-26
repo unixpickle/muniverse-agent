@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/unixpickle/anynet"
 	"github.com/unixpickle/anynet/anyconv"
@@ -10,7 +11,33 @@ import (
 	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/lazyseq"
 	"github.com/unixpickle/lazyseq/lazyrnn"
+	"github.com/unixpickle/serializer"
 )
+
+// LoadOrMakeAgent creates or loads a policy and a critic
+// from the specified files.
+// It logs what it is doing so the user knows whether an
+// RNN was created or not.
+//
+// If needsCritic is false, then no critic is loaded.
+func LoadOrMakeAgent(creator anyvec.Creator, spec *EnvSpec, policyPath,
+	criticPath string, needsCritic bool) (policy, critic anyrnn.Block) {
+	if err := serializer.LoadAny(policyPath, &policy); err != nil {
+		log.Println("Creating new policy...")
+		policy = MakePolicy(creator, spec)
+	} else {
+		log.Println("Loaded policy.")
+	}
+	if needsCritic {
+		if err := serializer.LoadAny(criticPath, &critic); err != nil {
+			log.Println("Creating new critic...")
+			critic = MakeCritic(creator)
+		} else {
+			log.Println("Loaded critic.")
+		}
+	}
+	return
+}
 
 // MakePolicy creates a new policy RNN which is compatible
 // with the environment specification.

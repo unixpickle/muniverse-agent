@@ -3,6 +3,7 @@ package main
 import (
 	"time"
 
+	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
 )
 
@@ -64,6 +65,16 @@ func SpecForName(name string) *EnvSpec {
 		}
 	}
 	return nil
+}
+
+// MustSpecForName is like SpecForName, but it exits if
+// the spec is not found.
+func MustSpecForName(name string) *EnvSpec {
+	spec := SpecForName(name)
+	if spec == nil {
+		essentials.Die("unsupported environment:", name)
+	}
+	return spec
 }
 
 // StandardKeySpec generates an *EnvSpec with a common

@@ -27,7 +27,7 @@ type Env struct {
 //
 // It is the caller's responsibility to close RawEnv once
 // it is done using the environment.
-func NewEnv(c anyvec.Creator, flags Flags, spec *EnvSpec) *Env {
+func NewEnv(c anyvec.Creator, flags *TrainingFlags, spec *EnvSpec) *Env {
 	opts := &muniverse.Options{}
 	if flags.ImageName != "" {
 		opts.CustomImage = flags.ImageName
