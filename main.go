@@ -64,8 +64,6 @@ func main() {
 
 	if flags.EnvName == "" {
 		essentials.Die("Missing -env flag. See -help for more.")
-	} else if flags.ImageName != "" && flags.GamesDir != "" {
-		essentials.Die("Cannot use -image and -gamesdir together.")
 	}
 
 	spec := SpecForName(flags.EnvName)
