@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/unixpickle/anynet"
 	"github.com/unixpickle/anynet/anyconv"
@@ -9,8 +10,33 @@ import (
 	"github.com/unixpickle/anyrl/anya3c"
 	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/lazyseq"
-	"github.com/unixpickle/lazyseq/lazyrnn"
+	"github.com/unixpickle/serializer"
 )
+
+// LoadOrMakeAgent creates or loads a policy and a critic
+// from the specified files.
+// It logs what it is doing so the user knows whether an
+// RNN was created or not.
+//
+// If needsCritic is false, then no critic is loaded.
+func LoadOrMakeAgent(creator anyvec.Creator, spec *EnvSpec, policyPath,
+	criticPath string, needsCritic bool) (policy, critic anyrnn.Block) {
+	if err := serializer.LoadAny(policyPath, &policy); err != nil {
+		log.Println("Creating new policy...")
+		policy = MakePolicy(creator, spec)
+	} else {
+		log.Println("Loaded policy.")
+	}
+	if needsCritic {
+		if err := serializer.LoadAny(criticPath, &critic); err != nil {
+			log.Println("Creating new critic...")
+			critic = MakeCritic(creator)
+		} else {
+			log.Println("Loaded critic.")
+		}
+	}
+	return
+}
 
 // MakePolicy creates a new policy RNN which is compatible
 // with the environment specification.
@@ -25,7 +51,7 @@ func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
 		Tanh
 		FC(out=256)
 		Tanh
-	`, w, h, d*2)
+	`, w, h, d*(1+e.HistorySize))
 	convNet, err := anyconv.FromMarkup(c, markup)
 	if err != nil {
 		panic(err)
@@ -61,11 +87,20 @@ func MakeAgent(c anyvec.Creator, e *EnvSpec, policy,
 	}
 }
 
-// ApplyPolicy applies the policy in a memory-efficient
+// ApplyBlock applies the block in a memory-efficient
 // manner.
-func ApplyPolicy(seq lazyseq.Rereader, b anyrnn.Block) lazyseq.Rereader {
-	out := lazyrnn.FixedHSM(30, true, seq, b)
-	return lazyseq.Lazify(lazyseq.Unlazify(out))
+func ApplyBlock(seq lazyseq.Rereader, b anyrnn.Block) lazyseq.Rereader {
+	switch b := b.(type) {
+	case anyrnn.Stack:
+		if len(b) != 1 {
+			panic("expected one entry")
+		}
+		return ApplyBlock(seq, b[0])
+	case *anyrnn.LayerBlock:
+		return lazyseq.Map(seq, b.Layer.Apply)
+	default:
+		panic(fmt.Sprintf("unexpected block type: %T", b))
+	}
 }
 
 // DecomposeAgent decomposes an A3C agent into the policy

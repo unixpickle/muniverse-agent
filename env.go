@@ -18,8 +18,8 @@ type Env struct {
 	FrameTime time.Duration
 	MaxSteps  int
 
-	timestep  int
-	lastFrame anyvec.Vector
+	timestep int
+	joiner   *ObsJoiner
 }
 
 // NewEnv creates an environment according to the flags
@@ -27,18 +27,24 @@ type Env struct {
 //
 // It is the caller's responsibility to close RawEnv once
 // it is done using the environment.
-func NewEnv(c anyvec.Creator, flags Flags, spec *EnvSpec) *Env {
-	var env muniverse.Env
-	var err error
+func NewEnv(c anyvec.Creator, flags *TrainingFlags, spec *EnvSpec) *Env {
+	opts := &muniverse.Options{}
 	if flags.ImageName != "" {
-		env, err = muniverse.NewEnvContainer(flags.ImageName, spec.EnvSpec)
-	} else if flags.GamesDir != "" {
-		env, err = muniverse.NewEnvGamesDir(flags.GamesDir, spec.EnvSpec)
-	} else {
-		env, err = muniverse.NewEnv(spec.EnvSpec)
+		opts.CustomImage = flags.ImageName
 	}
+	if flags.GamesDir != "" {
+		opts.GamesDir = flags.GamesDir
+	}
+	if flags.Compression >= 0 {
+		if flags.Compression > 100 {
+			essentials.Die("invalid compression level:", flags.Compression)
+		}
+		opts.Compression = true
+		opts.CompressionQuality = flags.Compression
+	}
+	env, err := muniverse.NewEnvOptions(spec.EnvSpec, opts)
 	if err != nil {
-		essentials.Die("create environment:", err)
+		essentials.Die(err)
 	}
 	if spec.Wrap != nil {
 		env = spec.Wrap(env)
@@ -53,6 +59,7 @@ func NewEnv(c anyvec.Creator, flags Flags, spec *EnvSpec) *Env {
 		Observer:  spec.Observer,
 		FrameTime: spec.FrameTime,
 		MaxSteps:  flags.MaxSteps,
+		joiner:    &ObsJoiner{HistorySize: spec.HistorySize},
 	}
 }
 
@@ -76,8 +83,8 @@ func (e *Env) Reset() (obs anyvec.Vector, err error) {
 	if err != nil {
 		return
 	}
-	e.lastFrame = obsVec.Copy()
-	obs = joinFrames(obsVec, obsVec)
+	e.joiner.Reset(obsVec)
+	obs = e.joiner.Step(obsVec)
 
 	return
 }
@@ -99,8 +106,7 @@ func (e *Env) Step(action anyvec.Vector) (obs anyvec.Vector, reward float64,
 	if err != nil {
 		return
 	}
-	obs = joinFrames(e.lastFrame, obsVec)
-	e.lastFrame = obsVec.Copy()
+	obs = e.joiner.Step(obsVec)
 
 	e.timestep++
 	if e.timestep >= e.MaxSteps {
@@ -108,11 +114,4 @@ func (e *Env) Step(action anyvec.Vector) (obs anyvec.Vector, reward float64,
 	}
 
 	return
-}
-
-func joinFrames(f1, f2 anyvec.Vector) anyvec.Vector {
-	joined := f1.Creator().Concat(f1, f2)
-	res := f1.Creator().MakeVector(f1.Len() * 2)
-	anyvec.Transpose(joined, res, 2)
-	return res
 }

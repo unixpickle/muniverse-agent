@@ -3,6 +3,7 @@ package main
 import (
 	"time"
 
+	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
 )
 
@@ -23,6 +24,11 @@ type EnvSpec struct {
 	DiscountFactor float64
 	FrameTime      time.Duration
 	BatchSize      int
+
+	// HistorySize is the number of previous observations
+	// to feed into the network in addition to the current
+	// observation.
+	HistorySize int
 }
 
 var EnvSpecs = []*EnvSpec{
@@ -35,6 +41,7 @@ var EnvSpecs = []*EnvSpec{
 	StandardTapSpec("Lectro-v0", true, 0.99, time.Second/10, 512),
 	StandardTapSpec("PineapplePen-v0", true, 0.98, time.Second/10, 512),
 	StandardTapSpec("SushiNinjaDash-v0", true, 0.98, time.Second/10, 512),
+	StandardTapSpec("PopUp-v0", true, 0.98, time.Second/10, 2048),
 	StandardTapSpec("StickFreak-v0", false, 0.98, time.Second/10, 512),
 	StandardTapSpec("Basketball-v0", false, 0.95, time.Second/10, 512),
 	StandardTapSpec("TowerMania-v0", false, 0.99, time.Second/10, 512),
@@ -46,6 +53,7 @@ var EnvSpecs = []*EnvSpec{
 	StandardKeySpec("TRex-v0", false, 0.98, time.Second/10, 512),
 	StandardKeySpec("Cars-v0", false, 0.98, time.Second/10, 512),
 	StandardKeySpec("DoodleJump-v0", false, 0.98, time.Second/10, 2048),
+	Colorize(StandardKeySpec("ColorTease-v0", false, 0.98, time.Second/10, 512)),
 	StandardMouseSpec("PizzaNinja3-v0", false, 0.99, time.Second/10, 2048),
 	Colorize(StandardMouseSpec("Colorpop-v0", false, 0.99, time.Second/10, 512)),
 }
@@ -58,6 +66,16 @@ func SpecForName(name string) *EnvSpec {
 		}
 	}
 	return nil
+}
+
+// MustSpecForName is like SpecForName, but it exits if
+// the spec is not found.
+func MustSpecForName(name string) *EnvSpec {
+	spec := SpecForName(name)
+	if spec == nil {
+		essentials.Die("unsupported environment:", name)
+	}
+	return spec
 }
 
 // StandardKeySpec generates an *EnvSpec with a common
@@ -88,6 +106,8 @@ func StandardKeySpec(name string, noHold bool, discount float64,
 		DiscountFactor: discount,
 		FrameTime:      frameTime,
 		BatchSize:      batchSize,
+
+		HistorySize: 1,
 	}
 }
 
@@ -127,5 +147,11 @@ func StandardMouseSpec(name string, noHold bool, discount float64,
 // Colorize changes a standard spec to use color.
 func Colorize(e *EnvSpec) *EnvSpec {
 	e.Observer.(*DownsampleObserver).Color = true
+	return e
+}
+
+// WithHistSize changes the history size of a spec.
+func WithHistSize(e *EnvSpec, size int) *EnvSpec {
+	e.HistorySize = size
 	return e
 }
