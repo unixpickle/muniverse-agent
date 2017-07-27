@@ -109,11 +109,13 @@ func PPO(c anyvec.Creator, args []string) {
 			log.Println("Training on batch...")
 			adv := ppo.Advantage(r)
 			for i := 0; i < flags.Epochs; i++ {
-				g := ppo.Run(r, adv)
+				g, terms := ppo.Run(r, adv)
 				g = transformer.Transform(g)
 				g.Scale(c.MakeNumeric(flags.Step))
 				g.AddToVars()
-				log.Println("training: done iteration", i)
+				log.Printf("iteration %d: actor=%f critic=%f reg=%f", i,
+					terms.MeanAdvantage, terms.MeanCritic,
+					terms.MeanRegularization)
 			}
 
 			trainLock.Lock()
@@ -172,7 +174,6 @@ func gatherPPORollouts(flags *PPOFlags, spec *EnvSpec,
 	var closed bool
 	for item := range resChan {
 		res = append(res, item)
-		log.Printf("episode: steps=%d", len(item.Rewards[0]))
 		numSteps += len(item.Rewards[0])
 		if numSteps < flags.BatchSteps {
 			requests <- struct{}{}
