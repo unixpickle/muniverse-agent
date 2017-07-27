@@ -10,10 +10,11 @@ import (
 
 // An Env is an anyrl.Env which wraps a muniverse.Env.
 type Env struct {
-	Creator  anyvec.Creator
-	RawEnv   muniverse.Env
-	Actor    Actor
-	Observer Observer
+	Creator     anyvec.Creator
+	RawEnv      muniverse.Env
+	Actor       Actor
+	Observer    Observer
+	RewardScale float64
 
 	FrameTime time.Duration
 	MaxSteps  int
@@ -53,13 +54,14 @@ func NewEnv(c anyvec.Creator, flags *TrainingFlags, spec *EnvSpec) *Env {
 		env = muniverse.RecordEnv(env, flags.RecordDir)
 	}
 	return &Env{
-		Creator:   c,
-		RawEnv:    env,
-		Actor:     spec.MakeActor(),
-		Observer:  spec.Observer,
-		FrameTime: spec.FrameTime,
-		MaxSteps:  flags.MaxSteps,
-		joiner:    &ObsJoiner{HistorySize: spec.HistorySize},
+		Creator:     c,
+		RawEnv:      env,
+		Actor:       spec.MakeActor(),
+		Observer:    spec.Observer,
+		RewardScale: spec.RewardScale,
+		FrameTime:   spec.FrameTime,
+		MaxSteps:    flags.MaxSteps,
+		joiner:      &ObsJoiner{HistorySize: spec.HistorySize},
 	}
 }
 
@@ -96,6 +98,9 @@ func (e *Env) Step(action anyvec.Vector) (obs anyvec.Vector, reward float64,
 	reward, done, err = e.RawEnv.Step(e.FrameTime, events...)
 	if err != nil {
 		return
+	}
+	if e.RewardScale != 0 {
+		reward *= e.RewardScale
 	}
 
 	rawObs, err := e.RawEnv.Observe()
