@@ -2,13 +2,13 @@ package main
 
 import (
 	"compress/flate"
+	"flag"
 	"log"
 	"math"
 	"sync"
 
 	"github.com/unixpickle/anydiff/anyseq"
 	"github.com/unixpickle/anynet"
-	"github.com/unixpickle/anynet/anyrnn"
 	"github.com/unixpickle/anyrl"
 	"github.com/unixpickle/anyrl/anypg"
 	"github.com/unixpickle/anyvec"
@@ -18,7 +18,15 @@ import (
 	"github.com/unixpickle/serializer"
 )
 
-func TRPO(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
+func TRPO(c anyvec.Creator, args []string) {
+	fs := flag.NewFlagSet("trpo", flag.ExitOnError)
+	flags := &TrainingFlags{}
+	flags.Add(fs)
+	fs.Parse(args)
+
+	spec := MustSpecForName(flags.EnvName)
+	policy, _ := LoadOrMakeAgent(c, spec, flags.PolicyFile, "", false)
+
 	actionSpace := spec.MakeActor().ActionSpace()
 
 	roller := &anyrl.RNNRoller{
@@ -45,7 +53,7 @@ func TRPO(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 				MakeInputTape: roller.MakeInputTape,
 			}).Reduce,
 
-			ApplyPolicy:  ApplyPolicy,
+			ApplyPolicy:  ApplyBlock,
 			ActionJudger: &anypg.QJudger{Discount: spec.DiscountFactor},
 		},
 		LogLineSearch: func(kl, improvement anyvec.Numeric) {
@@ -61,7 +69,7 @@ func TRPO(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 			log.Println("Gathering batch of experience...")
 
 			// Join the rollouts into one set.
-			rollouts := gatherRollouts(flags, spec, roller)
+			rollouts := gatherTRPORollouts(flags, spec, roller)
 			r := anyrl.PackRolloutSets(rollouts)
 
 			// Print the stats for the batch.
@@ -73,7 +81,7 @@ func TRPO(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 			grad := trpo.Run(r)
 			grad.AddToVars()
 			trainLock.Lock()
-			if err := serializer.SaveAny(flags.OutFile, policy); err != nil {
+			if err := serializer.SaveAny(flags.PolicyFile, policy); err != nil {
 				essentials.Die("save policy:", err)
 			}
 			trainLock.Unlock()
@@ -88,7 +96,7 @@ func TRPO(flags Flags, spec *EnvSpec, policy anyrnn.Block) {
 	trainLock.Lock()
 }
 
-func gatherRollouts(flags Flags, spec *EnvSpec,
+func gatherTRPORollouts(flags *TrainingFlags, spec *EnvSpec,
 	roller *anyrl.RNNRoller) []*anyrl.RolloutSet {
 	resChan := make(chan *anyrl.RolloutSet, spec.BatchSize)
 

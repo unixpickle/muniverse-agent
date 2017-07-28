@@ -3,6 +3,7 @@ package main
 import (
 	"time"
 
+	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
 )
 
@@ -23,6 +24,10 @@ type EnvSpec struct {
 	DiscountFactor float64
 	FrameTime      time.Duration
 	BatchSize      int
+
+	// If non-zero, used to scale down the rewards to a
+	// reasonable regime (e.g. to be close to 0-1).
+	RewardScale float64
 
 	// HistorySize is the number of previous observations
 	// to feed into the network in addition to the current
@@ -51,6 +56,8 @@ var EnvSpecs = []*EnvSpec{
 	StandardKeySpec("CartoonFlight-v1", false, 0.95, time.Second/8, 512),
 	StandardKeySpec("TRex-v0", false, 0.98, time.Second/10, 512),
 	StandardKeySpec("Cars-v0", false, 0.98, time.Second/10, 512),
+	WithRewardScale(StandardKeySpec("DoodleJump-v0", false, 0.98, time.Second/10, 2048),
+		1.0/500),
 	Colorize(StandardKeySpec("ColorTease-v0", true, 0.98, time.Second/10, 1024)),
 	StandardMouseSpec("PizzaNinja3-v0", false, 0.99, time.Second/10, 2048),
 	Colorize(StandardMouseSpec("Colorpop-v0", false, 0.99, time.Second/10, 512)),
@@ -64,6 +71,16 @@ func SpecForName(name string) *EnvSpec {
 		}
 	}
 	return nil
+}
+
+// MustSpecForName is like SpecForName, but it exits if
+// the spec is not found.
+func MustSpecForName(name string) *EnvSpec {
+	spec := SpecForName(name)
+	if spec == nil {
+		essentials.Die("unsupported environment:", name)
+	}
+	return spec
 }
 
 // StandardKeySpec generates an *EnvSpec with a common
@@ -141,5 +158,11 @@ func Colorize(e *EnvSpec) *EnvSpec {
 // WithHistSize changes the history size of a spec.
 func WithHistSize(e *EnvSpec, size int) *EnvSpec {
 	e.HistorySize = size
+	return e
+}
+
+// WithRewardScale changes the RewardScale of a spec.
+func WithRewardScale(e *EnvSpec, scale float64) *EnvSpec {
+	e.RewardScale = scale
 	return e
 }
