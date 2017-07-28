@@ -6,8 +6,10 @@ import (
 	"flag"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/unixpickle/anydiff"
 	"github.com/unixpickle/anydiff/anyseq"
@@ -42,6 +44,8 @@ func (c *CloneFlags) Add(fs *flag.FlagSet) {
 
 // Clone performs behavior cloning.
 func Clone(c anyvec.Creator, args []string) {
+	rand.Seed(time.Now().UnixNano())
+
 	fs := flag.NewFlagSet("clone", flag.ExitOnError)
 	flags := &CloneFlags{}
 	flags.Add(fs)
