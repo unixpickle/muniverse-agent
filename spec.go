@@ -51,7 +51,7 @@ var EnvSpecs = []*EnvSpec{
 	StandardKeySpec("CartoonFlight-v1", false, 0.95, time.Second/8, 512),
 	StandardKeySpec("TRex-v0", false, 0.98, time.Second/10, 512),
 	StandardKeySpec("Cars-v0", false, 0.98, time.Second/10, 512),
-	Colorize(StandardKeySpec("ColorTease-v0", false, 0.98, time.Second/10, 512)),
+	Colorize(StandardKeySpec("ColorTease-v0", true, 0.98, time.Second/10, 1024)),
 	StandardMouseSpec("PizzaNinja3-v0", false, 0.99, time.Second/10, 2048),
 	Colorize(StandardMouseSpec("Colorpop-v0", false, 0.99, time.Second/10, 512)),
 }
