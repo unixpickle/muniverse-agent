@@ -47,6 +47,7 @@ var EnvSpecs = []*EnvSpec{
 	StandardTapSpec("SushiNinjaDash-v0", true, 0.98, time.Second/10, 512),
 	StandardTapSpec("PopUp-v0", true, 0.98, time.Second/10, 2048),
 	StandardTapSpec("PanicDrop-v0", true, 0.98, time.Second/10, 512),
+	StandardTapSpec("TapTapDash-v0", true, 0.98, time.Second/10, 512),
 	StandardTapSpec("StickFreak-v0", false, 0.98, time.Second/10, 512),
 	StandardTapSpec("Basketball-v0", false, 0.95, time.Second/10, 512),
 	StandardTapSpec("TowerMania-v0", false, 0.99, time.Second/10, 512),
