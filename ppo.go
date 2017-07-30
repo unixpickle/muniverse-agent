@@ -25,7 +25,8 @@ type PPOFlags struct {
 	CriticFile   string
 	Lambda       float64
 	Epsilon      float64
-	EntropyReg   float64
+	RegCoeff     float64
+	KLReg        bool
 	CriticWeight float64
 	Step         float64
 	Epochs       int
@@ -37,7 +38,8 @@ func (p *PPOFlags) Add(fs *flag.FlagSet) {
 	fs.StringVar(&p.CriticFile, "critic", "trained_critic", "filename for critic network")
 	fs.Float64Var(&p.Lambda, "lambda", 0.95, "GAE coefficient")
 	fs.Float64Var(&p.Epsilon, "epsilon", 0.1, "PPO probability epsilon")
-	fs.Float64Var(&p.EntropyReg, "reg", 0.01, "entropy regularization")
+	fs.Float64Var(&p.RegCoeff, "reg", 0.01, "regularization strength")
+	fs.BoolVar(&p.KLReg, "klreg", false, "use KL regularization (instead of entropy)")
 	fs.Float64Var(&p.CriticWeight, "criticweight", 1, "importance of critic gradient")
 	fs.Float64Var(&p.Step, "step", 3e-4, "SGD step size (with Adam)")
 	fs.IntVar(&p.Epochs, "epochs", 10, "SGD epochs per batch")
@@ -79,13 +81,21 @@ func PPO(c anyvec.Creator, args []string) {
 		},
 		ActionSpace:  agent.ActionSpace,
 		CriticWeight: flags.CriticWeight,
-		Regularizer: &anypg.EntropyReg{
-			Coeff:     flags.EntropyReg,
+		Discount:     spec.DiscountFactor,
+		Lambda:       flags.Lambda,
+		Epsilon:      flags.Epsilon,
+	}
+	if flags.KLReg {
+		ppo.Regularizer = &anypg.KLReg{
+			Coeff: flags.RegCoeff,
+			Base:  c.MakeVector(spec.MakeActor().ParamLen()),
+			KLer:  agent.ActionSpace.(anyrl.KLer),
+		}
+	} else {
+		ppo.Regularizer = &anypg.EntropyReg{
+			Coeff:     flags.RegCoeff,
 			Entropyer: agent.ActionSpace.(anyrl.Entropyer),
-		},
-		Discount: spec.DiscountFactor,
-		Lambda:   flags.Lambda,
-		Epsilon:  flags.Epsilon,
+		}
 	}
 
 	// Train on a background goroutine so that we can
