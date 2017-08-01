@@ -43,7 +43,7 @@ func (p *PPOFlags) Add(fs *flag.FlagSet) {
 	fs.Float64Var(&p.CriticWeight, "criticweight", 1, "importance of critic gradient")
 	fs.Float64Var(&p.Step, "step", 3e-4, "SGD step size (with Adam)")
 	fs.IntVar(&p.Epochs, "epochs", 10, "SGD epochs per batch")
-	fs.IntVar(&p.BatchSteps, "batchsteps", 1024, "minimum steps per batch")
+	fs.IntVar(&p.BatchSteps, "batchsteps", 2048, "minimum steps per batch")
 }
 
 func PPO(c anyvec.Creator, args []string) {
