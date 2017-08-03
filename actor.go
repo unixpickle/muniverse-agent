@@ -1,6 +1,8 @@
 package main
 
 import (
+	"math"
+
 	"github.com/unixpickle/anyrl"
 	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/essentials"
@@ -238,6 +240,10 @@ type MouseActor struct {
 	// instantaneous; the mouse cannot be held down.
 	NoHold bool
 
+	// Discrete, if true, limits mouse movements to a
+	// pre-specified set of options.
+	Discrete bool
+
 	pressed bool
 	lastX   int
 	lastY   int
@@ -246,16 +252,29 @@ type MouseActor struct {
 // ActionSpace returns an action space for producing
 // arbitrary mouse actions.
 func (m *MouseActor) ActionSpace() ActionSpace {
-	return &anyrl.Tuple{
-		Spaces:      []interface{}{&anyrl.Bernoulli{}, anyrl.Gaussian{}},
-		ParamSizes:  []int{1, 4},
-		SampleSizes: []int{1, 2},
+	if m.Discrete {
+		size := len(m.options())
+		return &anyrl.Tuple{
+			Spaces:      []interface{}{&anyrl.Bernoulli{}, anyrl.Softmax{}},
+			ParamSizes:  []int{1, size},
+			SampleSizes: []int{1, size},
+		}
+	} else {
+		return &anyrl.Tuple{
+			Spaces:      []interface{}{&anyrl.Bernoulli{}, anyrl.Gaussian{}},
+			ParamSizes:  []int{1, 4},
+			SampleSizes: []int{1, 2},
+		}
 	}
 }
 
 // ParamLen returns the size of action parameter space.
 func (m *MouseActor) ParamLen() int {
-	return 5
+	if m.Discrete {
+		return 1 + len(m.options())
+	} else {
+		return 5
+	}
 }
 
 // Reset resets the mouse state.
@@ -272,7 +291,7 @@ func (m *MouseActor) Events(vec anyvec.Vector) []interface{} {
 	ops := vec.Creator().NumOps()
 	thresh := vec.Creator().MakeNumeric(0.5)
 	press := ops.Greater(anyvec.Sum(vec.Slice(0, 1)), thresh)
-	x, y := m.mouseCoords(vec.Slice(1, 3))
+	x, y := m.mouseCoords(vec.Slice(1, vec.Len()))
 
 	if x != m.lastX || y != m.lastY {
 		m.lastX = x
@@ -340,8 +359,14 @@ func (m *MouseActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Ve
 			}
 		}
 	}
-	vec := []float64{0, 4 * float64(newX-m.lastX) / float64(m.Width),
-		4 * float64(newY-m.lastY) / float64(m.Height)}
+	var vec []float64
+	if m.Discrete {
+		vec = make([]float64, 1+len(m.options()))
+		vec[1+m.closestOption(newX-m.lastX, newY-m.lastY)] = 1
+	} else {
+		vec = []float64{0, 4 * float64(newX-m.lastX) / float64(m.Width),
+			4 * float64(newY-m.lastY) / float64(m.Height)}
+	}
 	m.lastX = newX
 	m.lastY = newY
 	if m.pressed {
@@ -351,18 +376,58 @@ func (m *MouseActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Ve
 }
 
 func (m *MouseActor) mouseCoords(vec anyvec.Vector) (x, y int) {
-	var fx, fy float64
-	switch data := vec.Data().(type) {
-	case []float32:
-		fx, fy = float64(data[0]), float64(data[1])
-	case []float64:
-		fx, fy = data[0], data[1]
-	default:
-		panic("unsupported numeric type")
+	if m.Discrete {
+		idx := anyvec.MaxIndex(vec)
+		offset := m.options()[idx]
+		x = m.lastX + offset[0]
+		y = m.lastY + offset[1]
+	} else {
+		var fx, fy float64
+		switch data := vec.Data().(type) {
+		case []float32:
+			fx, fy = float64(data[0]), float64(data[1])
+		case []float64:
+			fx, fy = data[0], data[1]
+		default:
+			panic("unsupported numeric type")
+		}
+		x = m.lastX + int(essentials.Round(float64(m.Width)*fx/4))
+		y = m.lastY + int(essentials.Round(float64(m.Height)*fy/4))
 	}
-	x = m.lastX + int(essentials.Round(float64(m.Width)*fx/4))
-	y = m.lastY + int(essentials.Round(float64(m.Height)*fy/4))
 	x = essentials.MaxInt(0, essentials.MinInt(m.Width-1, x))
 	y = essentials.MaxInt(0, essentials.MinInt(m.Height-1, y))
 	return
+}
+
+// options returns the (x, y) offsets for each of the
+// discrete options.
+func (m *MouseActor) options() [][2]int {
+	res := make([][2]int, 1, 3*5+1)
+	res[0] = [2]int{0, 0}
+	for _, radius := range []float64{10, 40, 80} {
+		for i := 0; i < 5; i++ {
+			angle := math.Pi * 2 * float64(i) / 5
+			x := math.Cos(angle) * radius
+			y := math.Sin(angle) * radius
+			res = append(res, [2]int{int(x), int(y)})
+		}
+	}
+	return res
+}
+
+// closestOption finds the discrete option which is the
+// closest to approximating the given delta.
+func (m *MouseActor) closestOption(deltaX, deltaY int) int {
+	opts := m.options()
+	var closestOpt int
+	closestDist := math.Inf(1)
+	for i, opt := range opts {
+		dist := math.Sqrt(math.Pow(float64(deltaX-opt[0]), 2) +
+			math.Pow(float64(deltaY-opt[1]), 2))
+		if dist < closestDist {
+			closestDist = dist
+			closestOpt = i
+		}
+	}
+	return closestOpt
 }

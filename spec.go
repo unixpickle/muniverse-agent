@@ -157,9 +157,10 @@ func StandardMouseSpec(name string, noHold bool, discount float64,
 	}
 	res.MakeActor = func() Actor {
 		return &MouseActor{
-			Width:  res.Width,
-			Height: res.Height,
-			NoHold: noHold,
+			Width:    res.Width,
+			Height:   res.Height,
+			NoHold:   noHold,
+			Discrete: true,
 		}
 	}
 	return res
