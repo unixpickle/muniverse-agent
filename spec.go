@@ -74,7 +74,7 @@ var EnvSpecs = []*EnvSpec{
 		1.0/100),
 	Colorize(StandardKeySpec("ColorTease-v0", true, 0.98, time.Second/10, 1024)),
 	StandardMouseSpec("PizzaNinja3-v0", false, 0.99, time.Second/10, 2048),
-	StandardMouseSpec("SoccerGirl-v1", false, 0.98, time.Second/10, 512),
+	WithRewardScale(StandardMouseSpec("SoccerGirl-v1", false, 0.98, time.Second/10, 512), 1.0/100),
 	WithRewardScale(StandardMouseSpec("ClickThemAll-v0", false, 0.98, time.Second/10,
 		2048), 1.0/1000),
 	Colorize(StandardMouseSpec("Colorpop-v0", false, 0.99, time.Second/10, 512)),
