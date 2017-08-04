@@ -55,7 +55,7 @@ var EnvSpecs = []*EnvSpec{
 	WithRewardScale(StandardTapSpec("KibaKumbaShadowRun-v0", true, 0.98,
 		time.Second/10, 512), 1.0/250),
 	StandardTapSpec("FlappyBird-v0", true, 0.99, time.Second/10, 512),
-	StandardTapSpec("StickFreak-v0", false, 0.98, time.Second/10, 512),
+	WithAverageObserver(StandardTapSpec("StickFreak-v0", false, 0.98, time.Second/10, 512)),
 	StandardTapSpec("Basketball-v0", false, 0.95, time.Second/10, 512),
 	StandardTapSpec("TowerMania-v0", false, 0.99, time.Second/10, 512),
 	StandardTapSpec("StackTowerClassic-v0", false, 0.99, time.Second/10, 1024),
@@ -182,5 +182,19 @@ func WithHistSize(e *EnvSpec, size int) *EnvSpec {
 // WithRewardScale changes the RewardScale of a spec.
 func WithRewardScale(e *EnvSpec, scale float64) *EnvSpec {
 	e.RewardScale = scale
+	return e
+}
+
+// WithAverageObserver sets the spec to use an
+// AverageObserver rather than a DownsampleObserver.
+func WithAverageObserver(e *EnvSpec) *EnvSpec {
+	o := e.Observer.(*DownsampleObserver)
+	e.Observer = &AverageObserver{
+		StrideX:  o.StrideX,
+		StrideY:  o.StrideY,
+		InWidth:  o.InWidth,
+		InHeight: o.InHeight,
+		Color:    o.Color,
+	}
 	return e
 }

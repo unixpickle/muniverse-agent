@@ -74,6 +74,75 @@ func (d *DownsampleObserver) ObsVec(c anyvec.Creator,
 	return c.MakeVectorData(c.MakeNumericList(data)), nil
 }
 
+// An AverageObserver scales down observation images by
+// averaging neighboring pixels.
+type AverageObserver struct {
+	StrideX int
+	StrideY int
+
+	InWidth  int
+	InHeight int
+
+	Color bool
+}
+
+// ObsSize returns the output tensor size.
+func (a *AverageObserver) ObsSize() (width, height, depth int) {
+	do := &DownsampleObserver{
+		StrideX:  a.StrideX,
+		StrideY:  a.StrideY,
+		InWidth:  a.InWidth,
+		InHeight: a.InHeight,
+		Color:    a.Color,
+	}
+	return do.ObsSize()
+}
+
+// ObsVec downsamples the image and converts it to a
+// tensor.
+func (a *AverageObserver) ObsVec(c anyvec.Creator,
+	obs muniverse.Obs) (anyvec.Vector, error) {
+	buffer, _, _, err := muniverse.RGB(obs)
+	if err != nil {
+		return nil, err
+	}
+	var data []float64
+	for y := 0; y < a.InHeight; y += a.StrideY {
+		for x := 0; x < a.InWidth; x += a.StrideX {
+			var sums [3]float64
+			var count float64
+			for subY := 0; subY < a.StrideY; subY++ {
+				if y+subY >= a.InHeight {
+					continue
+				}
+				rowOff := a.InWidth * (y + subY) * 3
+				for subX := 0; subX < a.StrideX; subX++ {
+					if x+subX >= a.InWidth {
+						continue
+					}
+					depthOff := rowOff + (x+subX)*3
+					for z := 0; z < 3; z++ {
+						sums[z] += float64(buffer[depthOff+z])
+						count += 1
+					}
+				}
+			}
+			if a.Color {
+				for _, sum := range sums[:] {
+					data = append(data, essentials.Round(sum/count))
+				}
+			} else {
+				var total float64
+				for _, sum := range sums[:] {
+					total += sum
+				}
+				data = append(data, essentials.Round(total/(count*3)))
+			}
+		}
+	}
+	return c.MakeVectorData(c.MakeNumericList(data)), nil
+}
+
 // An ObsJoiner joins together a history of observations.
 type ObsJoiner struct {
 	HistorySize int
