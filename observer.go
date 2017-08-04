@@ -120,10 +120,10 @@ func (a *AverageObserver) ObsVec(c anyvec.Creator,
 					if x+subX >= a.InWidth {
 						continue
 					}
+					count += 1
 					depthOff := rowOff + (x+subX)*3
 					for z := 0; z < 3; z++ {
 						sums[z] += float64(buffer[depthOff+z])
-						count += 1
 					}
 				}
 			}
