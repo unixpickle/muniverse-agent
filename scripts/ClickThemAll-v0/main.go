@@ -21,8 +21,8 @@ func main() {
 func record() {
 	spec := muniverse.SpecForName("ClickThemAll-v0")
 	env, _ := muniverse.NewEnv(spec)
-	env = muniverse.RecordEnv(env, "click_demos")
 	env = muniverse.CursorEnv(env, spec.Width/2, spec.Height/2)
+	env = muniverse.RecordEnv(env, "click_demos")
 	defer env.Close()
 	for {
 		env.Reset()
@@ -30,14 +30,14 @@ func record() {
 		mouseX := spec.Width / 2
 		mouseY := spec.Height / 2
 		for i := 0; true; i++ {
-			var actions []interface{}
-
 			randomMovement(spec, &mouseX, &mouseY)
-			actions = append(actions, &chrome.MouseEvent{
-				Type: chrome.MouseMoved,
-				X:    mouseX,
-				Y:    mouseY,
-			})
+			actions := []interface{}{
+				&chrome.MouseEvent{
+					Type: chrome.MouseMoved,
+					X:    mouseX,
+					Y:    mouseY,
+				},
+			}
 
 			if shouldClick(spec, mouseX, mouseY, lastObs) {
 				click := chrome.MouseEvent{
@@ -49,7 +49,7 @@ func record() {
 				}
 				unclick := click
 				unclick.Type = chrome.MouseReleased
-				actions = []interface{}{&click, &unclick}
+				actions = append(actions, &click, unclick)
 			}
 
 			_, done, _ := env.Step(time.Second/10, actions...)
@@ -80,7 +80,8 @@ func shouldClick(spec *muniverse.EnvSpec, mouseX, mouseY int,
 	}
 
 	// Favor colored pixels for clicks.
-	return (rand.Intn(10) < 8 && color > 0x80 && color < 0xff*3-0x80)
+	return (rand.Intn(10) < 8 && color > 0x80 && color < 0xff*3-0x80) ||
+		rand.Intn(10) < 2
 }
 
 func mouseOptions() [][2]int {
