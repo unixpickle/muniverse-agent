@@ -339,7 +339,8 @@ func (m *MouseActor) Events(vec anyvec.Vector) []interface{} {
 
 // Vectorize generates a vector for the mouse events.
 func (m *MouseActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector {
-	var newX, newY int
+	newX := m.lastX
+	newY := m.lastY
 	for _, event := range events {
 		mouseEvent, ok := event.(*chrome.MouseEvent)
 		if !ok {
