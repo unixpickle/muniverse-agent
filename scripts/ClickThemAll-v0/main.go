@@ -30,14 +30,7 @@ func record() {
 		mouseX := spec.Width / 2
 		mouseY := spec.Height / 2
 		for i := 0; true; i++ {
-			randomMovement(spec, &mouseX, &mouseY)
-			actions := []interface{}{
-				&chrome.MouseEvent{
-					Type: chrome.MouseMoved,
-					X:    mouseX,
-					Y:    mouseY,
-				},
-			}
+			var actions []interface{}
 
 			if shouldClick(spec, mouseX, mouseY, lastObs) {
 				click := chrome.MouseEvent{
@@ -49,8 +42,15 @@ func record() {
 				}
 				unclick := click
 				unclick.Type = chrome.MouseReleased
-				actions = append(actions, &click, unclick)
+				actions = append(actions, &click, &unclick)
 			}
+
+			randomMovement(spec, &mouseX, &mouseY)
+			actions = append(actions, &chrome.MouseEvent{
+				Type: chrome.MouseMoved,
+				X:    mouseX,
+				Y:    mouseY,
+			})
 
 			_, done, _ := env.Step(time.Second/10, actions...)
 			lastObs, _ = env.Observe()

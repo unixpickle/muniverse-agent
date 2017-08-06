@@ -293,6 +293,32 @@ func (m *MouseActor) Events(vec anyvec.Vector) []interface{} {
 	press := ops.Greater(anyvec.Sum(vec.Slice(0, 1)), thresh)
 	x, y := m.mouseCoords(vec.Slice(1, vec.Len()))
 
+	if m.NoHold && press {
+		evt := chrome.MouseEvent{
+			Type:       chrome.MousePressed,
+			X:          m.lastX,
+			Y:          m.lastY,
+			Button:     chrome.LeftButton,
+			ClickCount: 1,
+		}
+		evt1 := evt
+		evt1.Type = chrome.MouseReleased
+		events = append(events, &evt, &evt1)
+	} else if !m.NoHold && press != m.pressed {
+		m.pressed = press
+		evt := chrome.MouseEvent{
+			Type:       chrome.MousePressed,
+			X:          m.lastX,
+			Y:          m.lastY,
+			Button:     chrome.LeftButton,
+			ClickCount: 1,
+		}
+		if !press {
+			evt.Type = chrome.MouseReleased
+		}
+		events = append(events, &evt)
+	}
+
 	if x != m.lastX || y != m.lastY {
 		m.lastX = x
 		m.lastY = y
@@ -306,32 +332,6 @@ func (m *MouseActor) Events(vec anyvec.Vector) []interface{} {
 			evt.Button = chrome.LeftButton
 		}
 		events = append(events, evt)
-	}
-
-	if m.NoHold && press {
-		evt := chrome.MouseEvent{
-			Type:       chrome.MousePressed,
-			X:          x,
-			Y:          y,
-			Button:     chrome.LeftButton,
-			ClickCount: 1,
-		}
-		evt1 := evt
-		evt1.Type = chrome.MouseReleased
-		events = append(events, &evt, &evt1)
-	} else if !m.NoHold && press != m.pressed {
-		m.pressed = press
-		evt := chrome.MouseEvent{
-			Type:       chrome.MousePressed,
-			X:          x,
-			Y:          y,
-			Button:     chrome.LeftButton,
-			ClickCount: 1,
-		}
-		if !press {
-			evt.Type = chrome.MouseReleased
-		}
-		events = append(events, &evt)
 	}
 
 	return events
