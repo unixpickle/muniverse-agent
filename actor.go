@@ -58,12 +58,20 @@ type KeyActor struct {
 	// instantaneous; keys cannot be held down.
 	NoHold bool
 
+	// OneHot, if true, indicates that only one key may
+	// be pressed at once.
+	OneHot bool
+
 	pressed map[string]bool
 }
 
 // ActionSpace returns a Bernoulli action space.
 func (k *KeyActor) ActionSpace() ActionSpace {
-	return &anyrl.Bernoulli{}
+	if k.OneHot {
+		return anyrl.Softmax{}
+	} else {
+		return &anyrl.Bernoulli{}
+	}
 }
 
 // ParamLen returns the number of keys.
@@ -128,6 +136,9 @@ func (k *KeyActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vect
 	for i, key := range k.Keys {
 		if k.pressed[key] {
 			vector[i] = 1
+			if k.OneHot {
+				break
+			}
 		}
 	}
 	return c.MakeVectorData(c.MakeNumericList(vector))

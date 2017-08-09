@@ -72,8 +72,8 @@ var EnvSpecs = []*EnvSpec{
 		1.0/250),
 	WithRewardScale(StandardTapSpec("UfoRun-v0", false, 0.99, time.Second/10, 512),
 		1.0/100),
-	WithRewardScale(StandardKeySpec("PacMan-v0", false, 0.99, time.Second/10, 512),
-		1.0/100),
+	WithRewardScale(OneHotKeys(StandardKeySpec("PacMan-v0", false, 0.99, time.Second/10,
+		512)), 1.0/100),
 	Colorize(StandardKeySpec("ColorTease-v0", true, 0.98, time.Second/10, 1024)),
 	StandardMouseSpec("PizzaNinja3-v0", false, 0.99, time.Second/10, 2048),
 	WithRewardScale(StandardMouseSpec("SoccerGirl-v1", false, 0.98, time.Second/10, 512), 1.0/100),
@@ -201,6 +201,17 @@ func WithAverageObserver(e *EnvSpec) *EnvSpec {
 		InWidth:  o.InWidth,
 		InHeight: o.InHeight,
 		Color:    o.Color,
+	}
+	return e
+}
+
+// OneHotKeys sets the OneHot flag on a spec's KeyActors.
+func OneHotKeys(e *EnvSpec) *EnvSpec {
+	oldMake := e.MakeActor
+	e.MakeActor = func() Actor {
+		a := oldMake().(*KeyActor)
+		a.OneHot = true
+		return a
 	}
 	return e
 }
