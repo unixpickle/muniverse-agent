@@ -72,6 +72,8 @@ var EnvSpecs = []*EnvSpec{
 		1.0/250),
 	WithRewardScale(StandardTapSpec("UfoRun-v0", false, 0.99, time.Second/10, 512),
 		1.0/100),
+	WithRewardScale(StandardKeySpec("PacMan-v0", false, 0.99, time.Second/10, 512),
+		1.0/100),
 	Colorize(StandardKeySpec("ColorTease-v0", true, 0.98, time.Second/10, 1024)),
 	StandardMouseSpec("PizzaNinja3-v0", false, 0.99, time.Second/10, 2048),
 	WithRewardScale(StandardMouseSpec("SoccerGirl-v1", false, 0.98, time.Second/10, 512), 1.0/100),
@@ -110,11 +112,15 @@ func StandardKeySpec(name string, noHold bool, discount float64,
 	if raw == nil {
 		panic("no environment: " + name)
 	}
+	stride := 4
+	if raw.Width <= 256 && raw.Height <= 256 {
+		stride = 2
+	}
 	return &EnvSpec{
 		EnvSpec: raw,
 		Observer: &DownsampleObserver{
-			StrideX:  4,
-			StrideY:  4,
+			StrideX:  stride,
+			StrideY:  stride,
 			InWidth:  raw.Width,
 			InHeight: raw.Height,
 		},
