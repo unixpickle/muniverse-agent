@@ -84,6 +84,7 @@ func PPO(c anyvec.Creator, args []string) {
 		Discount:     spec.DiscountFactor,
 		Lambda:       flags.Lambda,
 		Epsilon:      flags.Epsilon,
+		PoolBase:     true,
 	}
 	if flags.KLReg {
 		ppo.Regularizer = &anypg.KLReg{
