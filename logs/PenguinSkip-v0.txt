@@ -1,0 +1,2194 @@
+2017/08/16 17:21:50 Running with arguments: [ppo -env PenguinSkip-v0 -out policies/PenguinSkip-v0 -critic critics/PenguinSkip-v0]
+2017/08/16 17:21:50 Creating new policy...
+2017/08/16 17:21:50 Creating new critic...
+2017/08/16 17:21:50 Running. Press Ctrl+C to stop.
+2017/08/16 17:21:50 Gathering batch of experience...
+2017/08/16 17:22:57 Running with arguments: [ppo -env PenguinSkip-v0 -out policies/PenguinSkip-v0 -critic critics/PenguinSkip-v0 -numparallel 12]
+2017/08/16 17:22:57 Creating new policy...
+2017/08/16 17:22:57 Creating new critic...
+2017/08/16 17:22:57 Running. Press Ctrl+C to stop.
+2017/08/16 17:22:57 Gathering batch of experience...
+2017/08/16 17:23:51 batch 0: mean=6.535294 count=170 error_margin=0.593689
+2017/08/16 17:23:51 Training on batch...
+2017/08/16 17:23:53 iteration 0: actor=1.490955 critic=-7.663587 reg=0.013863
+2017/08/16 17:23:54 iteration 1: actor=1.491597 critic=-7.343978 reg=0.013863
+2017/08/16 17:23:55 iteration 2: actor=1.492439 critic=-5.604348 reg=0.013863
+2017/08/16 17:23:56 iteration 3: actor=1.493141 critic=-5.041524 reg=0.013863
+2017/08/16 17:23:58 iteration 4: actor=1.493899 critic=-5.595613 reg=0.013862
+2017/08/16 17:23:59 iteration 5: actor=1.495112 critic=-5.262691 reg=0.013861
+2017/08/16 17:24:00 iteration 6: actor=1.496789 critic=-4.736376 reg=0.013860
+2017/08/16 17:24:01 iteration 7: actor=1.498658 critic=-4.741993 reg=0.013857
+2017/08/16 17:24:02 iteration 8: actor=1.500190 critic=-4.861455 reg=0.013853
+2017/08/16 17:24:03 iteration 9: actor=1.500575 critic=-4.659267 reg=0.013851
+2017/08/16 17:24:03 Gathering batch of experience...
+2017/08/16 17:24:58 batch 1: mean=7.552326 count=172 error_margin=0.627113
+2017/08/16 17:24:58 Training on batch...
+2017/08/16 17:25:00 iteration 0: actor=0.063168 critic=-5.856375 reg=0.013850
+2017/08/16 17:25:01 iteration 1: actor=0.062809 critic=-5.766014 reg=0.013850
+2017/08/16 17:25:02 iteration 2: actor=0.062450 critic=-5.749824 reg=0.013850
+2017/08/16 17:25:03 iteration 3: actor=0.062268 critic=-5.664460 reg=0.013849
+2017/08/16 17:25:05 iteration 4: actor=0.062365 critic=-5.485487 reg=0.013846
+2017/08/16 17:25:06 iteration 5: actor=0.062743 critic=-5.312954 reg=0.013843
+2017/08/16 17:25:07 iteration 6: actor=0.063336 critic=-5.218991 reg=0.013839
+2017/08/16 17:25:08 iteration 7: actor=0.064068 critic=-5.171075 reg=0.013837
+2017/08/16 17:25:09 iteration 8: actor=0.064888 critic=-5.098636 reg=0.013836
+2017/08/16 17:25:10 iteration 9: actor=0.065780 critic=-4.984694 reg=0.013836
+2017/08/16 17:25:11 Gathering batch of experience...
+2017/08/16 17:26:06 batch 2: mean=6.348315 count=178 error_margin=0.550344
+2017/08/16 17:26:06 Training on batch...
+2017/08/16 17:26:08 iteration 0: actor=-0.244430 critic=-4.999498 reg=0.013836
+2017/08/16 17:26:09 iteration 1: actor=-0.244044 critic=-4.954792 reg=0.013836
+2017/08/16 17:26:10 iteration 2: actor=-0.243598 critic=-4.920052 reg=0.013836
+2017/08/16 17:26:11 iteration 3: actor=-0.243055 critic=-4.861084 reg=0.013835
+2017/08/16 17:26:12 iteration 4: actor=-0.242407 critic=-4.755580 reg=0.013832
+2017/08/16 17:26:13 iteration 5: actor=-0.241676 critic=-4.631809 reg=0.013829
+2017/08/16 17:26:14 iteration 6: actor=-0.240895 critic=-4.532395 reg=0.013825
+2017/08/16 17:26:16 iteration 7: actor=-0.240080 critic=-4.464194 reg=0.013821
+2017/08/16 17:26:17 iteration 8: actor=-0.239233 critic=-4.398559 reg=0.013817
+2017/08/16 17:26:18 iteration 9: actor=-0.238348 critic=-4.312284 reg=0.013813
+2017/08/16 17:26:18 Gathering batch of experience...
+2017/08/16 17:27:15 batch 3: mean=6.643243 count=185 error_margin=0.574665
+2017/08/16 17:27:15 Training on batch...
+2017/08/16 17:27:17 iteration 0: actor=0.080596 critic=-5.536460 reg=0.013808
+2017/08/16 17:27:18 iteration 1: actor=0.081289 critic=-5.462164 reg=0.013803
+2017/08/16 17:27:19 iteration 2: actor=0.082230 critic=-5.359493 reg=0.013797
+2017/08/16 17:27:21 iteration 3: actor=0.083410 critic=-5.233696 reg=0.013789
+2017/08/16 17:27:22 iteration 4: actor=0.084824 critic=-5.094988 reg=0.013781
+2017/08/16 17:27:23 iteration 5: actor=0.086456 critic=-4.959512 reg=0.013772
+2017/08/16 17:27:24 iteration 6: actor=0.088282 critic=-4.838510 reg=0.013761
+2017/08/16 17:27:25 iteration 7: actor=0.090142 critic=-4.731062 reg=0.013749
+2017/08/16 17:27:26 iteration 8: actor=0.091965 critic=-4.629680 reg=0.013737
+2017/08/16 17:27:27 iteration 9: actor=0.093366 critic=-4.530472 reg=0.013725
+2017/08/16 17:27:28 Gathering batch of experience...
+2017/08/16 17:28:23 batch 4: mean=6.431818 count=176 error_margin=0.762321
+2017/08/16 17:28:23 Training on batch...
+2017/08/16 17:28:25 iteration 0: actor=-0.090209 critic=-4.750809 reg=0.013721
+2017/08/16 17:28:26 iteration 1: actor=-0.088655 critic=-4.713019 reg=0.013711
+2017/08/16 17:28:27 iteration 2: actor=-0.086794 critic=-4.635841 reg=0.013699
+2017/08/16 17:28:28 iteration 3: actor=-0.084605 critic=-4.528955 reg=0.013687
+2017/08/16 17:28:30 iteration 4: actor=-0.082074 critic=-4.403001 reg=0.013672
+2017/08/16 17:28:31 iteration 5: actor=-0.079216 critic=-4.272089 reg=0.013654
+2017/08/16 17:28:32 iteration 6: actor=-0.076372 critic=-4.148995 reg=0.013634
+2017/08/16 17:28:33 iteration 7: actor=-0.074210 critic=-4.038782 reg=0.013613
+2017/08/16 17:28:34 iteration 8: actor=-0.073600 critic=-3.938933 reg=0.013592
+2017/08/16 17:28:36 iteration 9: actor=-0.073788 critic=-3.845501 reg=0.013574
+2017/08/16 17:28:36 Gathering batch of experience...
+2017/08/16 17:29:29 batch 5: mean=8.245509 count=167 error_margin=0.713428
+2017/08/16 17:29:29 Training on batch...
+2017/08/16 17:29:31 iteration 0: actor=0.238252 critic=-6.030884 reg=0.013568
+2017/08/16 17:29:32 iteration 1: actor=0.239576 critic=-5.950119 reg=0.013547
+2017/08/16 17:29:33 iteration 2: actor=0.241422 critic=-5.844119 reg=0.013521
+2017/08/16 17:29:34 iteration 3: actor=0.243720 critic=-5.744344 reg=0.013490
+2017/08/16 17:29:36 iteration 4: actor=0.246329 critic=-5.663738 reg=0.013456
+2017/08/16 17:29:37 iteration 5: actor=0.248294 critic=-5.592139 reg=0.013424
+2017/08/16 17:29:38 iteration 6: actor=0.248527 critic=-5.512722 reg=0.013398
+2017/08/16 17:29:39 iteration 7: actor=0.248415 critic=-5.419470 reg=0.013382
+2017/08/16 17:29:40 iteration 8: actor=0.249044 critic=-5.314568 reg=0.013376
+2017/08/16 17:29:41 iteration 9: actor=0.250796 critic=-5.198339 reg=0.013376
+2017/08/16 17:29:42 Gathering batch of experience...
+2017/08/16 17:30:36 batch 6: mean=8.561404 count=171 error_margin=0.761360
+2017/08/16 17:30:36 Training on batch...
+2017/08/16 17:30:38 iteration 0: actor=0.072028 critic=-6.079770 reg=0.013379
+2017/08/16 17:30:39 iteration 1: actor=0.072825 critic=-6.021451 reg=0.013372
+2017/08/16 17:30:41 iteration 2: actor=0.074196 critic=-5.936948 reg=0.013360
+2017/08/16 17:30:42 iteration 3: actor=0.076101 critic=-5.842008 reg=0.013347
+2017/08/16 17:30:43 iteration 4: actor=0.078529 critic=-5.736643 reg=0.013335
+2017/08/16 17:30:45 iteration 5: actor=0.081482 critic=-5.619335 reg=0.013325
+2017/08/16 17:30:46 iteration 6: actor=0.084987 critic=-5.498010 reg=0.013317
+2017/08/16 17:30:47 iteration 7: actor=0.088600 critic=-5.382304 reg=0.013308
+2017/08/16 17:30:48 iteration 8: actor=0.091585 critic=-5.272433 reg=0.013294
+2017/08/16 17:30:50 iteration 9: actor=0.094145 critic=-5.162343 reg=0.013276
+2017/08/16 17:30:50 Gathering batch of experience...
+2017/08/16 17:31:47 batch 7: mean=7.166667 count=180 error_margin=0.555417
+2017/08/16 17:31:47 Training on batch...
+2017/08/16 17:31:48 iteration 0: actor=-0.129141 critic=-4.580561 reg=0.013261
+2017/08/16 17:31:50 iteration 1: actor=-0.128162 critic=-4.529693 reg=0.013239
+2017/08/16 17:31:51 iteration 2: actor=-0.126781 critic=-4.456008 reg=0.013219
+2017/08/16 17:31:52 iteration 3: actor=-0.125014 critic=-4.385293 reg=0.013202
+2017/08/16 17:31:53 iteration 4: actor=-0.122865 critic=-4.325672 reg=0.013184
+2017/08/16 17:31:54 iteration 5: actor=-0.120320 critic=-4.266487 reg=0.013166
+2017/08/16 17:31:55 iteration 6: actor=-0.117459 critic=-4.190717 reg=0.013143
+2017/08/16 17:31:57 iteration 7: actor=-0.114784 critic=-4.091165 reg=0.013116
+2017/08/16 17:31:58 iteration 8: actor=-0.112228 critic=-3.976504 reg=0.013086
+2017/08/16 17:31:59 iteration 9: actor=-0.109673 critic=-3.863151 reg=0.013055
+2017/08/16 17:31:59 Gathering batch of experience...
+2017/08/16 17:32:55 batch 8: mean=7.494253 count=174 error_margin=0.571471
+2017/08/16 17:32:55 Training on batch...
+2017/08/16 17:32:57 iteration 0: actor=-0.004375 critic=-4.362399 reg=0.013044
+2017/08/16 17:32:58 iteration 1: actor=-0.002996 critic=-4.331472 reg=0.013017
+2017/08/16 17:32:59 iteration 2: actor=-0.001124 critic=-4.281255 reg=0.012992
+2017/08/16 17:33:00 iteration 3: actor=0.001146 critic=-4.209011 reg=0.012969
+2017/08/16 17:33:01 iteration 4: actor=0.003618 critic=-4.118745 reg=0.012950
+2017/08/16 17:33:03 iteration 5: actor=0.006284 critic=-4.019883 reg=0.012932
+2017/08/16 17:33:04 iteration 6: actor=0.008857 critic=-3.921414 reg=0.012914
+2017/08/16 17:33:05 iteration 7: actor=0.011134 critic=-3.826762 reg=0.012894
+2017/08/16 17:33:06 iteration 8: actor=0.013178 critic=-3.733790 reg=0.012875
+2017/08/16 17:33:07 iteration 9: actor=0.015021 critic=-3.639288 reg=0.012855
+2017/08/16 17:33:07 Gathering batch of experience...
+2017/08/16 17:34:01 batch 9: mean=8.897590 count=166 error_margin=0.798670
+2017/08/16 17:34:01 Training on batch...
+2017/08/16 17:34:03 iteration 0: actor=0.212485 critic=-6.107295 reg=0.012870
+2017/08/16 17:34:04 iteration 1: actor=0.214257 critic=-6.029109 reg=0.012840
+2017/08/16 17:34:05 iteration 2: actor=0.217246 critic=-5.923066 reg=0.012802
+2017/08/16 17:34:06 iteration 3: actor=0.221270 critic=-5.818552 reg=0.012764
+2017/08/16 17:34:08 iteration 4: actor=0.225971 critic=-5.714908 reg=0.012729
+2017/08/16 17:34:09 iteration 5: actor=0.229744 critic=-5.601149 reg=0.012701
+2017/08/16 17:34:10 iteration 6: actor=0.232267 critic=-5.475547 reg=0.012686
+2017/08/16 17:34:11 iteration 7: actor=0.235247 critic=-5.341426 reg=0.012680
+2017/08/16 17:34:12 iteration 8: actor=0.238830 critic=-5.202517 reg=0.012679
+2017/08/16 17:34:13 iteration 9: actor=0.242390 critic=-5.067239 reg=0.012682
+2017/08/16 17:34:13 Gathering batch of experience...
+2017/08/16 17:35:06 batch 10: mean=8.761006 count=159 error_margin=0.740669
+2017/08/16 17:35:06 Training on batch...
+2017/08/16 17:35:08 iteration 0: actor=-0.096066 critic=-5.275921 reg=0.012693
+2017/08/16 17:35:09 iteration 1: actor=-0.093199 critic=-5.237956 reg=0.012702
+2017/08/16 17:35:10 iteration 2: actor=-0.088974 critic=-5.168249 reg=0.012711
+2017/08/16 17:35:11 iteration 3: actor=-0.084018 critic=-5.076580 reg=0.012717
+2017/08/16 17:35:13 iteration 4: actor=-0.080375 critic=-4.969435 reg=0.012714
+2017/08/16 17:35:14 iteration 5: actor=-0.078192 critic=-4.850051 reg=0.012698
+2017/08/16 17:35:15 iteration 6: actor=-0.076214 critic=-4.727444 reg=0.012672
+2017/08/16 17:35:16 iteration 7: actor=-0.073975 critic=-4.610999 reg=0.012642
+2017/08/16 17:35:17 iteration 8: actor=-0.070907 critic=-4.499471 reg=0.012616
+2017/08/16 17:35:18 iteration 9: actor=-0.067306 critic=-4.387122 reg=0.012597
+2017/08/16 17:35:18 Gathering batch of experience...
+2017/08/16 17:36:11 batch 11: mean=9.475309 count=162 error_margin=0.771788
+2017/08/16 17:36:11 Training on batch...
+2017/08/16 17:36:13 iteration 0: actor=0.113357 critic=-5.505810 reg=0.012627
+2017/08/16 17:36:14 iteration 1: actor=0.115568 critic=-5.444947 reg=0.012609
+2017/08/16 17:36:16 iteration 2: actor=0.118928 critic=-5.352633 reg=0.012585
+2017/08/16 17:36:17 iteration 3: actor=0.123048 critic=-5.251643 reg=0.012559
+2017/08/16 17:36:18 iteration 4: actor=0.126582 critic=-5.141576 reg=0.012537
+2017/08/16 17:36:19 iteration 5: actor=0.129602 critic=-5.019927 reg=0.012520
+2017/08/16 17:36:20 iteration 6: actor=0.132826 critic=-4.893176 reg=0.012506
+2017/08/16 17:36:21 iteration 7: actor=0.136866 critic=-4.762509 reg=0.012492
+2017/08/16 17:36:23 iteration 8: actor=0.140925 critic=-4.623766 reg=0.012474
+2017/08/16 17:36:24 iteration 9: actor=0.144385 critic=-4.482607 reg=0.012456
+2017/08/16 17:36:24 Gathering batch of experience...
+2017/08/16 17:37:19 batch 12: mean=8.792899 count=169 error_margin=0.749911
+2017/08/16 17:37:19 Training on batch...
+2017/08/16 17:37:21 iteration 0: actor=-0.106600 critic=-5.131025 reg=0.012390
+2017/08/16 17:37:22 iteration 1: actor=-0.105813 critic=-5.067452 reg=0.012383
+2017/08/16 17:37:24 iteration 2: actor=-0.104180 critic=-4.979747 reg=0.012378
+2017/08/16 17:37:25 iteration 3: actor=-0.101588 critic=-4.888429 reg=0.012368
+2017/08/16 17:37:26 iteration 4: actor=-0.098638 critic=-4.777984 reg=0.012345
+2017/08/16 17:37:27 iteration 5: actor=-0.095428 critic=-4.646592 reg=0.012311
+2017/08/16 17:37:29 iteration 6: actor=-0.091659 critic=-4.513226 reg=0.012275
+2017/08/16 17:37:30 iteration 7: actor=-0.087932 critic=-4.380825 reg=0.012248
+2017/08/16 17:37:31 iteration 8: actor=-0.083640 critic=-4.249198 reg=0.012235
+2017/08/16 17:37:32 iteration 9: actor=-0.078942 critic=-4.130858 reg=0.012232
+2017/08/16 17:37:32 Gathering batch of experience...
+2017/08/16 17:38:25 batch 13: mean=9.331288 count=163 error_margin=0.755028
+2017/08/16 17:38:25 Training on batch...
+2017/08/16 17:38:27 iteration 0: actor=0.100479 critic=-5.099147 reg=0.012283
+2017/08/16 17:38:28 iteration 1: actor=0.101663 critic=-5.057072 reg=0.012271
+2017/08/16 17:38:30 iteration 2: actor=0.104160 critic=-4.993997 reg=0.012255
+2017/08/16 17:38:31 iteration 3: actor=0.107538 critic=-4.921759 reg=0.012242
+2017/08/16 17:38:32 iteration 4: actor=0.110873 critic=-4.821419 reg=0.012235
+2017/08/16 17:38:33 iteration 5: actor=0.114564 critic=-4.700229 reg=0.012230
+2017/08/16 17:38:34 iteration 6: actor=0.119282 critic=-4.570688 reg=0.012218
+2017/08/16 17:38:35 iteration 7: actor=0.124761 critic=-4.428501 reg=0.012195
+2017/08/16 17:38:37 iteration 8: actor=0.130110 critic=-4.286385 reg=0.012162
+2017/08/16 17:38:38 iteration 9: actor=0.134093 critic=-4.158223 reg=0.012130
+2017/08/16 17:38:38 Gathering batch of experience...
+2017/08/16 17:39:30 batch 14: mean=8.343750 count=160 error_margin=0.587835
+2017/08/16 17:39:30 Training on batch...
+2017/08/16 17:39:32 iteration 0: actor=-0.210028 critic=-3.893142 reg=0.012085
+2017/08/16 17:39:33 iteration 1: actor=-0.205940 critic=-3.758862 reg=0.012070
+2017/08/16 17:39:34 iteration 2: actor=-0.200221 critic=-3.632185 reg=0.012048
+2017/08/16 17:39:35 iteration 3: actor=-0.195274 critic=-3.504193 reg=0.012003
+2017/08/16 17:39:37 iteration 4: actor=-0.192948 critic=-3.378386 reg=0.011938
+2017/08/16 17:39:38 iteration 5: actor=-0.192785 critic=-3.293317 reg=0.011879
+2017/08/16 17:39:39 iteration 6: actor=-0.191021 critic=-3.190745 reg=0.011849
+2017/08/16 17:39:40 iteration 7: actor=-0.186859 critic=-3.061373 reg=0.011852
+2017/08/16 17:39:41 iteration 8: actor=-0.181574 critic=-2.948266 reg=0.011868
+2017/08/16 17:39:42 iteration 9: actor=-0.177390 critic=-2.831052 reg=0.011879
+2017/08/16 17:39:42 Gathering batch of experience...
+2017/08/16 17:40:32 batch 15: mean=11.048276 count=145 error_margin=0.999183
+2017/08/16 17:40:32 Training on batch...
+2017/08/16 17:40:34 iteration 0: actor=0.180542 critic=-5.251966 reg=0.011984
+2017/08/16 17:40:35 iteration 1: actor=0.182397 critic=-5.148929 reg=0.011969
+2017/08/16 17:40:36 iteration 2: actor=0.185983 critic=-5.060047 reg=0.011958
+2017/08/16 17:40:38 iteration 3: actor=0.189963 critic=-4.918912 reg=0.011963
+2017/08/16 17:40:39 iteration 4: actor=0.192154 critic=-4.781281 reg=0.011969
+2017/08/16 17:40:40 iteration 5: actor=0.195506 critic=-4.648836 reg=0.011954
+2017/08/16 17:40:41 iteration 6: actor=0.200779 critic=-4.466415 reg=0.011911
+2017/08/16 17:40:43 iteration 7: actor=0.205377 critic=-4.307313 reg=0.011854
+2017/08/16 17:40:44 iteration 8: actor=0.208790 critic=-4.189545 reg=0.011806
+2017/08/16 17:40:45 iteration 9: actor=0.211902 critic=-4.049566 reg=0.011783
+2017/08/16 17:40:45 Gathering batch of experience...
+2017/08/16 17:41:34 batch 16: mean=10.455782 count=147 error_margin=0.931810
+2017/08/16 17:41:34 Training on batch...
+2017/08/16 17:41:36 iteration 0: actor=0.062394 critic=-4.533903 reg=0.011816
+2017/08/16 17:41:37 iteration 1: actor=0.064266 critic=-4.491376 reg=0.011805
+2017/08/16 17:41:38 iteration 2: actor=0.068266 critic=-4.375592 reg=0.011779
+2017/08/16 17:41:40 iteration 3: actor=0.073238 critic=-4.236415 reg=0.011743
+2017/08/16 17:41:41 iteration 4: actor=0.077498 critic=-4.100640 reg=0.011708
+2017/08/16 17:41:42 iteration 5: actor=0.080898 critic=-3.955183 reg=0.011684
+2017/08/16 17:41:43 iteration 6: actor=0.083924 critic=-3.820435 reg=0.011662
+2017/08/16 17:41:44 iteration 7: actor=0.087525 critic=-3.693185 reg=0.011636
+2017/08/16 17:41:46 iteration 8: actor=0.091810 critic=-3.552376 reg=0.011600
+2017/08/16 17:41:47 iteration 9: actor=0.096123 critic=-3.416692 reg=0.011562
+2017/08/16 17:41:47 Gathering batch of experience...
+2017/08/16 17:42:36 batch 17: mean=10.486486 count=148 error_margin=0.907042
+2017/08/16 17:42:36 Training on batch...
+2017/08/16 17:42:38 iteration 0: actor=0.051217 critic=-5.156956 reg=0.011503
+2017/08/16 17:42:39 iteration 1: actor=0.053966 critic=-5.087920 reg=0.011469
+2017/08/16 17:42:40 iteration 2: actor=0.058367 critic=-4.983975 reg=0.011433
+2017/08/16 17:42:42 iteration 3: actor=0.062616 critic=-4.858419 reg=0.011401
+2017/08/16 17:42:43 iteration 4: actor=0.066763 critic=-4.722079 reg=0.011374
+2017/08/16 17:42:44 iteration 5: actor=0.071001 critic=-4.571837 reg=0.011353
+2017/08/16 17:42:45 iteration 6: actor=0.075249 critic=-4.408045 reg=0.011342
+2017/08/16 17:42:46 iteration 7: actor=0.079577 critic=-4.241866 reg=0.011343
+2017/08/16 17:42:47 iteration 8: actor=0.083987 critic=-4.079314 reg=0.011355
+2017/08/16 17:42:49 iteration 9: actor=0.087941 critic=-3.923976 reg=0.011371
+2017/08/16 17:42:49 Gathering batch of experience...
+2017/08/16 17:43:38 batch 18: mean=11.690141 count=142 error_margin=0.943251
+2017/08/16 17:43:38 Training on batch...
+2017/08/16 17:43:40 iteration 0: actor=0.083487 critic=-5.373780 reg=0.011460
+2017/08/16 17:43:41 iteration 1: actor=0.087784 critic=-5.286493 reg=0.011462
+2017/08/16 17:43:42 iteration 2: actor=0.094148 critic=-5.139793 reg=0.011462
+2017/08/16 17:43:43 iteration 3: actor=0.100147 critic=-4.950510 reg=0.011464
+2017/08/16 17:43:44 iteration 4: actor=0.104968 critic=-4.738555 reg=0.011459
+2017/08/16 17:43:46 iteration 5: actor=0.109310 critic=-4.533913 reg=0.011438
+2017/08/16 17:43:47 iteration 6: actor=0.113668 critic=-4.333886 reg=0.011404
+2017/08/16 17:43:48 iteration 7: actor=0.118055 critic=-4.150896 reg=0.011364
+2017/08/16 17:43:49 iteration 8: actor=0.122182 critic=-3.981657 reg=0.011331
+2017/08/16 17:43:51 iteration 9: actor=0.126393 critic=-3.817973 reg=0.011311
+2017/08/16 17:43:51 Gathering batch of experience...
+2017/08/16 17:44:37 batch 19: mean=12.537313 count=134 error_margin=1.202519
+2017/08/16 17:44:37 Training on batch...
+2017/08/16 17:44:39 iteration 0: actor=-0.053177 critic=-6.172375 reg=0.011320
+2017/08/16 17:44:40 iteration 1: actor=-0.049364 critic=-6.081184 reg=0.011318
+2017/08/16 17:44:42 iteration 2: actor=-0.044279 critic=-5.921205 reg=0.011317
+2017/08/16 17:44:43 iteration 3: actor=-0.039059 critic=-5.726427 reg=0.011309
+2017/08/16 17:44:44 iteration 4: actor=-0.034331 critic=-5.527317 reg=0.011296
+2017/08/16 17:44:45 iteration 5: actor=-0.028660 critic=-5.308239 reg=0.011275
+2017/08/16 17:44:47 iteration 6: actor=-0.021822 critic=-5.096569 reg=0.011243
+2017/08/16 17:44:48 iteration 7: actor=-0.016920 critic=-4.884706 reg=0.011202
+2017/08/16 17:44:49 iteration 8: actor=-0.012913 critic=-4.678729 reg=0.011182
+2017/08/16 17:44:50 iteration 9: actor=-0.007317 critic=-4.479141 reg=0.011198
+2017/08/16 17:44:51 Gathering batch of experience...
+2017/08/16 17:45:38 batch 20: mean=12.340741 count=135 error_margin=0.985668
+2017/08/16 17:45:38 Training on batch...
+2017/08/16 17:45:40 iteration 0: actor=0.041520 critic=-4.718104 reg=0.011195
+2017/08/16 17:45:41 iteration 1: actor=0.043897 critic=-4.614785 reg=0.011205
+2017/08/16 17:45:42 iteration 2: actor=0.048632 critic=-4.452013 reg=0.011193
+2017/08/16 17:45:43 iteration 3: actor=0.054119 critic=-4.269885 reg=0.011159
+2017/08/16 17:45:45 iteration 4: actor=0.059101 critic=-4.089152 reg=0.011107
+2017/08/16 17:45:46 iteration 5: actor=0.062986 critic=-3.917118 reg=0.011046
+2017/08/16 17:45:47 iteration 6: actor=0.064897 critic=-3.753096 reg=0.010991
+2017/08/16 17:45:49 iteration 7: actor=0.067913 critic=-3.603394 reg=0.010964
+2017/08/16 17:45:50 iteration 8: actor=0.072744 critic=-3.459718 reg=0.010967
+2017/08/16 17:45:51 iteration 9: actor=0.076854 critic=-3.317763 reg=0.010987
+2017/08/16 17:45:51 Gathering batch of experience...
+2017/08/16 17:46:38 batch 21: mean=13.919118 count=136 error_margin=1.136978
+2017/08/16 17:46:38 Training on batch...
+2017/08/16 17:46:40 iteration 0: actor=0.392113 critic=-6.639152 reg=0.011097
+2017/08/16 17:46:41 iteration 1: actor=0.397516 critic=-6.404694 reg=0.011072
+2017/08/16 17:46:42 iteration 2: actor=0.401703 critic=-6.345342 reg=0.011057
+2017/08/16 17:46:43 iteration 3: actor=0.407683 critic=-6.037715 reg=0.011088
+2017/08/16 17:46:45 iteration 4: actor=0.412799 critic=-5.931178 reg=0.011109
+2017/08/16 17:46:46 iteration 5: actor=0.416572 critic=-5.586476 reg=0.011092
+2017/08/16 17:46:47 iteration 6: actor=0.420766 critic=-5.443658 reg=0.011067
+2017/08/16 17:46:48 iteration 7: actor=0.426760 critic=-5.214984 reg=0.011054
+2017/08/16 17:46:49 iteration 8: actor=0.433517 critic=-4.967178 reg=0.011046
+2017/08/16 17:46:51 iteration 9: actor=0.439887 critic=-4.853990 reg=0.011029
+2017/08/16 17:46:51 Gathering batch of experience...
+2017/08/16 17:47:36 batch 22: mean=13.542636 count=129 error_margin=1.194352
+2017/08/16 17:47:36 Training on batch...
+2017/08/16 17:47:38 iteration 0: actor=-0.039096 critic=-5.445843 reg=0.011049
+2017/08/16 17:47:39 iteration 1: actor=-0.035421 critic=-5.359244 reg=0.011003
+2017/08/16 17:47:41 iteration 2: actor=-0.030308 critic=-5.178434 reg=0.010948
+2017/08/16 17:47:42 iteration 3: actor=-0.026442 critic=-4.993937 reg=0.010890
+2017/08/16 17:47:43 iteration 4: actor=-0.023605 critic=-4.796554 reg=0.010848
+2017/08/16 17:47:44 iteration 5: actor=-0.020436 critic=-4.553917 reg=0.010826
+2017/08/16 17:47:46 iteration 6: actor=-0.015764 critic=-4.358879 reg=0.010826
+2017/08/16 17:47:47 iteration 7: actor=-0.010047 critic=-4.167414 reg=0.010846
+2017/08/16 17:47:48 iteration 8: actor=-0.006063 critic=-3.975950 reg=0.010868
+2017/08/16 17:47:50 iteration 9: actor=-0.003103 critic=-3.833798 reg=0.010883
+2017/08/16 17:47:50 Gathering batch of experience...
+2017/08/16 17:48:39 batch 23: mean=11.556338 count=142 error_margin=0.955285
+2017/08/16 17:48:39 Training on batch...
+2017/08/16 17:48:40 iteration 0: actor=-0.049866 critic=-4.306340 reg=0.010818
+2017/08/16 17:48:42 iteration 1: actor=-0.045855 critic=-4.255119 reg=0.010811
+2017/08/16 17:48:43 iteration 2: actor=-0.039724 critic=-4.162449 reg=0.010794
+2017/08/16 17:48:44 iteration 3: actor=-0.035015 critic=-4.039097 reg=0.010774
+2017/08/16 17:48:46 iteration 4: actor=-0.031733 critic=-3.889381 reg=0.010768
+2017/08/16 17:48:47 iteration 5: actor=-0.028064 critic=-3.736399 reg=0.010782
+2017/08/16 17:48:48 iteration 6: actor=-0.024952 critic=-3.589858 reg=0.010808
+2017/08/16 17:48:49 iteration 7: actor=-0.022481 critic=-3.459574 reg=0.010838
+2017/08/16 17:48:51 iteration 8: actor=-0.020719 critic=-3.329853 reg=0.010859
+2017/08/16 17:48:52 iteration 9: actor=-0.018202 critic=-3.205078 reg=0.010861
+2017/08/16 17:48:52 Gathering batch of experience...
+2017/08/16 17:49:40 batch 24: mean=13.864662 count=133 error_margin=1.243755
+2017/08/16 17:49:40 Training on batch...
+2017/08/16 17:49:42 iteration 0: actor=0.126347 critic=-5.277431 reg=0.010856
+2017/08/16 17:49:43 iteration 1: actor=0.130351 critic=-5.162005 reg=0.010828
+2017/08/16 17:49:44 iteration 2: actor=0.135708 critic=-5.028589 reg=0.010787
+2017/08/16 17:49:45 iteration 3: actor=0.139699 critic=-4.856018 reg=0.010762
+2017/08/16 17:49:47 iteration 4: actor=0.145192 critic=-4.708081 reg=0.010775
+2017/08/16 17:49:48 iteration 5: actor=0.149553 critic=-4.540778 reg=0.010807
+2017/08/16 17:49:49 iteration 6: actor=0.152929 critic=-4.412019 reg=0.010836
+2017/08/16 17:49:51 iteration 7: actor=0.155138 critic=-4.259317 reg=0.010840
+2017/08/16 17:49:52 iteration 8: actor=0.158736 critic=-4.118034 reg=0.010804
+2017/08/16 17:49:53 iteration 9: actor=0.163216 critic=-3.965612 reg=0.010739
+2017/08/16 17:49:53 Gathering batch of experience...
+2017/08/16 17:50:39 batch 25: mean=14.275591 count=127 error_margin=1.370878
+2017/08/16 17:50:39 Training on batch...
+2017/08/16 17:50:40 iteration 0: actor=-0.022021 critic=-5.677649 reg=0.010732
+2017/08/16 17:50:42 iteration 1: actor=-0.017447 critic=-5.547620 reg=0.010667
+2017/08/16 17:50:43 iteration 2: actor=-0.012482 critic=-5.359432 reg=0.010605
+2017/08/16 17:50:44 iteration 3: actor=-0.008287 critic=-5.174585 reg=0.010568
+2017/08/16 17:50:46 iteration 4: actor=-0.001373 critic=-4.976480 reg=0.010578
+2017/08/16 17:50:47 iteration 5: actor=0.005398 critic=-4.778926 reg=0.010624
+2017/08/16 17:50:48 iteration 6: actor=0.007838 critic=-4.590833 reg=0.010662
+2017/08/16 17:50:50 iteration 7: actor=0.011156 critic=-4.416154 reg=0.010665
+2017/08/16 17:50:51 iteration 8: actor=0.016594 critic=-4.222528 reg=0.010629
+2017/08/16 17:50:52 iteration 9: actor=0.019257 critic=-4.029121 reg=0.010578
+2017/08/16 17:50:52 Gathering batch of experience...
+2017/08/16 17:51:37 batch 26: mean=15.153226 count=124 error_margin=1.262556
+2017/08/16 17:51:37 Training on batch...
+2017/08/16 17:51:39 iteration 0: actor=0.034625 critic=-5.324995 reg=0.010627
+2017/08/16 17:51:40 iteration 1: actor=0.039045 critic=-5.198538 reg=0.010575
+2017/08/16 17:51:41 iteration 2: actor=0.042867 critic=-5.015738 reg=0.010515
+2017/08/16 17:51:43 iteration 3: actor=0.045772 critic=-4.833736 reg=0.010479
+2017/08/16 17:51:44 iteration 4: actor=0.049695 critic=-4.671577 reg=0.010484
+2017/08/16 17:51:45 iteration 5: actor=0.053565 critic=-4.500467 reg=0.010517
+2017/08/16 17:51:47 iteration 6: actor=0.056411 critic=-4.336420 reg=0.010558
+2017/08/16 17:51:48 iteration 7: actor=0.058583 critic=-4.170614 reg=0.010578
+2017/08/16 17:51:49 iteration 8: actor=0.063004 critic=-4.004632 reg=0.010560
+2017/08/16 17:51:51 iteration 9: actor=0.065811 critic=-3.834802 reg=0.010513
+2017/08/16 17:51:51 Gathering batch of experience...
+2017/08/16 17:52:34 batch 27: mean=16.235294 count=119 error_margin=1.652311
+2017/08/16 17:52:34 Training on batch...
+2017/08/16 17:52:36 iteration 0: actor=0.058580 critic=-6.405039 reg=0.010441
+2017/08/16 17:52:37 iteration 1: actor=0.064509 critic=-6.278162 reg=0.010409
+2017/08/16 17:52:39 iteration 2: actor=0.071301 critic=-6.106220 reg=0.010391
+2017/08/16 17:52:40 iteration 3: actor=0.075770 critic=-5.935183 reg=0.010402
+2017/08/16 17:52:42 iteration 4: actor=0.078822 critic=-5.762807 reg=0.010428
+2017/08/16 17:52:43 iteration 5: actor=0.080909 critic=-5.569704 reg=0.010442
+2017/08/16 17:52:44 iteration 6: actor=0.083501 critic=-5.352763 reg=0.010430
+2017/08/16 17:52:46 iteration 7: actor=0.087276 critic=-5.128744 reg=0.010385
+2017/08/16 17:52:47 iteration 8: actor=0.090157 critic=-4.901857 reg=0.010335
+2017/08/16 17:52:48 iteration 9: actor=0.093730 critic=-4.678056 reg=0.010304
+2017/08/16 17:52:48 Gathering batch of experience...
+2017/08/16 17:53:29 batch 28: mean=16.611111 count=108 error_margin=1.711327
+2017/08/16 17:53:29 Training on batch...
+2017/08/16 17:53:31 iteration 0: actor=-0.215302 critic=-5.576502 reg=0.010310
+2017/08/16 17:53:32 iteration 1: actor=-0.212107 critic=-5.440065 reg=0.010298
+2017/08/16 17:53:34 iteration 2: actor=-0.210416 critic=-5.266464 reg=0.010280
+2017/08/16 17:53:35 iteration 3: actor=-0.204596 critic=-5.041919 reg=0.010237
+2017/08/16 17:53:36 iteration 4: actor=-0.200093 critic=-4.878255 reg=0.010183
+2017/08/16 17:53:38 iteration 5: actor=-0.197107 critic=-4.628297 reg=0.010135
+2017/08/16 17:53:39 iteration 6: actor=-0.192654 critic=-4.459626 reg=0.010104
+2017/08/16 17:53:41 iteration 7: actor=-0.186753 critic=-4.216979 reg=0.010098
+2017/08/16 17:53:42 iteration 8: actor=-0.182671 critic=-4.050766 reg=0.010120
+2017/08/16 17:53:43 iteration 9: actor=-0.178410 critic=-3.865162 reg=0.010156
+2017/08/16 17:53:44 Gathering batch of experience...
+2017/08/16 17:54:24 batch 29: mean=21.951923 count=104 error_margin=1.900754
+2017/08/16 17:54:24 Training on batch...
+2017/08/16 17:54:26 iteration 0: actor=0.459993 critic=-6.412637 reg=0.010378
+2017/08/16 17:54:27 iteration 1: actor=0.462058 critic=-6.096711 reg=0.010418
+2017/08/16 17:54:29 iteration 2: actor=0.465224 critic=-6.165028 reg=0.010462
+2017/08/16 17:54:30 iteration 3: actor=0.472727 critic=-5.841124 reg=0.010455
+2017/08/16 17:54:32 iteration 4: actor=0.476904 critic=-5.774686 reg=0.010404
+2017/08/16 17:54:33 iteration 5: actor=0.482703 critic=-5.550767 reg=0.010332
+2017/08/16 17:54:35 iteration 6: actor=0.485519 critic=-5.307075 reg=0.010255
+2017/08/16 17:54:36 iteration 7: actor=0.486286 critic=-5.188849 reg=0.010194
+2017/08/16 17:54:37 iteration 8: actor=0.492265 critic=-4.878488 reg=0.010166
+2017/08/16 17:54:39 iteration 9: actor=0.497128 critic=-4.723825 reg=0.010161
+2017/08/16 17:54:39 Gathering batch of experience...
+2017/08/16 17:55:24 batch 30: mean=17.384000 count=125 error_margin=1.697425
+2017/08/16 17:55:24 Training on batch...
+2017/08/16 17:55:26 iteration 0: actor=0.156365 critic=-5.237260 reg=0.009907
+2017/08/16 17:55:28 iteration 1: actor=0.159559 critic=-5.137876 reg=0.009885
+2017/08/16 17:55:29 iteration 2: actor=0.164766 critic=-5.023458 reg=0.009844
+2017/08/16 17:55:31 iteration 3: actor=0.168106 critic=-4.854200 reg=0.009793
+2017/08/16 17:55:32 iteration 4: actor=0.171642 critic=-4.705451 reg=0.009750
+2017/08/16 17:55:34 iteration 5: actor=0.175523 critic=-4.565795 reg=0.009720
+2017/08/16 17:55:35 iteration 6: actor=0.179244 critic=-4.414639 reg=0.009709
+2017/08/16 17:55:37 iteration 7: actor=0.183135 critic=-4.281167 reg=0.009721
+2017/08/16 17:55:38 iteration 8: actor=0.186200 critic=-4.117689 reg=0.009742
+2017/08/16 17:55:40 iteration 9: actor=0.188755 critic=-3.952945 reg=0.009756
+2017/08/16 17:55:40 Gathering batch of experience...
+2017/08/16 17:56:23 batch 31: mean=18.401786 count=112 error_margin=1.887858
+2017/08/16 17:56:23 Training on batch...
+2017/08/16 17:56:25 iteration 0: actor=0.025824 critic=-5.498974 reg=0.009904
+2017/08/16 17:56:26 iteration 1: actor=0.032279 critic=-5.382858 reg=0.009883
+2017/08/16 17:56:27 iteration 2: actor=0.037226 critic=-5.214084 reg=0.009849
+2017/08/16 17:56:29 iteration 3: actor=0.040129 critic=-5.032587 reg=0.009816
+2017/08/16 17:56:30 iteration 4: actor=0.043493 critic=-4.837927 reg=0.009794
+2017/08/16 17:56:32 iteration 5: actor=0.048107 critic=-4.639842 reg=0.009783
+2017/08/16 17:56:33 iteration 6: actor=0.053043 critic=-4.451819 reg=0.009781
+2017/08/16 17:56:35 iteration 7: actor=0.057739 critic=-4.268077 reg=0.009773
+2017/08/16 17:56:36 iteration 8: actor=0.062229 critic=-4.090370 reg=0.009754
+2017/08/16 17:56:37 iteration 9: actor=0.065947 critic=-3.927921 reg=0.009729
+2017/08/16 17:56:38 Gathering batch of experience...
+2017/08/16 17:57:18 batch 32: mean=20.689320 count=103 error_margin=2.018392
+2017/08/16 17:57:18 Training on batch...
+2017/08/16 17:57:20 iteration 0: actor=0.022628 critic=-5.515892 reg=0.009897
+2017/08/16 17:57:21 iteration 1: actor=0.025661 critic=-5.404373 reg=0.009861
+2017/08/16 17:57:23 iteration 2: actor=0.029883 critic=-5.228518 reg=0.009818
+2017/08/16 17:57:24 iteration 3: actor=0.033732 critic=-5.014059 reg=0.009791
+2017/08/16 17:57:26 iteration 4: actor=0.039406 critic=-4.794514 reg=0.009792
+2017/08/16 17:57:27 iteration 5: actor=0.043465 critic=-4.589091 reg=0.009802
+2017/08/16 17:57:28 iteration 6: actor=0.045823 critic=-4.397517 reg=0.009802
+2017/08/16 17:57:30 iteration 7: actor=0.048056 critic=-4.225824 reg=0.009792
+2017/08/16 17:57:31 iteration 8: actor=0.050776 critic=-4.072394 reg=0.009779
+2017/08/16 17:57:33 iteration 9: actor=0.054719 critic=-3.933715 reg=0.009769
+2017/08/16 17:57:33 Gathering batch of experience...
+2017/08/16 17:58:14 batch 33: mean=19.641509 count=106 error_margin=1.870600
+2017/08/16 17:58:14 Training on batch...
+2017/08/16 17:58:16 iteration 0: actor=0.014309 critic=-5.408268 reg=0.009689
+2017/08/16 17:58:17 iteration 1: actor=0.017658 critic=-5.319027 reg=0.009695
+2017/08/16 17:58:19 iteration 2: actor=0.023202 critic=-5.159233 reg=0.009701
+2017/08/16 17:58:20 iteration 3: actor=0.028536 critic=-4.956555 reg=0.009708
+2017/08/16 17:58:22 iteration 4: actor=0.033781 critic=-4.734296 reg=0.009726
+2017/08/16 17:58:23 iteration 5: actor=0.037511 critic=-4.515650 reg=0.009742
+2017/08/16 17:58:25 iteration 6: actor=0.040809 critic=-4.311941 reg=0.009735
+2017/08/16 17:58:26 iteration 7: actor=0.043879 critic=-4.122522 reg=0.009717
+2017/08/16 17:58:28 iteration 8: actor=0.046804 critic=-3.945370 reg=0.009696
+2017/08/16 17:58:30 iteration 9: actor=0.050411 critic=-3.776184 reg=0.009684
+2017/08/16 17:58:30 Gathering batch of experience...
+2017/08/16 17:59:12 batch 34: mean=18.117117 count=111 error_margin=2.033672
+2017/08/16 17:59:12 Training on batch...
+2017/08/16 17:59:14 iteration 0: actor=0.072381 critic=-5.240124 reg=0.009723
+2017/08/16 17:59:15 iteration 1: actor=0.075893 critic=-5.134845 reg=0.009724
+2017/08/16 17:59:17 iteration 2: actor=0.081440 critic=-4.997335 reg=0.009731
+2017/08/16 17:59:18 iteration 3: actor=0.085058 critic=-4.835565 reg=0.009737
+2017/08/16 17:59:19 iteration 4: actor=0.088362 critic=-4.669872 reg=0.009726
+2017/08/16 17:59:21 iteration 5: actor=0.092884 critic=-4.492769 reg=0.009694
+2017/08/16 17:59:22 iteration 6: actor=0.096497 critic=-4.315428 reg=0.009664
+2017/08/16 17:59:24 iteration 7: actor=0.099908 critic=-4.139577 reg=0.009653
+2017/08/16 17:59:25 iteration 8: actor=0.102852 critic=-3.974001 reg=0.009659
+2017/08/16 17:59:27 iteration 9: actor=0.103966 critic=-3.820803 reg=0.009667
+2017/08/16 17:59:27 Gathering batch of experience...
+2017/08/16 18:00:06 batch 35: mean=20.750000 count=100 error_margin=1.802796
+2017/08/16 18:00:06 Training on batch...
+2017/08/16 18:00:08 iteration 0: actor=0.118513 critic=-4.756809 reg=0.009615
+2017/08/16 18:00:10 iteration 1: actor=0.123084 critic=-4.696686 reg=0.009618
+2017/08/16 18:00:11 iteration 2: actor=0.127784 critic=-4.606601 reg=0.009623
+2017/08/16 18:00:12 iteration 3: actor=0.131316 critic=-4.452417 reg=0.009606
+2017/08/16 18:00:14 iteration 4: actor=0.134344 critic=-4.312750 reg=0.009565
+2017/08/16 18:00:15 iteration 5: actor=0.136938 critic=-4.121124 reg=0.009515
+2017/08/16 18:00:16 iteration 6: actor=0.140290 critic=-3.973078 reg=0.009467
+2017/08/16 18:00:17 iteration 7: actor=0.145027 critic=-3.784329 reg=0.009429
+2017/08/16 18:00:19 iteration 8: actor=0.149563 critic=-3.626074 reg=0.009408
+2017/08/16 18:00:20 iteration 9: actor=0.152105 critic=-3.464413 reg=0.009405
+2017/08/16 18:00:20 Gathering batch of experience...
+2017/08/16 18:01:04 batch 36: mean=17.478261 count=115 error_margin=1.580761
+2017/08/16 18:01:04 Training on batch...
+2017/08/16 18:01:06 iteration 0: actor=-0.158227 critic=-4.474441 reg=0.009422
+2017/08/16 18:01:07 iteration 1: actor=-0.153253 critic=-4.313051 reg=0.009431
+2017/08/16 18:01:09 iteration 2: actor=-0.150186 critic=-4.219868 reg=0.009444
+2017/08/16 18:01:10 iteration 3: actor=-0.146906 critic=-4.053135 reg=0.009433
+2017/08/16 18:01:11 iteration 4: actor=-0.140205 critic=-3.887070 reg=0.009393
+2017/08/16 18:01:13 iteration 5: actor=-0.135772 critic=-3.714221 reg=0.009340
+2017/08/16 18:01:14 iteration 6: actor=-0.132790 critic=-3.540129 reg=0.009311
+2017/08/16 18:01:16 iteration 7: actor=-0.128600 critic=-3.375487 reg=0.009325
+2017/08/16 18:01:17 iteration 8: actor=-0.125377 critic=-3.222836 reg=0.009368
+2017/08/16 18:01:18 iteration 9: actor=-0.123519 critic=-3.093596 reg=0.009406
+2017/08/16 18:01:19 Gathering batch of experience...
+2017/08/16 18:02:01 batch 37: mean=17.226087 count=115 error_margin=1.357695
+2017/08/16 18:02:01 Training on batch...
+2017/08/16 18:02:03 iteration 0: actor=-0.000699 critic=-4.110189 reg=0.009440
+2017/08/16 18:02:04 iteration 1: actor=0.003906 critic=-4.021909 reg=0.009434
+2017/08/16 18:02:05 iteration 2: actor=0.009084 critic=-3.873209 reg=0.009417
+2017/08/16 18:02:07 iteration 3: actor=0.012326 critic=-3.687861 reg=0.009385
+2017/08/16 18:02:08 iteration 4: actor=0.013587 critic=-3.497576 reg=0.009349
+2017/08/16 18:02:09 iteration 5: actor=0.014764 critic=-3.351608 reg=0.009321
+2017/08/16 18:02:11 iteration 6: actor=0.017718 critic=-3.194736 reg=0.009308
+2017/08/16 18:02:12 iteration 7: actor=0.021012 critic=-3.034396 reg=0.009305
+2017/08/16 18:02:13 iteration 8: actor=0.024560 critic=-2.910297 reg=0.009312
+2017/08/16 18:02:15 iteration 9: actor=0.027661 critic=-2.785575 reg=0.009326
+2017/08/16 18:02:15 Gathering batch of experience...
+2017/08/16 18:02:55 batch 38: mean=21.851485 count=101 error_margin=1.990881
+2017/08/16 18:02:55 Training on batch...
+2017/08/16 18:02:57 iteration 0: actor=0.253276 critic=-5.498648 reg=0.009305
+2017/08/16 18:02:58 iteration 1: actor=0.255506 critic=-5.308146 reg=0.009303
+2017/08/16 18:02:59 iteration 2: actor=0.258514 critic=-5.219832 reg=0.009288
+2017/08/16 18:03:01 iteration 3: actor=0.266143 critic=-4.959518 reg=0.009267
+2017/08/16 18:03:02 iteration 4: actor=0.269926 critic=-4.817558 reg=0.009243
+2017/08/16 18:03:03 iteration 5: actor=0.273417 critic=-4.550661 reg=0.009212
+2017/08/16 18:03:05 iteration 6: actor=0.277318 critic=-4.345620 reg=0.009182
+2017/08/16 18:03:06 iteration 7: actor=0.281600 critic=-4.126711 reg=0.009158
+2017/08/16 18:03:07 iteration 8: actor=0.286006 critic=-3.938663 reg=0.009138
+2017/08/16 18:03:09 iteration 9: actor=0.289129 critic=-3.765169 reg=0.009117
+2017/08/16 18:03:09 Gathering batch of experience...
+2017/08/16 18:03:48 batch 39: mean=23.578947 count=95 error_margin=2.401365
+2017/08/16 18:03:48 Training on batch...
+2017/08/16 18:03:50 iteration 0: actor=-0.036535 critic=-4.821392 reg=0.009306
+2017/08/16 18:03:51 iteration 1: actor=-0.033090 critic=-4.787229 reg=0.009287
+2017/08/16 18:03:53 iteration 2: actor=-0.029481 critic=-4.619924 reg=0.009273
+2017/08/16 18:03:55 iteration 3: actor=-0.024103 critic=-4.416993 reg=0.009286
+2017/08/16 18:03:56 iteration 4: actor=-0.019359 critic=-4.188584 reg=0.009309
+2017/08/16 18:03:58 iteration 5: actor=-0.015653 critic=-3.992826 reg=0.009322
+2017/08/16 18:03:59 iteration 6: actor=-0.012206 critic=-3.786766 reg=0.009307
+2017/08/16 18:04:01 iteration 7: actor=-0.008691 critic=-3.604131 reg=0.009271
+2017/08/16 18:04:02 iteration 8: actor=-0.006273 critic=-3.452025 reg=0.009234
+2017/08/16 18:04:04 iteration 9: actor=-0.004516 critic=-3.283767 reg=0.009215
+2017/08/16 18:04:04 Gathering batch of experience...
+2017/08/16 18:04:43 batch 40: mean=24.102041 count=98 error_margin=2.227506
+2017/08/16 18:04:43 Training on batch...
+2017/08/16 18:04:45 iteration 0: actor=0.057618 critic=-5.142215 reg=0.009128
+2017/08/16 18:04:47 iteration 1: actor=0.061875 critic=-5.062170 reg=0.009142
+2017/08/16 18:04:48 iteration 2: actor=0.066216 critic=-4.911236 reg=0.009155
+2017/08/16 18:04:49 iteration 3: actor=0.068538 critic=-4.735370 reg=0.009155
+2017/08/16 18:04:51 iteration 4: actor=0.073362 critic=-4.549262 reg=0.009139
+2017/08/16 18:04:52 iteration 5: actor=0.077690 critic=-4.347654 reg=0.009117
+2017/08/16 18:04:54 iteration 6: actor=0.079815 critic=-4.165724 reg=0.009102
+2017/08/16 18:04:55 iteration 7: actor=0.083012 critic=-3.975126 reg=0.009107
+2017/08/16 18:04:56 iteration 8: actor=0.086037 critic=-3.796966 reg=0.009123
+2017/08/16 18:04:58 iteration 9: actor=0.088279 critic=-3.607142 reg=0.009135
+2017/08/16 18:04:58 Gathering batch of experience...
+2017/08/16 18:05:36 batch 41: mean=22.826087 count=92 error_margin=2.225932
+2017/08/16 18:05:36 Training on batch...
+2017/08/16 18:05:38 iteration 0: actor=-0.141458 critic=-4.563664 reg=0.009164
+2017/08/16 18:05:39 iteration 1: actor=-0.136804 critic=-4.404908 reg=0.009163
+2017/08/16 18:05:41 iteration 2: actor=-0.132585 critic=-4.287491 reg=0.009168
+2017/08/16 18:05:42 iteration 3: actor=-0.128879 critic=-4.087300 reg=0.009173
+2017/08/16 18:05:43 iteration 4: actor=-0.124052 critic=-3.942765 reg=0.009159
+2017/08/16 18:05:45 iteration 5: actor=-0.119649 critic=-3.731163 reg=0.009132
+2017/08/16 18:05:46 iteration 6: actor=-0.116632 critic=-3.571255 reg=0.009116
+2017/08/16 18:05:47 iteration 7: actor=-0.113513 critic=-3.355604 reg=0.009127
+2017/08/16 18:05:49 iteration 8: actor=-0.109808 critic=-3.211608 reg=0.009157
+2017/08/16 18:05:50 iteration 9: actor=-0.106790 critic=-3.027826 reg=0.009188
+2017/08/16 18:05:50 Gathering batch of experience...
+2017/08/16 18:06:27 batch 42: mean=22.659341 count=91 error_margin=1.884878
+2017/08/16 18:06:27 Training on batch...
+2017/08/16 18:06:29 iteration 0: actor=0.153141 critic=-4.345542 reg=0.009119
+2017/08/16 18:06:31 iteration 1: actor=0.156795 critic=-4.250356 reg=0.009121
+2017/08/16 18:06:32 iteration 2: actor=0.162263 critic=-4.155717 reg=0.009106
+2017/08/16 18:06:34 iteration 3: actor=0.166271 critic=-3.985413 reg=0.009082
+2017/08/16 18:06:35 iteration 4: actor=0.169937 critic=-3.851684 reg=0.009075
+2017/08/16 18:06:36 iteration 5: actor=0.173508 critic=-3.668966 reg=0.009078
+2017/08/16 18:06:38 iteration 6: actor=0.176096 critic=-3.513103 reg=0.009080
+2017/08/16 18:06:39 iteration 7: actor=0.178062 critic=-3.340601 reg=0.009068
+2017/08/16 18:06:41 iteration 8: actor=0.179994 critic=-3.201568 reg=0.009042
+2017/08/16 18:06:42 iteration 9: actor=0.183036 critic=-3.047481 reg=0.009009
+2017/08/16 18:06:42 Gathering batch of experience...
+2017/08/16 18:07:18 batch 43: mean=25.662651 count=83 error_margin=2.829570
+2017/08/16 18:07:18 Training on batch...
+2017/08/16 18:07:21 iteration 0: actor=-0.022410 critic=-4.145203 reg=0.009073
+2017/08/16 18:07:22 iteration 1: actor=-0.018977 critic=-4.042771 reg=0.009042
+2017/08/16 18:07:24 iteration 2: actor=-0.014388 critic=-3.904299 reg=0.009013
+2017/08/16 18:07:26 iteration 3: actor=-0.011394 critic=-3.768204 reg=0.008985
+2017/08/16 18:07:27 iteration 4: actor=-0.009288 critic=-3.596073 reg=0.008963
+2017/08/16 18:07:29 iteration 5: actor=-0.006155 critic=-3.448522 reg=0.008958
+2017/08/16 18:07:30 iteration 6: actor=-0.002185 critic=-3.309401 reg=0.008975
+2017/08/16 18:07:32 iteration 7: actor=0.000829 critic=-3.166757 reg=0.008995
+2017/08/16 18:07:34 iteration 8: actor=0.003053 critic=-3.033096 reg=0.009003
+2017/08/16 18:07:35 iteration 9: actor=0.006110 critic=-2.916921 reg=0.008991
+2017/08/16 18:07:36 Gathering batch of experience...
+2017/08/16 18:08:16 batch 44: mean=21.921569 count=102 error_margin=1.884276
+2017/08/16 18:08:16 Training on batch...
+2017/08/16 18:08:18 iteration 0: actor=-0.020563 critic=-4.074961 reg=0.008820
+2017/08/16 18:08:19 iteration 1: actor=-0.018509 critic=-3.953135 reg=0.008783
+2017/08/16 18:08:20 iteration 2: actor=-0.016249 critic=-3.803926 reg=0.008756
+2017/08/16 18:08:22 iteration 3: actor=-0.012168 critic=-3.616244 reg=0.008775
+2017/08/16 18:08:23 iteration 4: actor=-0.006780 critic=-3.409418 reg=0.008821
+2017/08/16 18:08:24 iteration 5: actor=-0.005083 critic=-3.246192 reg=0.008857
+2017/08/16 18:08:26 iteration 6: actor=-0.002639 critic=-3.076339 reg=0.008859
+2017/08/16 18:08:27 iteration 7: actor=-0.001042 critic=-2.908598 reg=0.008832
+2017/08/16 18:08:28 iteration 8: actor=-0.001597 critic=-2.764492 reg=0.008800
+2017/08/16 18:08:30 iteration 9: actor=-0.000580 critic=-2.635568 reg=0.008799
+2017/08/16 18:08:30 Gathering batch of experience...
+2017/08/16 18:09:08 batch 45: mean=23.238636 count=88 error_margin=2.147757
+2017/08/16 18:09:08 Training on batch...
+2017/08/16 18:09:10 iteration 0: actor=-0.169924 critic=-3.612976 reg=0.009045
+2017/08/16 18:09:11 iteration 1: actor=-0.165986 critic=-3.512212 reg=0.009029
+2017/08/16 18:09:13 iteration 2: actor=-0.160384 critic=-3.341118 reg=0.009017
+2017/08/16 18:09:14 iteration 3: actor=-0.157596 critic=-3.150692 reg=0.009022
+2017/08/16 18:09:16 iteration 4: actor=-0.155936 critic=-2.965831 reg=0.009014
+2017/08/16 18:09:17 iteration 5: actor=-0.153579 critic=-2.812434 reg=0.008993
+2017/08/16 18:09:18 iteration 6: actor=-0.150295 critic=-2.667294 reg=0.008993
+2017/08/16 18:09:20 iteration 7: actor=-0.147066 critic=-2.541253 reg=0.009007
+2017/08/16 18:09:21 iteration 8: actor=-0.145116 critic=-2.407789 reg=0.009002
+2017/08/16 18:09:23 iteration 9: actor=-0.143662 critic=-2.285638 reg=0.008985
+2017/08/16 18:09:23 Gathering batch of experience...
+2017/08/16 18:10:00 batch 46: mean=23.563218 count=87 error_margin=2.327392
+2017/08/16 18:10:00 Training on batch...
+2017/08/16 18:10:02 iteration 0: actor=0.196013 critic=-3.994158 reg=0.008967
+2017/08/16 18:10:03 iteration 1: actor=0.199442 critic=-3.839998 reg=0.008989
+2017/08/16 18:10:05 iteration 2: actor=0.203764 critic=-3.670255 reg=0.008988
+2017/08/16 18:10:06 iteration 3: actor=0.208319 critic=-3.504061 reg=0.008948
+2017/08/16 18:10:08 iteration 4: actor=0.210010 critic=-3.335876 reg=0.008901
+2017/08/16 18:10:09 iteration 5: actor=0.208072 critic=-3.138165 reg=0.008869
+2017/08/16 18:10:11 iteration 6: actor=0.209171 critic=-2.982141 reg=0.008852
+2017/08/16 18:10:12 iteration 7: actor=0.214383 critic=-2.792100 reg=0.008855
+2017/08/16 18:10:14 iteration 8: actor=0.217796 critic=-2.651735 reg=0.008867
+2017/08/16 18:10:15 iteration 9: actor=0.219839 critic=-2.502785 reg=0.008877
+2017/08/16 18:10:15 Gathering batch of experience...
+2017/08/16 18:10:56 batch 47: mean=23.291262 count=103 error_margin=2.319581
+2017/08/16 18:10:56 Training on batch...
+2017/08/16 18:10:59 iteration 0: actor=-0.010999 critic=-4.226345 reg=0.008677
+2017/08/16 18:11:00 iteration 1: actor=-0.008658 critic=-4.104702 reg=0.008644
+2017/08/16 18:11:02 iteration 2: actor=-0.005553 critic=-3.964967 reg=0.008598
+2017/08/16 18:11:03 iteration 3: actor=-0.003292 critic=-3.811732 reg=0.008567
+2017/08/16 18:11:05 iteration 4: actor=-0.000505 critic=-3.646532 reg=0.008550
+2017/08/16 18:11:06 iteration 5: actor=0.003108 critic=-3.484222 reg=0.008539
+2017/08/16 18:11:08 iteration 6: actor=0.007755 critic=-3.303216 reg=0.008524
+2017/08/16 18:11:09 iteration 7: actor=0.012029 critic=-3.141660 reg=0.008497
+2017/08/16 18:11:11 iteration 8: actor=0.013614 critic=-3.001682 reg=0.008472
+2017/08/16 18:11:12 iteration 9: actor=0.015216 critic=-2.861214 reg=0.008466
+2017/08/16 18:11:12 Gathering batch of experience...
+2017/08/16 18:11:52 batch 48: mean=20.851485 count=101 error_margin=2.105835
+2017/08/16 18:11:52 Training on batch...
+2017/08/16 18:11:54 iteration 0: actor=0.007704 critic=-3.531513 reg=0.008659
+2017/08/16 18:11:55 iteration 1: actor=0.011090 critic=-3.460869 reg=0.008645
+2017/08/16 18:11:57 iteration 2: actor=0.016837 critic=-3.313374 reg=0.008602
+2017/08/16 18:11:58 iteration 3: actor=0.018509 critic=-3.172496 reg=0.008569
+2017/08/16 18:11:59 iteration 4: actor=0.022701 critic=-3.020092 reg=0.008571
+2017/08/16 18:12:01 iteration 5: actor=0.027430 critic=-2.867861 reg=0.008592
+2017/08/16 18:12:02 iteration 6: actor=0.030759 critic=-2.717469 reg=0.008606
+2017/08/16 18:12:03 iteration 7: actor=0.034055 critic=-2.564614 reg=0.008620
+2017/08/16 18:12:05 iteration 8: actor=0.036938 critic=-2.410710 reg=0.008636
+2017/08/16 18:12:06 iteration 9: actor=0.039384 critic=-2.275939 reg=0.008641
+2017/08/16 18:12:06 Gathering batch of experience...
+2017/08/16 18:12:44 batch 49: mean=26.208791 count=91 error_margin=2.664309
+2017/08/16 18:12:44 Training on batch...
+2017/08/16 18:12:47 iteration 0: actor=0.000339 critic=-3.759681 reg=0.008599
+2017/08/16 18:12:48 iteration 1: actor=0.003725 critic=-3.653621 reg=0.008598
+2017/08/16 18:12:49 iteration 2: actor=0.006633 critic=-3.562771 reg=0.008601
+2017/08/16 18:12:51 iteration 3: actor=0.009320 critic=-3.446699 reg=0.008599
+2017/08/16 18:12:52 iteration 4: actor=0.013660 critic=-3.329548 reg=0.008603
+2017/08/16 18:12:54 iteration 5: actor=0.018848 critic=-3.213144 reg=0.008619
+2017/08/16 18:12:55 iteration 6: actor=0.022377 critic=-3.057619 reg=0.008638
+2017/08/16 18:12:57 iteration 7: actor=0.025645 critic=-2.908774 reg=0.008633
+2017/08/16 18:12:58 iteration 8: actor=0.029532 critic=-2.775172 reg=0.008605
+2017/08/16 18:12:59 iteration 9: actor=0.032320 critic=-2.635894 reg=0.008582
+2017/08/16 18:13:00 Gathering batch of experience...
+2017/08/16 18:13:39 batch 50: mean=28.494382 count=89 error_margin=2.986741
+2017/08/16 18:13:39 Training on batch...
+2017/08/16 18:13:41 iteration 0: actor=0.029893 critic=-3.615207 reg=0.008689
+2017/08/16 18:13:43 iteration 1: actor=0.033194 critic=-3.559389 reg=0.008676
+2017/08/16 18:13:45 iteration 2: actor=0.037290 critic=-3.464392 reg=0.008665
+2017/08/16 18:13:46 iteration 3: actor=0.041193 critic=-3.334791 reg=0.008639
+2017/08/16 18:13:48 iteration 4: actor=0.045471 critic=-3.193986 reg=0.008599
+2017/08/16 18:13:50 iteration 5: actor=0.048275 critic=-3.037008 reg=0.008560
+2017/08/16 18:13:51 iteration 6: actor=0.050772 critic=-2.887776 reg=0.008549
+2017/08/16 18:13:53 iteration 7: actor=0.054524 critic=-2.749168 reg=0.008569
+2017/08/16 18:13:55 iteration 8: actor=0.056549 critic=-2.612535 reg=0.008594
+2017/08/16 18:13:56 iteration 9: actor=0.058080 critic=-2.491271 reg=0.008608
+2017/08/16 18:13:57 Gathering batch of experience...
+2017/08/16 18:14:35 batch 51: mean=29.011494 count=87 error_margin=2.972081
+2017/08/16 18:14:35 Training on batch...
+2017/08/16 18:14:37 iteration 0: actor=0.054080 critic=-3.394174 reg=0.008588
+2017/08/16 18:14:39 iteration 1: actor=0.058369 critic=-3.333273 reg=0.008560
+2017/08/16 18:14:40 iteration 2: actor=0.060741 critic=-3.237987 reg=0.008530
+2017/08/16 18:14:42 iteration 3: actor=0.063372 critic=-3.124893 reg=0.008537
+2017/08/16 18:14:44 iteration 4: actor=0.066430 critic=-2.990308 reg=0.008561
+2017/08/16 18:14:45 iteration 5: actor=0.069391 critic=-2.848689 reg=0.008591
+2017/08/16 18:14:47 iteration 6: actor=0.070416 critic=-2.706785 reg=0.008620
+2017/08/16 18:14:49 iteration 7: actor=0.071682 critic=-2.585445 reg=0.008627
+2017/08/16 18:14:50 iteration 8: actor=0.074023 critic=-2.460680 reg=0.008608
+2017/08/16 18:14:52 iteration 9: actor=0.076215 critic=-2.350897 reg=0.008582
+2017/08/16 18:14:52 Gathering batch of experience...
+2017/08/16 18:15:30 batch 52: mean=25.600000 count=90 error_margin=2.308481
+2017/08/16 18:15:30 Training on batch...
+2017/08/16 18:15:32 iteration 0: actor=-0.050217 critic=-3.294878 reg=0.008467
+2017/08/16 18:15:34 iteration 1: actor=-0.047506 critic=-3.213494 reg=0.008449
+2017/08/16 18:15:35 iteration 2: actor=-0.044341 critic=-3.057497 reg=0.008440
+2017/08/16 18:15:37 iteration 3: actor=-0.039896 critic=-2.922004 reg=0.008451
+2017/08/16 18:15:38 iteration 4: actor=-0.035692 critic=-2.756760 reg=0.008477
+2017/08/16 18:15:40 iteration 5: actor=-0.032920 critic=-2.624687 reg=0.008500
+2017/08/16 18:15:41 iteration 6: actor=-0.030388 critic=-2.492713 reg=0.008510
+2017/08/16 18:15:43 iteration 7: actor=-0.027784 critic=-2.385215 reg=0.008509
+2017/08/16 18:15:44 iteration 8: actor=-0.024972 critic=-2.261220 reg=0.008501
+2017/08/16 18:15:46 iteration 9: actor=-0.022825 critic=-2.145666 reg=0.008497
+2017/08/16 18:15:46 Gathering batch of experience...
+2017/08/16 18:16:24 batch 53: mean=27.366667 count=90 error_margin=2.942177
+2017/08/16 18:16:24 Training on batch...
+2017/08/16 18:16:26 iteration 0: actor=0.042205 critic=-3.329001 reg=0.008618
+2017/08/16 18:16:28 iteration 1: actor=0.045825 critic=-3.239975 reg=0.008618
+2017/08/16 18:16:29 iteration 2: actor=0.049834 critic=-3.069024 reg=0.008603
+2017/08/16 18:16:31 iteration 3: actor=0.052894 critic=-2.926805 reg=0.008599
+2017/08/16 18:16:32 iteration 4: actor=0.057239 critic=-2.764427 reg=0.008603
+2017/08/16 18:16:34 iteration 5: actor=0.060660 critic=-2.631733 reg=0.008605
+2017/08/16 18:16:35 iteration 6: actor=0.063039 critic=-2.510306 reg=0.008593
+2017/08/16 18:16:37 iteration 7: actor=0.064784 critic=-2.390812 reg=0.008578
+2017/08/16 18:16:39 iteration 8: actor=0.066736 critic=-2.286155 reg=0.008556
+2017/08/16 18:16:40 iteration 9: actor=0.069635 critic=-2.160845 reg=0.008524
+2017/08/16 18:16:40 Gathering batch of experience...
+2017/08/16 18:17:18 batch 54: mean=28.388235 count=85 error_margin=2.989675
+2017/08/16 18:17:18 Training on batch...
+2017/08/16 18:17:20 iteration 0: actor=0.115960 critic=-3.291273 reg=0.008479
+2017/08/16 18:17:21 iteration 1: actor=0.121548 critic=-3.129745 reg=0.008429
+2017/08/16 18:17:23 iteration 2: actor=0.125383 critic=-2.966663 reg=0.008377
+2017/08/16 18:17:24 iteration 3: actor=0.126815 critic=-2.817764 reg=0.008342
+2017/08/16 18:17:26 iteration 4: actor=0.129748 critic=-2.677491 reg=0.008323
+2017/08/16 18:17:27 iteration 5: actor=0.133091 critic=-2.555494 reg=0.008318
+2017/08/16 18:17:29 iteration 6: actor=0.136902 critic=-2.422104 reg=0.008316
+2017/08/16 18:17:30 iteration 7: actor=0.138657 critic=-2.302296 reg=0.008320
+2017/08/16 18:17:32 iteration 8: actor=0.140511 critic=-2.155512 reg=0.008331
+2017/08/16 18:17:33 iteration 9: actor=0.143430 critic=-2.033694 reg=0.008338
+2017/08/16 18:17:33 Gathering batch of experience...
+2017/08/16 18:18:11 batch 55: mean=27.741176 count=85 error_margin=3.209292
+2017/08/16 18:18:11 Training on batch...
+2017/08/16 18:18:13 iteration 0: actor=-0.090476 critic=-3.385779 reg=0.008371
+2017/08/16 18:18:14 iteration 1: actor=-0.087845 critic=-3.331364 reg=0.008357
+2017/08/16 18:18:16 iteration 2: actor=-0.084163 critic=-3.090592 reg=0.008362
+2017/08/16 18:18:18 iteration 3: actor=-0.082015 critic=-3.007535 reg=0.008377
+2017/08/16 18:18:19 iteration 4: actor=-0.079712 critic=-2.802326 reg=0.008380
+2017/08/16 18:18:21 iteration 5: actor=-0.077062 critic=-2.717018 reg=0.008378
+2017/08/16 18:18:22 iteration 6: actor=-0.073315 critic=-2.547859 reg=0.008385
+2017/08/16 18:18:24 iteration 7: actor=-0.069704 critic=-2.457557 reg=0.008399
+2017/08/16 18:18:25 iteration 8: actor=-0.067244 critic=-2.305628 reg=0.008410
+2017/08/16 18:18:27 iteration 9: actor=-0.065492 critic=-2.210361 reg=0.008414
+2017/08/16 18:18:27 Gathering batch of experience...
+2017/08/16 18:19:05 batch 56: mean=27.034483 count=87 error_margin=3.160374
+2017/08/16 18:19:05 Training on batch...
+2017/08/16 18:19:07 iteration 0: actor=0.026144 critic=-3.063933 reg=0.008295
+2017/08/16 18:19:09 iteration 1: actor=0.029469 critic=-3.027204 reg=0.008293
+2017/08/16 18:19:10 iteration 2: actor=0.033272 critic=-2.827261 reg=0.008293
+2017/08/16 18:19:12 iteration 3: actor=0.036341 critic=-2.722363 reg=0.008295
+2017/08/16 18:19:13 iteration 4: actor=0.038766 critic=-2.528769 reg=0.008289
+2017/08/16 18:19:15 iteration 5: actor=0.041098 critic=-2.422579 reg=0.008280
+2017/08/16 18:19:17 iteration 6: actor=0.043508 critic=-2.240834 reg=0.008273
+2017/08/16 18:19:18 iteration 7: actor=0.046421 critic=-2.131860 reg=0.008258
+2017/08/16 18:19:20 iteration 8: actor=0.049076 critic=-1.976124 reg=0.008225
+2017/08/16 18:19:21 iteration 9: actor=0.050137 critic=-1.870535 reg=0.008195
+2017/08/16 18:19:21 Gathering batch of experience...
+2017/08/16 18:19:57 batch 57: mean=32.740260 count=77 error_margin=3.873763
+2017/08/16 18:19:57 Training on batch...
+2017/08/16 18:19:59 iteration 0: actor=0.140260 critic=-3.050451 reg=0.008446
+2017/08/16 18:20:01 iteration 1: actor=0.143755 critic=-2.936218 reg=0.008416
+2017/08/16 18:20:02 iteration 2: actor=0.146679 critic=-2.820674 reg=0.008387
+2017/08/16 18:20:04 iteration 3: actor=0.149968 critic=-2.649839 reg=0.008389
+2017/08/16 18:20:06 iteration 4: actor=0.152889 critic=-2.510945 reg=0.008394
+2017/08/16 18:20:07 iteration 5: actor=0.155684 critic=-2.348746 reg=0.008392
+2017/08/16 18:20:09 iteration 6: actor=0.157847 critic=-2.222478 reg=0.008396
+2017/08/16 18:20:10 iteration 7: actor=0.160032 critic=-2.090189 reg=0.008401
+2017/08/16 18:20:12 iteration 8: actor=0.163312 critic=-1.964796 reg=0.008392
+2017/08/16 18:20:13 iteration 9: actor=0.165617 critic=-1.845292 reg=0.008373
+2017/08/16 18:20:14 Gathering batch of experience...
+2017/08/16 18:20:50 batch 58: mean=26.927711 count=83 error_margin=2.757578
+2017/08/16 18:20:50 Training on batch...
+2017/08/16 18:20:52 iteration 0: actor=-0.137133 critic=-3.022042 reg=0.008198
+2017/08/16 18:20:53 iteration 1: actor=-0.134802 critic=-2.928163 reg=0.008199
+2017/08/16 18:20:55 iteration 2: actor=-0.132407 critic=-2.768387 reg=0.008160
+2017/08/16 18:20:56 iteration 3: actor=-0.132641 critic=-2.635228 reg=0.008115
+2017/08/16 18:20:58 iteration 4: actor=-0.129137 critic=-2.470197 reg=0.008151
+2017/08/16 18:20:59 iteration 5: actor=-0.129521 critic=-2.335946 reg=0.008235
+2017/08/16 18:21:01 iteration 6: actor=-0.131907 critic=-2.158559 reg=0.008289
+2017/08/16 18:21:02 iteration 7: actor=-0.128172 critic=-2.051673 reg=0.008303
+2017/08/16 18:21:03 iteration 8: actor=-0.118995 critic=-1.905777 reg=0.008285
+2017/08/16 18:21:05 iteration 9: actor=-0.114366 critic=-1.820403 reg=0.008254
+2017/08/16 18:21:05 Gathering batch of experience...
+2017/08/16 18:21:40 batch 59: mean=31.759494 count=79 error_margin=4.709140
+2017/08/16 18:21:40 Training on batch...
+2017/08/16 18:21:43 iteration 0: actor=0.242897 critic=-3.039522 reg=0.008400
+2017/08/16 18:21:45 iteration 1: actor=0.242537 critic=-2.988011 reg=0.008384
+2017/08/16 18:21:47 iteration 2: actor=0.244502 critic=-2.769121 reg=0.008397
+2017/08/16 18:21:49 iteration 3: actor=0.247121 critic=-2.661671 reg=0.008442
+2017/08/16 18:21:51 iteration 4: actor=0.247246 critic=-2.444547 reg=0.008471
+2017/08/16 18:21:53 iteration 5: actor=0.250094 critic=-2.360984 reg=0.008467
+2017/08/16 18:21:55 iteration 6: actor=0.257468 critic=-2.152060 reg=0.008411
+2017/08/16 18:21:57 iteration 7: actor=0.260127 critic=-2.074514 reg=0.008349
+2017/08/16 18:21:59 iteration 8: actor=0.263070 critic=-1.902379 reg=0.008322
+2017/08/16 18:22:00 iteration 9: actor=0.266444 critic=-1.811840 reg=0.008322
+2017/08/16 18:22:01 Gathering batch of experience...
+2017/08/16 18:22:40 batch 60: mean=29.402299 count=87 error_margin=3.519249
+2017/08/16 18:22:40 Training on batch...
+2017/08/16 18:22:42 iteration 0: actor=-0.139849 critic=-2.966942 reg=0.008361
+2017/08/16 18:22:44 iteration 1: actor=-0.135854 critic=-2.844740 reg=0.008329
+2017/08/16 18:22:46 iteration 2: actor=-0.132961 critic=-2.701977 reg=0.008282
+2017/08/16 18:22:47 iteration 3: actor=-0.131989 critic=-2.527176 reg=0.008237
+2017/08/16 18:22:49 iteration 4: actor=-0.129285 critic=-2.422124 reg=0.008230
+2017/08/16 18:22:51 iteration 5: actor=-0.125164 critic=-2.276510 reg=0.008258
+2017/08/16 18:22:53 iteration 6: actor=-0.122455 critic=-2.199377 reg=0.008279
+2017/08/16 18:22:54 iteration 7: actor=-0.120135 critic=-2.048079 reg=0.008274
+2017/08/16 18:22:56 iteration 8: actor=-0.117724 critic=-1.973928 reg=0.008266
+2017/08/16 18:22:58 iteration 9: actor=-0.114975 critic=-1.830729 reg=0.008279
+2017/08/16 18:22:58 Gathering batch of experience...
+2017/08/16 18:23:35 batch 61: mean=28.402439 count=82 error_margin=3.083262
+2017/08/16 18:23:35 Training on batch...
+2017/08/16 18:23:37 iteration 0: actor=0.042993 critic=-2.468783 reg=0.008295
+2017/08/16 18:23:39 iteration 1: actor=0.045418 critic=-2.363141 reg=0.008345
+2017/08/16 18:23:41 iteration 2: actor=0.046235 critic=-2.220891 reg=0.008383
+2017/08/16 18:23:42 iteration 3: actor=0.049151 critic=-2.136860 reg=0.008378
+2017/08/16 18:23:44 iteration 4: actor=0.052620 critic=-2.010160 reg=0.008340
+2017/08/16 18:23:45 iteration 5: actor=0.052777 critic=-1.903040 reg=0.008290
+2017/08/16 18:23:47 iteration 6: actor=0.052805 critic=-1.775568 reg=0.008250
+2017/08/16 18:23:48 iteration 7: actor=0.055098 critic=-1.676261 reg=0.008238
+2017/08/16 18:23:50 iteration 8: actor=0.058203 critic=-1.575069 reg=0.008265
+2017/08/16 18:23:52 iteration 9: actor=0.059176 critic=-1.492561 reg=0.008313
+2017/08/16 18:23:52 Gathering batch of experience...
+2017/08/16 18:24:29 batch 62: mean=31.222222 count=81 error_margin=2.954566
+2017/08/16 18:24:29 Training on batch...
+2017/08/16 18:24:31 iteration 0: actor=0.064459 critic=-2.336496 reg=0.008377
+2017/08/16 18:24:32 iteration 1: actor=0.068229 critic=-2.269987 reg=0.008390
+2017/08/16 18:24:34 iteration 2: actor=0.070392 critic=-2.181173 reg=0.008380
+2017/08/16 18:24:36 iteration 3: actor=0.073712 critic=-2.057729 reg=0.008353
+2017/08/16 18:24:37 iteration 4: actor=0.077086 critic=-1.956293 reg=0.008311
+2017/08/16 18:24:39 iteration 5: actor=0.078686 critic=-1.846470 reg=0.008267
+2017/08/16 18:24:41 iteration 6: actor=0.080020 critic=-1.738861 reg=0.008243
+2017/08/16 18:24:42 iteration 7: actor=0.082435 critic=-1.637646 reg=0.008252
+2017/08/16 18:24:44 iteration 8: actor=0.084143 critic=-1.539625 reg=0.008281
+2017/08/16 18:24:45 iteration 9: actor=0.085516 critic=-1.453594 reg=0.008298
+2017/08/16 18:24:45 Gathering batch of experience...
+2017/08/16 18:25:21 batch 63: mean=33.756757 count=74 error_margin=3.255765
+2017/08/16 18:25:21 Training on batch...
+2017/08/16 18:25:23 iteration 0: actor=0.026446 critic=-2.316414 reg=0.008226
+2017/08/16 18:25:25 iteration 1: actor=0.028564 critic=-2.256276 reg=0.008223
+2017/08/16 18:25:27 iteration 2: actor=0.031744 critic=-2.159893 reg=0.008228
+2017/08/16 18:25:28 iteration 3: actor=0.034495 critic=-2.058902 reg=0.008235
+2017/08/16 18:25:30 iteration 4: actor=0.036787 critic=-1.959718 reg=0.008225
+2017/08/16 18:25:32 iteration 5: actor=0.038323 critic=-1.845745 reg=0.008199
+2017/08/16 18:25:34 iteration 6: actor=0.040048 critic=-1.737787 reg=0.008178
+2017/08/16 18:25:35 iteration 7: actor=0.042617 critic=-1.617911 reg=0.008176
+2017/08/16 18:25:37 iteration 8: actor=0.044892 critic=-1.522335 reg=0.008184
+2017/08/16 18:25:39 iteration 9: actor=0.045992 critic=-1.431468 reg=0.008189
+2017/08/16 18:25:39 Gathering batch of experience...
+2017/08/16 18:26:14 batch 64: mean=34.210526 count=76 error_margin=3.264925
+2017/08/16 18:26:14 Training on batch...
+2017/08/16 18:26:16 iteration 0: actor=-0.054798 critic=-2.545498 reg=0.008082
+2017/08/16 18:26:18 iteration 1: actor=-0.051792 critic=-2.485979 reg=0.008076
+2017/08/16 18:26:19 iteration 2: actor=-0.048704 critic=-2.403897 reg=0.008062
+2017/08/16 18:26:21 iteration 3: actor=-0.046369 critic=-2.286980 reg=0.008042
+2017/08/16 18:26:22 iteration 4: actor=-0.044211 critic=-2.163796 reg=0.008023
+2017/08/16 18:26:24 iteration 5: actor=-0.042176 critic=-2.032780 reg=0.008015
+2017/08/16 18:26:25 iteration 6: actor=-0.039636 critic=-1.915281 reg=0.008019
+2017/08/16 18:26:27 iteration 7: actor=-0.037626 critic=-1.810683 reg=0.008029
+2017/08/16 18:26:29 iteration 8: actor=-0.035801 critic=-1.710574 reg=0.008034
+2017/08/16 18:26:30 iteration 9: actor=-0.034339 critic=-1.615082 reg=0.008036
+2017/08/16 18:26:30 Gathering batch of experience...
+2017/08/16 18:27:07 batch 65: mean=33.000000 count=78 error_margin=3.629949
+2017/08/16 18:27:07 Training on batch...
+2017/08/16 18:27:09 iteration 0: actor=-0.008931 critic=-2.401107 reg=0.008209
+2017/08/16 18:27:11 iteration 1: actor=-0.007108 critic=-2.327732 reg=0.008232
+2017/08/16 18:27:13 iteration 2: actor=-0.004143 critic=-2.208633 reg=0.008260
+2017/08/16 18:27:14 iteration 3: actor=-0.002601 critic=-2.092449 reg=0.008284
+2017/08/16 18:27:16 iteration 4: actor=-0.001639 critic=-1.981690 reg=0.008302
+2017/08/16 18:27:18 iteration 5: actor=-0.000419 critic=-1.868254 reg=0.008311
+2017/08/16 18:27:20 iteration 6: actor=0.001848 critic=-1.767443 reg=0.008309
+2017/08/16 18:27:21 iteration 7: actor=0.004726 critic=-1.673660 reg=0.008298
+2017/08/16 18:27:23 iteration 8: actor=0.007416 critic=-1.584344 reg=0.008283
+2017/08/16 18:27:25 iteration 9: actor=0.009780 critic=-1.490503 reg=0.008274
+2017/08/16 18:27:25 Gathering batch of experience...
+2017/08/16 18:28:00 batch 66: mean=29.142857 count=77 error_margin=3.584355
+2017/08/16 18:28:00 Training on batch...
+2017/08/16 18:28:02 iteration 0: actor=0.103898 critic=-2.158086 reg=0.008187
+2017/08/16 18:28:04 iteration 1: actor=0.105561 critic=-2.093158 reg=0.008183
+2017/08/16 18:28:06 iteration 2: actor=0.108260 critic=-2.009204 reg=0.008184
+2017/08/16 18:28:07 iteration 3: actor=0.111148 critic=-1.899155 reg=0.008180
+2017/08/16 18:28:09 iteration 4: actor=0.115087 critic=-1.803229 reg=0.008153
+2017/08/16 18:28:11 iteration 5: actor=0.117157 critic=-1.691914 reg=0.008107
+2017/08/16 18:28:12 iteration 6: actor=0.117652 critic=-1.594888 reg=0.008077
+2017/08/16 18:28:14 iteration 7: actor=0.120598 critic=-1.486359 reg=0.008089
+2017/08/16 18:28:16 iteration 8: actor=0.123680 critic=-1.394246 reg=0.008123
+2017/08/16 18:28:17 iteration 9: actor=0.125377 critic=-1.292282 reg=0.008154
+2017/08/16 18:28:17 Gathering batch of experience...
+2017/08/16 18:28:55 batch 67: mean=36.762500 count=80 error_margin=4.117616
+2017/08/16 18:28:55 Training on batch...
+2017/08/16 18:28:57 iteration 0: actor=-0.038715 critic=-2.411417 reg=0.008217
+2017/08/16 18:28:59 iteration 1: actor=-0.037048 critic=-2.331010 reg=0.008249
+2017/08/16 18:29:01 iteration 2: actor=-0.038820 critic=-2.249017 reg=0.008270
+2017/08/16 18:29:03 iteration 3: actor=-0.035826 critic=-2.142592 reg=0.008257
+2017/08/16 18:29:05 iteration 4: actor=-0.028515 critic=-2.040152 reg=0.008211
+2017/08/16 18:29:07 iteration 5: actor=-0.027334 critic=-1.922331 reg=0.008158
+2017/08/16 18:29:08 iteration 6: actor=-0.026662 critic=-1.815768 reg=0.008125
+2017/08/16 18:29:10 iteration 7: actor=-0.022330 critic=-1.714328 reg=0.008117
+2017/08/16 18:29:12 iteration 8: actor=-0.019509 critic=-1.615925 reg=0.008123
+2017/08/16 18:29:14 iteration 9: actor=-0.019081 critic=-1.524293 reg=0.008125
+2017/08/16 18:29:14 Gathering batch of experience...
+2017/08/16 18:29:51 batch 68: mean=27.811765 count=85 error_margin=2.624584
+2017/08/16 18:29:51 Training on batch...
+2017/08/16 18:29:53 iteration 0: actor=0.000702 critic=-2.394757 reg=0.007936
+2017/08/16 18:29:54 iteration 1: actor=0.004024 critic=-2.339853 reg=0.007905
+2017/08/16 18:29:56 iteration 2: actor=0.007192 critic=-2.234259 reg=0.007864
+2017/08/16 18:29:57 iteration 3: actor=0.009316 critic=-2.097641 reg=0.007840
+2017/08/16 18:29:59 iteration 4: actor=0.012079 critic=-1.956344 reg=0.007838
+2017/08/16 18:30:00 iteration 5: actor=0.014896 critic=-1.815235 reg=0.007850
+2017/08/16 18:30:01 iteration 6: actor=0.017195 critic=-1.681720 reg=0.007865
+2017/08/16 18:30:03 iteration 7: actor=0.019513 critic=-1.559982 reg=0.007884
+2017/08/16 18:30:04 iteration 8: actor=0.021744 critic=-1.455761 reg=0.007900
+2017/08/16 18:30:06 iteration 9: actor=0.023997 critic=-1.365184 reg=0.007907
+2017/08/16 18:30:06 Gathering batch of experience...
+2017/08/16 18:30:39 batch 69: mean=41.421875 count=64 error_margin=4.298540
+2017/08/16 18:30:39 Training on batch...
+2017/08/16 18:30:42 iteration 0: actor=0.000724 critic=-2.335709 reg=0.008312
+2017/08/16 18:30:43 iteration 1: actor=0.002548 critic=-2.268356 reg=0.008332
+2017/08/16 18:30:45 iteration 2: actor=0.005410 critic=-2.165814 reg=0.008357
+2017/08/16 18:30:47 iteration 3: actor=0.007851 critic=-2.048691 reg=0.008376
+2017/08/16 18:30:49 iteration 4: actor=0.010602 critic=-1.927562 reg=0.008385
+2017/08/16 18:30:50 iteration 5: actor=0.013598 critic=-1.802472 reg=0.008384
+2017/08/16 18:30:52 iteration 6: actor=0.017309 critic=-1.690537 reg=0.008375
+2017/08/16 18:30:54 iteration 7: actor=0.020206 critic=-1.584263 reg=0.008360
+2017/08/16 18:30:56 iteration 8: actor=0.021543 critic=-1.484565 reg=0.008344
+2017/08/16 18:30:57 iteration 9: actor=0.023147 critic=-1.394160 reg=0.008336
+2017/08/16 18:30:57 Gathering batch of experience...
+2017/08/16 18:31:33 batch 70: mean=34.426667 count=75 error_margin=3.652514
+2017/08/16 18:31:33 Training on batch...
+2017/08/16 18:31:35 iteration 0: actor=0.025333 critic=-1.995038 reg=0.008115
+2017/08/16 18:31:37 iteration 1: actor=0.028311 critic=-1.945647 reg=0.008085
+2017/08/16 18:31:39 iteration 2: actor=0.030949 critic=-1.853463 reg=0.008037
+2017/08/16 18:31:40 iteration 3: actor=0.032089 critic=-1.754451 reg=0.007999
+2017/08/16 18:31:42 iteration 4: actor=0.035630 critic=-1.659470 reg=0.007986
+2017/08/16 18:31:44 iteration 5: actor=0.039880 critic=-1.573421 reg=0.007992
+2017/08/16 18:31:45 iteration 6: actor=0.042369 critic=-1.480436 reg=0.008008
+2017/08/16 18:31:47 iteration 7: actor=0.043586 critic=-1.394052 reg=0.008021
+2017/08/16 18:31:49 iteration 8: actor=0.044509 critic=-1.308138 reg=0.008024
+2017/08/16 18:31:50 iteration 9: actor=0.046735 critic=-1.229498 reg=0.008018
+2017/08/16 18:31:51 Gathering batch of experience...
+2017/08/16 18:32:23 batch 71: mean=36.597015 count=67 error_margin=3.915404
+2017/08/16 18:32:23 Training on batch...
+2017/08/16 18:32:26 iteration 0: actor=0.017108 critic=-2.414392 reg=0.007968
+2017/08/16 18:32:27 iteration 1: actor=0.020652 critic=-2.315447 reg=0.007955
+2017/08/16 18:32:29 iteration 2: actor=0.024394 critic=-2.189924 reg=0.007937
+2017/08/16 18:32:31 iteration 3: actor=0.027008 critic=-2.073160 reg=0.007931
+2017/08/16 18:32:32 iteration 4: actor=0.030563 critic=-1.958084 reg=0.007948
+2017/08/16 18:32:34 iteration 5: actor=0.032610 critic=-1.842440 reg=0.007961
+2017/08/16 18:32:35 iteration 6: actor=0.034792 critic=-1.731647 reg=0.007956
+2017/08/16 18:32:37 iteration 7: actor=0.036680 critic=-1.627717 reg=0.007941
+2017/08/16 18:32:38 iteration 8: actor=0.037708 critic=-1.528616 reg=0.007927
+2017/08/16 18:32:40 iteration 9: actor=0.038684 critic=-1.433544 reg=0.007917
+2017/08/16 18:32:40 Gathering batch of experience...
+2017/08/16 18:33:15 batch 72: mean=45.787879 count=66 error_margin=5.166267
+2017/08/16 18:33:15 Training on batch...
+2017/08/16 18:33:18 iteration 0: actor=0.097677 critic=-2.354044 reg=0.008156
+2017/08/16 18:33:20 iteration 1: actor=0.099990 critic=-2.290806 reg=0.008129
+2017/08/16 18:33:22 iteration 2: actor=0.102999 critic=-2.163358 reg=0.008112
+2017/08/16 18:33:24 iteration 3: actor=0.105850 critic=-2.077182 reg=0.008090
+2017/08/16 18:33:26 iteration 4: actor=0.107974 critic=-1.958674 reg=0.008042
+2017/08/16 18:33:28 iteration 5: actor=0.110362 critic=-1.850457 reg=0.008014
+2017/08/16 18:33:30 iteration 6: actor=0.113280 critic=-1.751997 reg=0.008016
+2017/08/16 18:33:32 iteration 7: actor=0.114972 critic=-1.651929 reg=0.008014
+2017/08/16 18:33:34 iteration 8: actor=0.115776 critic=-1.570288 reg=0.008011
+2017/08/16 18:33:36 iteration 9: actor=0.116535 critic=-1.470616 reg=0.008028
+2017/08/16 18:33:36 Gathering batch of experience...
+2017/08/16 18:34:09 batch 73: mean=39.822581 count=62 error_margin=4.221959
+2017/08/16 18:34:09 Training on batch...
+2017/08/16 18:34:11 iteration 0: actor=-0.111892 critic=-1.913204 reg=0.007997
+2017/08/16 18:34:13 iteration 1: actor=-0.109762 critic=-1.856825 reg=0.008050
+2017/08/16 18:34:15 iteration 2: actor=-0.110672 critic=-1.707397 reg=0.008070
+2017/08/16 18:34:16 iteration 3: actor=-0.108633 critic=-1.659504 reg=0.008068
+2017/08/16 18:34:18 iteration 4: actor=-0.107021 critic=-1.515301 reg=0.008064
+2017/08/16 18:34:20 iteration 5: actor=-0.105796 critic=-1.460785 reg=0.008034
+2017/08/16 18:34:22 iteration 6: actor=-0.106407 critic=-1.335148 reg=0.007975
+2017/08/16 18:34:23 iteration 7: actor=-0.106247 critic=-1.264227 reg=0.007946
+2017/08/16 18:34:25 iteration 8: actor=-0.100481 critic=-1.172310 reg=0.007963
+2017/08/16 18:34:27 iteration 9: actor=-0.095540 critic=-1.112727 reg=0.007983
+2017/08/16 18:34:27 Gathering batch of experience...
+2017/08/16 18:35:01 batch 74: mean=50.360656 count=61 error_margin=4.953860
+2017/08/16 18:35:01 Training on batch...
+2017/08/16 18:35:03 iteration 0: actor=0.155747 critic=-1.996883 reg=0.008059
+2017/08/16 18:35:05 iteration 1: actor=0.157496 critic=-2.030237 reg=0.008050
+2017/08/16 18:35:07 iteration 2: actor=0.159406 critic=-1.809761 reg=0.008047
+2017/08/16 18:35:09 iteration 3: actor=0.161828 critic=-1.820303 reg=0.008034
+2017/08/16 18:35:10 iteration 4: actor=0.163701 critic=-1.629654 reg=0.008009
+2017/08/16 18:35:12 iteration 5: actor=0.165350 critic=-1.626342 reg=0.008005
+2017/08/16 18:35:14 iteration 6: actor=0.168747 critic=-1.450062 reg=0.008022
+2017/08/16 18:35:16 iteration 7: actor=0.171276 critic=-1.428098 reg=0.008033
+2017/08/16 18:35:18 iteration 8: actor=0.173400 critic=-1.309932 reg=0.008034
+2017/08/16 18:35:19 iteration 9: actor=0.174919 critic=-1.270077 reg=0.008043
+2017/08/16 18:35:20 Gathering batch of experience...
+2017/08/16 18:35:54 batch 75: mean=55.000000 count=61 error_margin=6.268172
+2017/08/16 18:35:54 Training on batch...
+2017/08/16 18:35:56 iteration 0: actor=0.107571 critic=-2.040032 reg=0.008088
+2017/08/16 18:35:58 iteration 1: actor=0.110237 critic=-1.978567 reg=0.008080
+2017/08/16 18:36:00 iteration 2: actor=0.112277 critic=-1.918318 reg=0.008063
+2017/08/16 18:36:02 iteration 3: actor=0.112991 critic=-1.827470 reg=0.008065
+2017/08/16 18:36:04 iteration 4: actor=0.115065 critic=-1.744695 reg=0.008077
+2017/08/16 18:36:06 iteration 5: actor=0.118298 critic=-1.628973 reg=0.008085
+2017/08/16 18:36:07 iteration 6: actor=0.118239 critic=-1.550102 reg=0.008092
+2017/08/16 18:36:09 iteration 7: actor=0.119997 critic=-1.447112 reg=0.008098
+2017/08/16 18:36:11 iteration 8: actor=0.123973 critic=-1.369137 reg=0.008085
+2017/08/16 18:36:13 iteration 9: actor=0.126235 critic=-1.278668 reg=0.008054
+2017/08/16 18:36:13 Gathering batch of experience...
+2017/08/16 18:36:45 batch 76: mean=45.701754 count=57 error_margin=4.707705
+2017/08/16 18:36:45 Training on batch...
+2017/08/16 18:36:48 iteration 0: actor=-0.150913 critic=-1.929479 reg=0.008028
+2017/08/16 18:36:49 iteration 1: actor=-0.150247 critic=-1.864673 reg=0.008012
+2017/08/16 18:36:51 iteration 2: actor=-0.147875 critic=-1.783915 reg=0.007987
+2017/08/16 18:36:53 iteration 3: actor=-0.143180 critic=-1.695451 reg=0.007968
+2017/08/16 18:36:54 iteration 4: actor=-0.141034 critic=-1.593523 reg=0.007969
+2017/08/16 18:36:56 iteration 5: actor=-0.139316 critic=-1.510936 reg=0.007973
+2017/08/16 18:36:58 iteration 6: actor=-0.136693 critic=-1.410142 reg=0.007956
+2017/08/16 18:36:59 iteration 7: actor=-0.134634 critic=-1.338555 reg=0.007932
+2017/08/16 18:37:01 iteration 8: actor=-0.133167 critic=-1.248829 reg=0.007926
+2017/08/16 18:37:03 iteration 9: actor=-0.131610 critic=-1.194086 reg=0.007940
+2017/08/16 18:37:03 Gathering batch of experience...
+2017/08/16 18:37:37 batch 77: mean=36.157143 count=70 error_margin=3.880650
+2017/08/16 18:37:37 Training on batch...
+2017/08/16 18:37:40 iteration 0: actor=0.003412 critic=-1.776654 reg=0.007895
+2017/08/16 18:37:41 iteration 1: actor=0.005744 critic=-1.725144 reg=0.007907
+2017/08/16 18:37:43 iteration 2: actor=0.006545 critic=-1.635032 reg=0.007921
+2017/08/16 18:37:45 iteration 3: actor=0.007407 critic=-1.526771 reg=0.007925
+2017/08/16 18:37:46 iteration 4: actor=0.011434 critic=-1.427386 reg=0.007909
+2017/08/16 18:37:48 iteration 5: actor=0.015354 critic=-1.329053 reg=0.007876
+2017/08/16 18:37:50 iteration 6: actor=0.015777 critic=-1.255189 reg=0.007846
+2017/08/16 18:37:51 iteration 7: actor=0.016097 critic=-1.175589 reg=0.007835
+2017/08/16 18:37:53 iteration 8: actor=0.018504 critic=-1.114855 reg=0.007842
+2017/08/16 18:37:55 iteration 9: actor=0.021653 critic=-1.044201 reg=0.007858
+2017/08/16 18:37:55 Gathering batch of experience...
+2017/08/16 18:38:31 batch 78: mean=42.716418 count=67 error_margin=6.255238
+2017/08/16 18:38:31 Training on batch...
+2017/08/16 18:38:34 iteration 0: actor=0.081699 critic=-1.880711 reg=0.007927
+2017/08/16 18:38:36 iteration 1: actor=0.084178 critic=-1.801780 reg=0.007934
+2017/08/16 18:38:38 iteration 2: actor=0.086382 critic=-1.717152 reg=0.007937
+2017/08/16 18:38:41 iteration 3: actor=0.088368 critic=-1.608702 reg=0.007934
+2017/08/16 18:38:43 iteration 4: actor=0.090844 critic=-1.526446 reg=0.007925
+2017/08/16 18:38:45 iteration 5: actor=0.093186 critic=-1.441188 reg=0.007913
+2017/08/16 18:38:47 iteration 6: actor=0.094765 critic=-1.373271 reg=0.007902
+2017/08/16 18:38:50 iteration 7: actor=0.096156 critic=-1.297061 reg=0.007887
+2017/08/16 18:38:52 iteration 8: actor=0.098168 critic=-1.228307 reg=0.007863
+2017/08/16 18:38:54 iteration 9: actor=0.099827 critic=-1.159482 reg=0.007835
+2017/08/16 18:38:54 Gathering batch of experience...
+2017/08/16 18:39:28 batch 79: mean=41.328358 count=67 error_margin=4.093113
+2017/08/16 18:39:28 Training on batch...
+2017/08/16 18:39:31 iteration 0: actor=0.010308 critic=-1.604810 reg=0.007825
+2017/08/16 18:39:32 iteration 1: actor=0.013224 critic=-1.532401 reg=0.007797
+2017/08/16 18:39:34 iteration 2: actor=0.016299 critic=-1.446859 reg=0.007764
+2017/08/16 18:39:36 iteration 3: actor=0.017806 critic=-1.354982 reg=0.007734
+2017/08/16 18:39:37 iteration 4: actor=0.019492 critic=-1.267187 reg=0.007711
+2017/08/16 18:39:39 iteration 5: actor=0.021903 critic=-1.186447 reg=0.007698
+2017/08/16 18:39:41 iteration 6: actor=0.024192 critic=-1.116992 reg=0.007695
+2017/08/16 18:39:43 iteration 7: actor=0.025726 critic=-1.055804 reg=0.007693
+2017/08/16 18:39:44 iteration 8: actor=0.026903 critic=-0.996552 reg=0.007691
+2017/08/16 18:39:46 iteration 9: actor=0.028335 critic=-0.943836 reg=0.007687
+2017/08/16 18:39:46 Gathering batch of experience...
+2017/08/16 18:40:20 batch 80: mean=48.934426 count=61 error_margin=6.599694
+2017/08/16 18:40:20 Training on batch...
+2017/08/16 18:40:24 iteration 0: actor=-0.027803 critic=-1.523220 reg=0.007645
+2017/08/16 18:40:26 iteration 1: actor=-0.026728 critic=-1.476466 reg=0.007639
+2017/08/16 18:40:28 iteration 2: actor=-0.024398 critic=-1.404259 reg=0.007625
+2017/08/16 18:40:31 iteration 3: actor=-0.020964 critic=-1.328249 reg=0.007614
+2017/08/16 18:40:33 iteration 4: actor=-0.018148 critic=-1.250052 reg=0.007617
+2017/08/16 18:40:36 iteration 5: actor=-0.016181 critic=-1.183900 reg=0.007626
+2017/08/16 18:40:38 iteration 6: actor=-0.014742 critic=-1.121127 reg=0.007626
+2017/08/16 18:40:41 iteration 7: actor=-0.013253 critic=-1.067517 reg=0.007619
+2017/08/16 18:40:43 iteration 8: actor=-0.011876 critic=-1.010063 reg=0.007614
+2017/08/16 18:40:46 iteration 9: actor=-0.010819 critic=-0.956816 reg=0.007603
+2017/08/16 18:40:46 Gathering batch of experience...
+2017/08/16 18:41:20 batch 81: mean=53.821429 count=56 error_margin=6.283132
+2017/08/16 18:41:20 Training on batch...
+2017/08/16 18:41:22 iteration 0: actor=0.055650 critic=-1.703925 reg=0.007666
+2017/08/16 18:41:24 iteration 1: actor=0.057585 critic=-1.665991 reg=0.007638
+2017/08/16 18:41:26 iteration 2: actor=0.058996 critic=-1.584385 reg=0.007616
+2017/08/16 18:41:28 iteration 3: actor=0.061525 critic=-1.519401 reg=0.007609
+2017/08/16 18:41:30 iteration 4: actor=0.066178 critic=-1.432060 reg=0.007607
+2017/08/16 18:41:32 iteration 5: actor=0.068069 critic=-1.353738 reg=0.007605
+2017/08/16 18:41:34 iteration 6: actor=0.069487 critic=-1.265322 reg=0.007599
+2017/08/16 18:41:36 iteration 7: actor=0.072113 critic=-1.183956 reg=0.007577
+2017/08/16 18:41:38 iteration 8: actor=0.074921 critic=-1.109947 reg=0.007538
+2017/08/16 18:41:40 iteration 9: actor=0.075865 critic=-1.038409 reg=0.007502
+2017/08/16 18:41:40 Gathering batch of experience...
+2017/08/16 18:42:13 batch 82: mean=53.508475 count=59 error_margin=7.636393
+2017/08/16 18:42:13 Training on batch...
+2017/08/16 18:42:16 iteration 0: actor=0.047959 critic=-1.479707 reg=0.007616
+2017/08/16 18:42:18 iteration 1: actor=0.049773 critic=-1.438779 reg=0.007592
+2017/08/16 18:42:20 iteration 2: actor=0.052999 critic=-1.378959 reg=0.007570
+2017/08/16 18:42:22 iteration 3: actor=0.055385 critic=-1.308165 reg=0.007557
+2017/08/16 18:42:24 iteration 4: actor=0.056534 critic=-1.233297 reg=0.007536
+2017/08/16 18:42:26 iteration 5: actor=0.057985 critic=-1.162088 reg=0.007510
+2017/08/16 18:42:28 iteration 6: actor=0.059850 critic=-1.087736 reg=0.007487
+2017/08/16 18:42:30 iteration 7: actor=0.061093 critic=-1.027462 reg=0.007467
+2017/08/16 18:42:33 iteration 8: actor=0.061950 critic=-0.971963 reg=0.007448
+2017/08/16 18:42:35 iteration 9: actor=0.062714 critic=-0.920417 reg=0.007436
+2017/08/16 18:42:35 Gathering batch of experience...
+2017/08/16 18:43:08 batch 83: mean=43.384615 count=65 error_margin=5.515666
+2017/08/16 18:43:08 Training on batch...
+2017/08/16 18:43:11 iteration 0: actor=-0.015323 critic=-1.654920 reg=0.007307
+2017/08/16 18:43:13 iteration 1: actor=-0.012300 critic=-1.604926 reg=0.007315
+2017/08/16 18:43:15 iteration 2: actor=-0.009591 critic=-1.522153 reg=0.007317
+2017/08/16 18:43:17 iteration 3: actor=-0.008572 critic=-1.445591 reg=0.007319
+2017/08/16 18:43:19 iteration 4: actor=-0.007760 critic=-1.365189 reg=0.007329
+2017/08/16 18:43:21 iteration 5: actor=-0.006071 critic=-1.292106 reg=0.007338
+2017/08/16 18:43:23 iteration 6: actor=-0.003711 critic=-1.221525 reg=0.007340
+2017/08/16 18:43:25 iteration 7: actor=-0.001825 critic=-1.153379 reg=0.007341
+2017/08/16 18:43:27 iteration 8: actor=-0.000696 critic=-1.090870 reg=0.007347
+2017/08/16 18:43:29 iteration 9: actor=0.000194 critic=-1.030578 reg=0.007352
+2017/08/16 18:43:30 Gathering batch of experience...
+2017/08/16 18:44:04 batch 84: mean=42.317460 count=63 error_margin=4.697653
+2017/08/16 18:44:04 Training on batch...
+2017/08/16 18:44:06 iteration 0: actor=-0.068977 critic=-1.609236 reg=0.007473
+2017/08/16 18:44:08 iteration 1: actor=-0.066479 critic=-1.550846 reg=0.007482
+2017/08/16 18:44:10 iteration 2: actor=-0.063618 critic=-1.478625 reg=0.007480
+2017/08/16 18:44:12 iteration 3: actor=-0.061937 critic=-1.401289 reg=0.007461
+2017/08/16 18:44:14 iteration 4: actor=-0.059395 critic=-1.322300 reg=0.007440
+2017/08/16 18:44:15 iteration 5: actor=-0.057058 critic=-1.250513 reg=0.007420
+2017/08/16 18:44:17 iteration 6: actor=-0.055206 critic=-1.173288 reg=0.007394
+2017/08/16 18:44:19 iteration 7: actor=-0.053630 critic=-1.107217 reg=0.007374
+2017/08/16 18:44:21 iteration 8: actor=-0.052504 critic=-1.034234 reg=0.007374
+2017/08/16 18:44:23 iteration 9: actor=-0.051474 critic=-0.975277 reg=0.007389
+2017/08/16 18:44:23 Gathering batch of experience...
+2017/08/16 18:45:00 batch 85: mean=52.274194 count=62 error_margin=6.099426
+2017/08/16 18:45:00 Training on batch...
+2017/08/16 18:45:04 iteration 0: actor=0.149120 critic=-1.600381 reg=0.007363
+2017/08/16 18:45:06 iteration 1: actor=0.150776 critic=-1.579868 reg=0.007360
+2017/08/16 18:45:08 iteration 2: actor=0.153036 critic=-1.450047 reg=0.007381
+2017/08/16 18:45:11 iteration 3: actor=0.155066 critic=-1.414256 reg=0.007408
+2017/08/16 18:45:13 iteration 4: actor=0.156826 critic=-1.289940 reg=0.007406
+2017/08/16 18:45:16 iteration 5: actor=0.157957 critic=-1.264586 reg=0.007396
+2017/08/16 18:45:18 iteration 6: actor=0.159020 critic=-1.154156 reg=0.007403
+2017/08/16 18:45:20 iteration 7: actor=0.159547 critic=-1.113362 reg=0.007411
+2017/08/16 18:45:23 iteration 8: actor=0.160499 critic=-1.027442 reg=0.007405
+2017/08/16 18:45:25 iteration 9: actor=0.161492 critic=-0.988022 reg=0.007407
+2017/08/16 18:45:25 Gathering batch of experience...
+2017/08/16 18:45:58 batch 86: mean=51.964912 count=57 error_margin=7.377979
+2017/08/16 18:45:58 Training on batch...
+2017/08/16 18:46:01 iteration 0: actor=0.088275 critic=-1.583490 reg=0.007427
+2017/08/16 18:46:03 iteration 1: actor=0.089689 critic=-1.532722 reg=0.007431
+2017/08/16 18:46:05 iteration 2: actor=0.091694 critic=-1.471105 reg=0.007425
+2017/08/16 18:46:07 iteration 3: actor=0.093294 critic=-1.377828 reg=0.007438
+2017/08/16 18:46:09 iteration 4: actor=0.094828 critic=-1.307312 reg=0.007467
+2017/08/16 18:46:11 iteration 5: actor=0.096081 critic=-1.202145 reg=0.007484
+2017/08/16 18:46:12 iteration 6: actor=0.097518 critic=-1.139316 reg=0.007496
+2017/08/16 18:46:14 iteration 7: actor=0.099632 critic=-1.052815 reg=0.007514
+2017/08/16 18:46:16 iteration 8: actor=0.101079 critic=-1.000107 reg=0.007523
+2017/08/16 18:46:18 iteration 9: actor=0.102038 critic=-0.936022 reg=0.007512
+2017/08/16 18:46:18 Gathering batch of experience...
+2017/08/16 18:46:53 batch 87: mean=41.895522 count=67 error_margin=5.600701
+2017/08/16 18:46:53 Training on batch...
+2017/08/16 18:46:55 iteration 0: actor=-0.097626 critic=-1.539115 reg=0.007429
+2017/08/16 18:46:57 iteration 1: actor=-0.095792 critic=-1.496071 reg=0.007430
+2017/08/16 18:46:59 iteration 2: actor=-0.093528 critic=-1.436690 reg=0.007418
+2017/08/16 18:47:01 iteration 3: actor=-0.090946 critic=-1.369839 reg=0.007398
+2017/08/16 18:47:03 iteration 4: actor=-0.089076 critic=-1.283256 reg=0.007396
+2017/08/16 18:47:05 iteration 5: actor=-0.087412 critic=-1.213941 reg=0.007405
+2017/08/16 18:47:07 iteration 6: actor=-0.085776 critic=-1.126453 reg=0.007401
+2017/08/16 18:47:08 iteration 7: actor=-0.084497 critic=-1.069804 reg=0.007391
+2017/08/16 18:47:10 iteration 8: actor=-0.083219 critic=-0.993253 reg=0.007395
+2017/08/16 18:47:12 iteration 9: actor=-0.082008 critic=-0.947360 reg=0.007406
+2017/08/16 18:47:12 Gathering batch of experience...
+2017/08/16 18:47:48 batch 88: mean=62.833333 count=54 error_margin=8.734765
+2017/08/16 18:47:48 Training on batch...
+2017/08/16 18:47:52 iteration 0: actor=0.010042 critic=-1.414666 reg=0.007590
+2017/08/16 18:47:54 iteration 1: actor=0.011483 critic=-1.385098 reg=0.007584
+2017/08/16 18:47:57 iteration 2: actor=0.013599 critic=-1.315687 reg=0.007594
+2017/08/16 18:47:59 iteration 3: actor=0.015305 critic=-1.255724 reg=0.007605
+2017/08/16 18:48:02 iteration 4: actor=0.016874 critic=-1.178427 reg=0.007607
+2017/08/16 18:48:05 iteration 5: actor=0.018317 critic=-1.119458 reg=0.007617
+2017/08/16 18:48:07 iteration 6: actor=0.019332 critic=-1.051212 reg=0.007642
+2017/08/16 18:48:10 iteration 7: actor=0.020259 critic=-0.995621 reg=0.007657
+2017/08/16 18:48:12 iteration 8: actor=0.021335 critic=-0.934546 reg=0.007660
+2017/08/16 18:48:15 iteration 9: actor=0.022255 critic=-0.882579 reg=0.007669
+2017/08/16 18:48:15 Gathering batch of experience...
+2017/08/16 18:48:52 batch 89: mean=48.123077 count=65 error_margin=5.625912
+2017/08/16 18:48:52 Training on batch...
+2017/08/16 18:48:55 iteration 0: actor=-0.030802 critic=-1.393568 reg=0.007583
+2017/08/16 18:48:58 iteration 1: actor=-0.029192 critic=-1.360564 reg=0.007606
+2017/08/16 18:49:00 iteration 2: actor=-0.026835 critic=-1.294525 reg=0.007616
+2017/08/16 18:49:03 iteration 3: actor=-0.024786 critic=-1.244526 reg=0.007618
+2017/08/16 18:49:05 iteration 4: actor=-0.022891 critic=-1.177329 reg=0.007624
+2017/08/16 18:49:07 iteration 5: actor=-0.020688 critic=-1.123595 reg=0.007619
+2017/08/16 18:49:10 iteration 6: actor=-0.019440 critic=-1.058861 reg=0.007596
+2017/08/16 18:49:12 iteration 7: actor=-0.018599 critic=-1.009653 reg=0.007576
+2017/08/16 18:49:15 iteration 8: actor=-0.017307 critic=-0.951979 reg=0.007576
+2017/08/16 18:49:17 iteration 9: actor=-0.016299 critic=-0.905527 reg=0.007581
+2017/08/16 18:49:17 Gathering batch of experience...
+2017/08/16 18:49:55 batch 90: mean=49.714286 count=63 error_margin=7.884382
+2017/08/16 18:49:55 Training on batch...
+2017/08/16 18:49:58 iteration 0: actor=0.095228 critic=-1.565717 reg=0.007513
+2017/08/16 18:50:00 iteration 1: actor=0.096876 critic=-1.542692 reg=0.007499
+2017/08/16 18:50:03 iteration 2: actor=0.099307 critic=-1.444892 reg=0.007507
+2017/08/16 18:50:05 iteration 3: actor=0.101834 critic=-1.395708 reg=0.007516
+2017/08/16 18:50:08 iteration 4: actor=0.103951 critic=-1.286189 reg=0.007498
+2017/08/16 18:50:10 iteration 5: actor=0.105503 critic=-1.238664 reg=0.007479
+2017/08/16 18:50:12 iteration 6: actor=0.106932 critic=-1.142368 reg=0.007483
+2017/08/16 18:50:15 iteration 7: actor=0.108198 critic=-1.098950 reg=0.007485
+2017/08/16 18:50:17 iteration 8: actor=0.109385 critic=-1.022218 reg=0.007474
+2017/08/16 18:50:20 iteration 9: actor=0.110672 critic=-0.981386 reg=0.007471
+2017/08/16 18:50:20 Gathering batch of experience...
+2017/08/16 18:50:54 batch 91: mean=63.870370 count=54 error_margin=8.656691
+2017/08/16 18:50:54 Training on batch...
+2017/08/16 18:50:57 iteration 0: actor=0.104721 critic=-1.412962 reg=0.007608
+2017/08/16 18:50:59 iteration 1: actor=0.106392 critic=-1.330953 reg=0.007611
+2017/08/16 18:51:02 iteration 2: actor=0.109304 critic=-1.270173 reg=0.007612
+2017/08/16 18:51:04 iteration 3: actor=0.111489 critic=-1.193078 reg=0.007619
+2017/08/16 18:51:06 iteration 4: actor=0.112930 critic=-1.122622 reg=0.007621
+2017/08/16 18:51:09 iteration 5: actor=0.114259 critic=-1.043572 reg=0.007609
+2017/08/16 18:51:11 iteration 6: actor=0.115384 critic=-0.988489 reg=0.007594
+2017/08/16 18:51:13 iteration 7: actor=0.116242 critic=-0.929841 reg=0.007588
+2017/08/16 18:51:16 iteration 8: actor=0.117263 critic=-0.875088 reg=0.007584
+2017/08/16 18:51:18 iteration 9: actor=0.118864 critic=-0.831364 reg=0.007582
+2017/08/16 18:51:18 Gathering batch of experience...
+2017/08/16 18:51:53 batch 92: mean=63.527273 count=55 error_margin=7.719369
+2017/08/16 18:51:53 Training on batch...
+2017/08/16 18:51:57 iteration 0: actor=0.011215 critic=-1.294605 reg=0.007531
+2017/08/16 18:51:59 iteration 1: actor=0.012404 critic=-1.248596 reg=0.007533
+2017/08/16 18:52:01 iteration 2: actor=0.013890 critic=-1.185912 reg=0.007529
+2017/08/16 18:52:04 iteration 3: actor=0.015248 critic=-1.115042 reg=0.007520
+2017/08/16 18:52:06 iteration 4: actor=0.017015 critic=-1.041876 reg=0.007509
+2017/08/16 18:52:09 iteration 5: actor=0.018617 critic=-0.973247 reg=0.007498
+2017/08/16 18:52:11 iteration 6: actor=0.019938 critic=-0.918496 reg=0.007492
+2017/08/16 18:52:13 iteration 7: actor=0.021296 critic=-0.862555 reg=0.007494
+2017/08/16 18:52:16 iteration 8: actor=0.022555 critic=-0.816145 reg=0.007501
+2017/08/16 18:52:18 iteration 9: actor=0.023558 critic=-0.774149 reg=0.007508
+2017/08/16 18:52:19 Gathering batch of experience...
+2017/08/16 18:52:51 batch 93: mean=65.897959 count=49 error_margin=6.674889
+2017/08/16 18:52:51 Training on batch...
+2017/08/16 18:52:54 iteration 0: actor=0.010564 critic=-1.283371 reg=0.007557
+2017/08/16 18:52:56 iteration 1: actor=0.012081 critic=-1.232552 reg=0.007556
+2017/08/16 18:52:58 iteration 2: actor=0.014509 critic=-1.170034 reg=0.007555
+2017/08/16 18:53:00 iteration 3: actor=0.016567 critic=-1.118497 reg=0.007562
+2017/08/16 18:53:02 iteration 4: actor=0.017907 critic=-1.052868 reg=0.007575
+2017/08/16 18:53:04 iteration 5: actor=0.018322 critic=-0.996820 reg=0.007588
+2017/08/16 18:53:07 iteration 6: actor=0.018452 critic=-0.944000 reg=0.007600
+2017/08/16 18:53:09 iteration 7: actor=0.019600 critic=-0.899175 reg=0.007605
+2017/08/16 18:53:11 iteration 8: actor=0.021918 critic=-0.844167 reg=0.007601
+2017/08/16 18:53:13 iteration 9: actor=0.023745 critic=-0.798677 reg=0.007591
+2017/08/16 18:53:13 Gathering batch of experience...
+2017/08/16 18:53:44 batch 94: mean=65.458333 count=48 error_margin=8.813015
+2017/08/16 18:53:44 Training on batch...
+2017/08/16 18:53:48 iteration 0: actor=0.003461 critic=-1.376260 reg=0.007603
+2017/08/16 18:53:50 iteration 1: actor=0.004791 critic=-1.335920 reg=0.007590
+2017/08/16 18:53:52 iteration 2: actor=0.006308 critic=-1.270268 reg=0.007577
+2017/08/16 18:53:54 iteration 3: actor=0.007917 critic=-1.207363 reg=0.007568
+2017/08/16 18:53:57 iteration 4: actor=0.009956 critic=-1.135583 reg=0.007556
+2017/08/16 18:53:59 iteration 5: actor=0.012110 critic=-1.056105 reg=0.007543
+2017/08/16 18:54:01 iteration 6: actor=0.013983 critic=-0.987574 reg=0.007534
+2017/08/16 18:54:04 iteration 7: actor=0.015394 critic=-0.924861 reg=0.007530
+2017/08/16 18:54:06 iteration 8: actor=0.016328 critic=-0.869196 reg=0.007528
+2017/08/16 18:54:08 iteration 9: actor=0.017563 critic=-0.818096 reg=0.007527
+2017/08/16 18:54:09 Gathering batch of experience...
+2017/08/16 18:54:40 batch 95: mean=65.458333 count=48 error_margin=9.681963
+2017/08/16 18:54:40 Training on batch...
+2017/08/16 18:54:44 iteration 0: actor=0.070831 critic=-1.356492 reg=0.007574
+2017/08/16 18:54:46 iteration 1: actor=0.072606 critic=-1.325943 reg=0.007560
+2017/08/16 18:54:48 iteration 2: actor=0.075104 critic=-1.245368 reg=0.007538
+2017/08/16 18:54:50 iteration 3: actor=0.076899 critic=-1.190993 reg=0.007519
+2017/08/16 18:54:53 iteration 4: actor=0.078293 critic=-1.098720 reg=0.007499
+2017/08/16 18:54:55 iteration 5: actor=0.079601 critic=-1.043471 reg=0.007485
+2017/08/16 18:54:57 iteration 6: actor=0.080971 critic=-0.964675 reg=0.007476
+2017/08/16 18:55:00 iteration 7: actor=0.082212 critic=-0.904387 reg=0.007466
+2017/08/16 18:55:02 iteration 8: actor=0.083405 critic=-0.847211 reg=0.007453
+2017/08/16 18:55:04 iteration 9: actor=0.085037 critic=-0.788021 reg=0.007439
+2017/08/16 18:55:05 Gathering batch of experience...
+2017/08/16 18:55:36 batch 96: mean=75.340909 count=44 error_margin=9.234768
+2017/08/16 18:55:36 Training on batch...
+2017/08/16 18:55:40 iteration 0: actor=0.029817 critic=-1.316763 reg=0.007408
+2017/08/16 18:55:42 iteration 1: actor=0.031161 critic=-1.289691 reg=0.007393
+2017/08/16 18:55:45 iteration 2: actor=0.032643 critic=-1.236492 reg=0.007374
+2017/08/16 18:55:47 iteration 3: actor=0.033899 critic=-1.170582 reg=0.007359
+2017/08/16 18:55:49 iteration 4: actor=0.035382 critic=-1.109762 reg=0.007353
+2017/08/16 18:55:52 iteration 5: actor=0.037002 critic=-1.037424 reg=0.007355
+2017/08/16 18:55:54 iteration 6: actor=0.038615 critic=-0.975526 reg=0.007362
+2017/08/16 18:55:57 iteration 7: actor=0.039803 critic=-0.909693 reg=0.007375
+2017/08/16 18:55:59 iteration 8: actor=0.040731 critic=-0.856571 reg=0.007393
+2017/08/16 18:56:02 iteration 9: actor=0.041466 critic=-0.808003 reg=0.007415
+2017/08/16 18:56:02 Gathering batch of experience...
+2017/08/16 18:56:31 batch 97: mean=61.418605 count=43 error_margin=9.741118
+2017/08/16 18:56:31 Training on batch...
+2017/08/16 18:56:34 iteration 0: actor=-0.037064 critic=-1.186113 reg=0.007487
+2017/08/16 18:56:36 iteration 1: actor=-0.035611 critic=-1.131887 reg=0.007502
+2017/08/16 18:56:38 iteration 2: actor=-0.033029 critic=-1.051008 reg=0.007498
+2017/08/16 18:56:40 iteration 3: actor=-0.030867 critic=-0.985536 reg=0.007488
+2017/08/16 18:56:42 iteration 4: actor=-0.029411 critic=-0.910087 reg=0.007486
+2017/08/16 18:56:44 iteration 5: actor=-0.027650 critic=-0.845216 reg=0.007477
+2017/08/16 18:56:46 iteration 6: actor=-0.025809 critic=-0.787463 reg=0.007455
+2017/08/16 18:56:49 iteration 7: actor=-0.024223 critic=-0.736908 reg=0.007433
+2017/08/16 18:56:51 iteration 8: actor=-0.022469 critic=-0.693597 reg=0.007408
+2017/08/16 18:56:53 iteration 9: actor=-0.020983 critic=-0.650208 reg=0.007366
+2017/08/16 18:56:53 Gathering batch of experience...
+2017/08/16 18:57:22 batch 98: mean=80.921053 count=38 error_margin=10.712394
+2017/08/16 18:57:22 Training on batch...
+2017/08/16 18:57:26 iteration 0: actor=0.010350 critic=-1.079227 reg=0.007418
+2017/08/16 18:57:28 iteration 1: actor=0.010879 critic=-1.048974 reg=0.007377
+2017/08/16 18:57:31 iteration 2: actor=0.012487 critic=-0.998222 reg=0.007354
+2017/08/16 18:57:33 iteration 3: actor=0.013989 critic=-0.944505 reg=0.007334
+2017/08/16 18:57:36 iteration 4: actor=0.015554 critic=-0.888176 reg=0.007311
+2017/08/16 18:57:38 iteration 5: actor=0.016723 critic=-0.834765 reg=0.007301
+2017/08/16 18:57:40 iteration 6: actor=0.017653 critic=-0.786571 reg=0.007302
+2017/08/16 18:57:43 iteration 7: actor=0.018816 critic=-0.739783 reg=0.007298
+2017/08/16 18:57:45 iteration 8: actor=0.020036 critic=-0.698418 reg=0.007298
+2017/08/16 18:57:48 iteration 9: actor=0.021240 critic=-0.657204 reg=0.007312
+2017/08/16 18:57:48 Gathering batch of experience...
+2017/08/16 18:58:22 batch 99: mean=85.704545 count=44 error_margin=12.907754
+2017/08/16 18:58:22 Training on batch...
+2017/08/16 18:58:26 iteration 0: actor=0.097452 critic=-1.352126 reg=0.007207
+2017/08/16 18:58:29 iteration 1: actor=0.098729 critic=-1.315090 reg=0.007200
+2017/08/16 18:58:31 iteration 2: actor=0.100321 critic=-1.236305 reg=0.007213
+2017/08/16 18:58:34 iteration 3: actor=0.101539 critic=-1.181011 reg=0.007226
+2017/08/16 18:58:37 iteration 4: actor=0.102900 critic=-1.109524 reg=0.007211
+2017/08/16 18:58:40 iteration 5: actor=0.104261 critic=-1.044128 reg=0.007196
+2017/08/16 18:58:42 iteration 6: actor=0.105407 critic=-0.979427 reg=0.007194
+2017/08/16 18:58:45 iteration 7: actor=0.106489 critic=-0.921838 reg=0.007178
+2017/08/16 18:58:48 iteration 8: actor=0.107553 critic=-0.870823 reg=0.007159
+2017/08/16 18:58:51 iteration 9: actor=0.108675 critic=-0.819078 reg=0.007160
+2017/08/16 18:58:51 Gathering batch of experience...
+2017/08/16 18:59:27 batch 100: mean=58.963636 count=55 error_margin=7.113529
+2017/08/16 18:59:27 Training on batch...
+2017/08/16 18:59:30 iteration 0: actor=-0.139624 critic=-1.247939 reg=0.007156
+2017/08/16 18:59:32 iteration 1: actor=-0.138947 critic=-1.216671 reg=0.007185
+2017/08/16 18:59:35 iteration 2: actor=-0.137020 critic=-1.120964 reg=0.007167
+2017/08/16 18:59:37 iteration 3: actor=-0.134366 critic=-1.108065 reg=0.007124
+2017/08/16 18:59:40 iteration 4: actor=-0.132862 critic=-0.998405 reg=0.007115
+2017/08/16 18:59:42 iteration 5: actor=-0.132340 critic=-0.972941 reg=0.007107
+2017/08/16 18:59:45 iteration 6: actor=-0.131424 critic=-0.881292 reg=0.007074
+2017/08/16 18:59:47 iteration 7: actor=-0.129996 critic=-0.853867 reg=0.007059
+2017/08/16 18:59:50 iteration 8: actor=-0.128611 critic=-0.785468 reg=0.007085
+2017/08/16 18:59:52 iteration 9: actor=-0.127843 critic=-0.747112 reg=0.007102
+2017/08/16 18:59:52 Gathering batch of experience...
+2017/08/16 19:00:24 batch 101: mean=86.461538 count=39 error_margin=11.960809
+2017/08/16 19:00:24 Training on batch...
+2017/08/16 19:00:27 iteration 0: actor=0.009382 critic=-0.994642 reg=0.007188
+2017/08/16 19:00:30 iteration 1: actor=0.010370 critic=-1.000323 reg=0.007167
+2017/08/16 19:00:32 iteration 2: actor=0.011639 critic=-0.923985 reg=0.007189
+2017/08/16 19:00:35 iteration 3: actor=0.013067 critic=-0.894973 reg=0.007194
+2017/08/16 19:00:38 iteration 4: actor=0.014795 critic=-0.851138 reg=0.007167
+2017/08/16 19:00:40 iteration 5: actor=0.015939 critic=-0.805241 reg=0.007166
+2017/08/16 19:00:43 iteration 6: actor=0.017004 critic=-0.759607 reg=0.007190
+2017/08/16 19:00:46 iteration 7: actor=0.018308 critic=-0.727665 reg=0.007188
+2017/08/16 19:00:48 iteration 8: actor=0.019563 critic=-0.686460 reg=0.007173
+2017/08/16 19:00:51 iteration 9: actor=0.020133 critic=-0.649131 reg=0.007180
+2017/08/16 19:00:51 Gathering batch of experience...
+2017/08/16 19:01:27 batch 102: mean=70.320000 count=50 error_margin=9.248284
+2017/08/16 19:01:27 Training on batch...
+2017/08/16 19:01:31 iteration 0: actor=0.031573 critic=-1.030967 reg=0.007095
+2017/08/16 19:01:34 iteration 1: actor=0.033059 critic=-0.994954 reg=0.007085
+2017/08/16 19:01:37 iteration 2: actor=0.035213 critic=-0.951675 reg=0.007067
+2017/08/16 19:01:40 iteration 3: actor=0.036544 critic=-0.900599 reg=0.007058
+2017/08/16 19:01:43 iteration 4: actor=0.037989 critic=-0.852427 reg=0.007052
+2017/08/16 19:01:46 iteration 5: actor=0.039688 critic=-0.805731 reg=0.007032
+2017/08/16 19:01:49 iteration 6: actor=0.041027 critic=-0.753030 reg=0.007008
+2017/08/16 19:01:52 iteration 7: actor=0.041872 critic=-0.710118 reg=0.006998
+2017/08/16 19:01:55 iteration 8: actor=0.042440 critic=-0.664763 reg=0.006998
+2017/08/16 19:01:58 iteration 9: actor=0.043175 critic=-0.632476 reg=0.006999
+2017/08/16 19:01:58 Gathering batch of experience...
+2017/08/16 19:02:30 batch 103: mean=75.088889 count=45 error_margin=9.064750
+2017/08/16 19:02:30 Training on batch...
+2017/08/16 19:02:33 iteration 0: actor=0.036178 critic=-0.983813 reg=0.006904
+2017/08/16 19:02:36 iteration 1: actor=0.038142 critic=-0.972787 reg=0.006902
+2017/08/16 19:02:38 iteration 2: actor=0.039444 critic=-0.897207 reg=0.006913
+2017/08/16 19:02:41 iteration 3: actor=0.039814 critic=-0.859513 reg=0.006917
+2017/08/16 19:02:43 iteration 4: actor=0.040692 critic=-0.784020 reg=0.006899
+2017/08/16 19:02:46 iteration 5: actor=0.042161 critic=-0.736433 reg=0.006875
+2017/08/16 19:02:48 iteration 6: actor=0.043886 critic=-0.683187 reg=0.006860
+2017/08/16 19:02:50 iteration 7: actor=0.045415 critic=-0.636343 reg=0.006839
+2017/08/16 19:02:53 iteration 8: actor=0.046203 critic=-0.605382 reg=0.006815
+2017/08/16 19:02:55 iteration 9: actor=0.047100 critic=-0.561735 reg=0.006801
+2017/08/16 19:02:55 Gathering batch of experience...
+2017/08/16 19:03:31 batch 104: mean=67.017857 count=56 error_margin=7.397061
+2017/08/16 19:03:31 Training on batch...
+2017/08/16 19:03:34 iteration 0: actor=0.040979 critic=-0.905559 reg=0.006839
+2017/08/16 19:03:37 iteration 1: actor=0.042587 critic=-0.865698 reg=0.006823
+2017/08/16 19:03:39 iteration 2: actor=0.044246 critic=-0.810126 reg=0.006817
+2017/08/16 19:03:42 iteration 3: actor=0.045577 critic=-0.757854 reg=0.006815
+2017/08/16 19:03:44 iteration 4: actor=0.046834 critic=-0.712267 reg=0.006802
+2017/08/16 19:03:47 iteration 5: actor=0.047988 critic=-0.678030 reg=0.006790
+2017/08/16 19:03:49 iteration 6: actor=0.048746 critic=-0.643339 reg=0.006791
+2017/08/16 19:03:52 iteration 7: actor=0.049392 critic=-0.613618 reg=0.006790
+2017/08/16 19:03:54 iteration 8: actor=0.050139 critic=-0.582351 reg=0.006784
+2017/08/16 19:03:57 iteration 9: actor=0.050896 critic=-0.550220 reg=0.006791
+2017/08/16 19:03:57 Gathering batch of experience...
+2017/08/16 19:04:30 batch 105: mean=83.755556 count=45 error_margin=11.076843
+2017/08/16 19:04:30 Training on batch...
+2017/08/16 19:04:33 iteration 0: actor=0.059141 critic=-1.148199 reg=0.006893
+2017/08/16 19:04:36 iteration 1: actor=0.061129 critic=-1.108022 reg=0.006889
+2017/08/16 19:04:38 iteration 2: actor=0.062609 critic=-1.045917 reg=0.006876
+2017/08/16 19:04:41 iteration 3: actor=0.064042 critic=-0.996026 reg=0.006862
+2017/08/16 19:04:43 iteration 4: actor=0.066530 critic=-0.940978 reg=0.006837
+2017/08/16 19:04:46 iteration 5: actor=0.068102 critic=-0.900443 reg=0.006807
+2017/08/16 19:04:48 iteration 6: actor=0.068731 critic=-0.860394 reg=0.006786
+2017/08/16 19:04:51 iteration 7: actor=0.069516 critic=-0.820600 reg=0.006773
+2017/08/16 19:04:54 iteration 8: actor=0.070822 critic=-0.784858 reg=0.006766
+2017/08/16 19:04:56 iteration 9: actor=0.071730 critic=-0.744819 reg=0.006764
+2017/08/16 19:04:56 Gathering batch of experience...
+2017/08/16 19:05:32 batch 106: mean=82.152174 count=46 error_margin=13.394938
+2017/08/16 19:05:32 Training on batch...
+2017/08/16 19:05:36 iteration 0: actor=0.029479 critic=-0.853654 reg=0.006806
+2017/08/16 19:05:39 iteration 1: actor=0.030544 critic=-0.834938 reg=0.006804
+2017/08/16 19:05:42 iteration 2: actor=0.032173 critic=-0.799647 reg=0.006812
+2017/08/16 19:05:45 iteration 3: actor=0.033512 critic=-0.768948 reg=0.006821
+2017/08/16 19:05:48 iteration 4: actor=0.034833 critic=-0.731933 reg=0.006821
+2017/08/16 19:05:51 iteration 5: actor=0.036080 critic=-0.697661 reg=0.006819
+2017/08/16 19:05:54 iteration 6: actor=0.037277 critic=-0.660467 reg=0.006823
+2017/08/16 19:05:57 iteration 7: actor=0.038097 critic=-0.626199 reg=0.006823
+2017/08/16 19:06:00 iteration 8: actor=0.038800 critic=-0.592333 reg=0.006820
+2017/08/16 19:06:03 iteration 9: actor=0.039449 critic=-0.557675 reg=0.006822
+2017/08/16 19:06:04 Gathering batch of experience...
+2017/08/16 19:06:40 batch 107: mean=102.177778 count=45 error_margin=15.086525
+2017/08/16 19:06:40 Training on batch...
+2017/08/16 19:06:44 iteration 0: actor=0.037440 critic=-0.939182 reg=0.006881
+2017/08/16 19:06:47 iteration 1: actor=0.038764 critic=-0.922324 reg=0.006883
+2017/08/16 19:06:51 iteration 2: actor=0.040354 critic=-0.886837 reg=0.006887
+2017/08/16 19:06:54 iteration 3: actor=0.041649 critic=-0.850493 reg=0.006901
+2017/08/16 19:06:58 iteration 4: actor=0.043046 critic=-0.808723 reg=0.006910
+2017/08/16 19:07:01 iteration 5: actor=0.044462 critic=-0.771210 reg=0.006912
+2017/08/16 19:07:04 iteration 6: actor=0.045510 critic=-0.732685 reg=0.006922
+2017/08/16 19:07:08 iteration 7: actor=0.046345 critic=-0.696126 reg=0.006934
+2017/08/16 19:07:11 iteration 8: actor=0.047286 critic=-0.659288 reg=0.006937
+2017/08/16 19:07:15 iteration 9: actor=0.047886 critic=-0.626174 reg=0.006941
+2017/08/16 19:07:15 Gathering batch of experience...
+2017/08/16 19:07:50 batch 108: mean=88.543478 count=46 error_margin=12.165164
+2017/08/16 19:07:50 Training on batch...
+2017/08/16 19:07:54 iteration 0: actor=-0.024491 critic=-0.718758 reg=0.006790
+2017/08/16 19:07:58 iteration 1: actor=-0.023860 critic=-0.704818 reg=0.006798
+2017/08/16 19:08:01 iteration 2: actor=-0.022615 critic=-0.670497 reg=0.006786
+2017/08/16 19:08:04 iteration 3: actor=-0.021510 critic=-0.649456 reg=0.006772
+2017/08/16 19:08:07 iteration 4: actor=-0.020460 critic=-0.614377 reg=0.006770
+2017/08/16 19:08:10 iteration 5: actor=-0.019504 critic=-0.590367 reg=0.006764
+2017/08/16 19:08:13 iteration 6: actor=-0.018618 critic=-0.561566 reg=0.006749
+2017/08/16 19:08:16 iteration 7: actor=-0.017865 critic=-0.540604 reg=0.006742
+2017/08/16 19:08:20 iteration 8: actor=-0.017265 critic=-0.512706 reg=0.006740
+2017/08/16 19:08:23 iteration 9: actor=-0.016759 critic=-0.490415 reg=0.006737
+2017/08/16 19:08:23 Gathering batch of experience...
+2017/08/16 19:08:59 batch 109: mean=84.882353 count=51 error_margin=13.474645
+2017/08/16 19:08:59 Training on batch...
+2017/08/16 19:09:04 iteration 0: actor=0.005322 critic=-0.857423 reg=0.006810
+2017/08/16 19:09:07 iteration 1: actor=0.006572 critic=-0.838007 reg=0.006816
+2017/08/16 19:09:10 iteration 2: actor=0.008178 critic=-0.802824 reg=0.006828
+2017/08/16 19:09:13 iteration 3: actor=0.009617 critic=-0.771236 reg=0.006841
+2017/08/16 19:09:17 iteration 4: actor=0.010936 critic=-0.736029 reg=0.006853
+2017/08/16 19:09:20 iteration 5: actor=0.011953 critic=-0.701166 reg=0.006863
+2017/08/16 19:09:23 iteration 6: actor=0.012660 critic=-0.663622 reg=0.006869
+2017/08/16 19:09:26 iteration 7: actor=0.013353 critic=-0.630994 reg=0.006877
+2017/08/16 19:09:30 iteration 8: actor=0.014224 critic=-0.598364 reg=0.006885
+2017/08/16 19:09:33 iteration 9: actor=0.015157 critic=-0.567331 reg=0.006891
+2017/08/16 19:09:33 Gathering batch of experience...
+2017/08/16 19:10:14 batch 110: mean=106.146341 count=41 error_margin=17.427766
+2017/08/16 19:10:14 Training on batch...
+2017/08/16 19:10:19 iteration 0: actor=-0.015905 critic=-0.954234 reg=0.006921
+2017/08/16 19:10:22 iteration 1: actor=-0.014494 critic=-0.925378 reg=0.006923
+2017/08/16 19:10:26 iteration 2: actor=-0.011927 critic=-0.877340 reg=0.006900
+2017/08/16 19:10:30 iteration 3: actor=-0.009961 critic=-0.841713 reg=0.006869
+2017/08/16 19:10:33 iteration 4: actor=-0.008796 critic=-0.805142 reg=0.006857
+2017/08/16 19:10:37 iteration 5: actor=-0.008029 critic=-0.779047 reg=0.006847
+2017/08/16 19:10:41 iteration 6: actor=-0.007535 critic=-0.744360 reg=0.006831
+2017/08/16 19:10:44 iteration 7: actor=-0.007061 critic=-0.709606 reg=0.006828
+2017/08/16 19:10:48 iteration 8: actor=-0.006496 critic=-0.672527 reg=0.006840
+2017/08/16 19:10:52 iteration 9: actor=-0.005876 critic=-0.637524 reg=0.006848
+2017/08/16 19:10:52 Gathering batch of experience...
+2017/08/16 19:11:24 batch 111: mean=106.294118 count=34 error_margin=16.773761
+2017/08/16 19:11:24 Training on batch...
+2017/08/16 19:11:28 iteration 0: actor=-0.035356 critic=-0.803419 reg=0.006868
+2017/08/16 19:11:30 iteration 1: actor=-0.034554 critic=-0.776437 reg=0.006880
+2017/08/16 19:11:33 iteration 2: actor=-0.033356 critic=-0.742107 reg=0.006893
+2017/08/16 19:11:36 iteration 3: actor=-0.032030 critic=-0.704921 reg=0.006896
+2017/08/16 19:11:39 iteration 4: actor=-0.030815 critic=-0.666577 reg=0.006898
+2017/08/16 19:11:41 iteration 5: actor=-0.030054 critic=-0.624679 reg=0.006905
+2017/08/16 19:11:44 iteration 6: actor=-0.029310 critic=-0.588392 reg=0.006909
+2017/08/16 19:11:47 iteration 7: actor=-0.028429 critic=-0.551952 reg=0.006906
+2017/08/16 19:11:49 iteration 8: actor=-0.027551 critic=-0.521366 reg=0.006902
+2017/08/16 19:11:52 iteration 9: actor=-0.026754 critic=-0.491655 reg=0.006901
+2017/08/16 19:11:52 Gathering batch of experience...
+2017/08/16 19:12:28 batch 112: mean=102.256410 count=39 error_margin=15.022128
+2017/08/16 19:12:28 Training on batch...
+2017/08/16 19:12:32 iteration 0: actor=-0.005194 critic=-0.966914 reg=0.006870
+2017/08/16 19:12:35 iteration 1: actor=-0.003121 critic=-0.954650 reg=0.006862
+2017/08/16 19:12:38 iteration 2: actor=-0.001458 critic=-0.916666 reg=0.006858
+2017/08/16 19:12:41 iteration 3: actor=-0.000833 critic=-0.879416 reg=0.006861
+2017/08/16 19:12:44 iteration 4: actor=-0.000176 critic=-0.834455 reg=0.006864
+2017/08/16 19:12:47 iteration 5: actor=0.001132 critic=-0.790133 reg=0.006865
+2017/08/16 19:12:50 iteration 6: actor=0.002802 critic=-0.752293 reg=0.006871
+2017/08/16 19:12:53 iteration 7: actor=0.003943 critic=-0.713119 reg=0.006876
+2017/08/16 19:12:56 iteration 8: actor=0.004815 critic=-0.676546 reg=0.006870
+2017/08/16 19:12:59 iteration 9: actor=0.005337 critic=-0.644037 reg=0.006864
+2017/08/16 19:12:59 Gathering batch of experience...
+2017/08/16 19:13:43 batch 113: mean=116.931818 count=44 error_margin=21.696331
+2017/08/16 19:13:43 Training on batch...
+2017/08/16 19:13:48 iteration 0: actor=0.082578 critic=-0.929525 reg=0.006865
+2017/08/16 19:13:52 iteration 1: actor=0.083764 critic=-0.897433 reg=0.006847
+2017/08/16 19:13:57 iteration 2: actor=0.083898 critic=-0.850038 reg=0.006853
+2017/08/16 19:14:01 iteration 3: actor=0.084374 critic=-0.814422 reg=0.006859
+2017/08/16 19:14:06 iteration 4: actor=0.085669 critic=-0.774538 reg=0.006837
+2017/08/16 19:14:10 iteration 5: actor=0.087859 critic=-0.740772 reg=0.006820
+2017/08/16 19:14:15 iteration 6: actor=0.089119 critic=-0.709319 reg=0.006811
+2017/08/16 19:14:19 iteration 7: actor=0.089072 critic=-0.676849 reg=0.006791
+2017/08/16 19:14:24 iteration 8: actor=0.089861 critic=-0.644343 reg=0.006777
+2017/08/16 19:14:28 iteration 9: actor=0.091161 critic=-0.614771 reg=0.006779
+2017/08/16 19:14:28 Gathering batch of experience...
+2017/08/16 19:15:00 batch 114: mean=93.650000 count=40 error_margin=14.658767
+2017/08/16 19:15:00 Training on batch...
+2017/08/16 19:15:04 iteration 0: actor=0.020824 critic=-0.975755 reg=0.006714
+2017/08/16 19:15:07 iteration 1: actor=0.022654 critic=-0.961285 reg=0.006710
+2017/08/16 19:15:10 iteration 2: actor=0.024642 critic=-0.909665 reg=0.006708
+2017/08/16 19:15:13 iteration 3: actor=0.026416 critic=-0.866072 reg=0.006700
+2017/08/16 19:15:16 iteration 4: actor=0.027563 critic=-0.825060 reg=0.006695
+2017/08/16 19:15:18 iteration 5: actor=0.028364 critic=-0.771320 reg=0.006701
+2017/08/16 19:15:21 iteration 6: actor=0.029109 critic=-0.731083 reg=0.006706
+2017/08/16 19:15:24 iteration 7: actor=0.029837 critic=-0.697846 reg=0.006715
+2017/08/16 19:15:27 iteration 8: actor=0.030192 critic=-0.656968 reg=0.006733
+2017/08/16 19:15:30 iteration 9: actor=0.030459 critic=-0.624842 reg=0.006747
+2017/08/16 19:15:30 Gathering batch of experience...
+2017/08/16 19:16:09 batch 115: mean=99.568182 count=44 error_margin=16.678641
+2017/08/16 19:16:09 Training on batch...
+2017/08/16 19:16:14 iteration 0: actor=-0.061401 critic=-0.787318 reg=0.006746
+2017/08/16 19:16:17 iteration 1: actor=-0.060518 critic=-0.755765 reg=0.006760
+2017/08/16 19:16:21 iteration 2: actor=-0.059286 critic=-0.720828 reg=0.006759
+2017/08/16 19:16:24 iteration 3: actor=-0.058449 critic=-0.687924 reg=0.006747
+2017/08/16 19:16:28 iteration 4: actor=-0.057574 critic=-0.651027 reg=0.006750
+2017/08/16 19:16:31 iteration 5: actor=-0.056568 critic=-0.626126 reg=0.006752
+2017/08/16 19:16:35 iteration 6: actor=-0.055399 critic=-0.594068 reg=0.006745
+2017/08/16 19:16:38 iteration 7: actor=-0.054233 critic=-0.562702 reg=0.006747
+2017/08/16 19:16:42 iteration 8: actor=-0.053232 critic=-0.534666 reg=0.006754
+2017/08/16 19:16:45 iteration 9: actor=-0.052544 critic=-0.502056 reg=0.006750
+2017/08/16 19:16:45 Gathering batch of experience...
+2017/08/16 19:17:21 batch 116: mean=109.078947 count=38 error_margin=15.890701
+2017/08/16 19:17:21 Training on batch...
+2017/08/16 19:17:25 iteration 0: actor=0.004082 critic=-0.779040 reg=0.006830
+2017/08/16 19:17:28 iteration 1: actor=0.005073 critic=-0.754627 reg=0.006830
+2017/08/16 19:17:31 iteration 2: actor=0.005871 critic=-0.719540 reg=0.006833
+2017/08/16 19:17:34 iteration 3: actor=0.006765 critic=-0.684962 reg=0.006836
+2017/08/16 19:17:38 iteration 4: actor=0.007787 critic=-0.649891 reg=0.006837
+2017/08/16 19:17:41 iteration 5: actor=0.008731 critic=-0.619571 reg=0.006837
+2017/08/16 19:17:44 iteration 6: actor=0.009438 critic=-0.588534 reg=0.006837
+2017/08/16 19:17:47 iteration 7: actor=0.010056 critic=-0.561500 reg=0.006840
+2017/08/16 19:17:50 iteration 8: actor=0.010711 critic=-0.534542 reg=0.006840
+2017/08/16 19:17:53 iteration 9: actor=0.011460 critic=-0.508203 reg=0.006840
+2017/08/16 19:17:53 Gathering batch of experience...
+2017/08/16 19:18:34 batch 117: mean=94.854167 count=48 error_margin=16.854257
+2017/08/16 19:18:34 Training on batch...
+2017/08/16 19:18:39 iteration 0: actor=0.000688 critic=-0.872855 reg=0.006827
+2017/08/16 19:18:43 iteration 1: actor=0.001707 critic=-0.855272 reg=0.006826
+2017/08/16 19:18:47 iteration 2: actor=0.002634 critic=-0.824462 reg=0.006822
+2017/08/16 19:18:51 iteration 3: actor=0.003579 critic=-0.786471 reg=0.006819
+2017/08/16 19:18:55 iteration 4: actor=0.005090 critic=-0.746021 reg=0.006816
+2017/08/16 19:18:59 iteration 5: actor=0.006596 critic=-0.705338 reg=0.006812
+2017/08/16 19:19:03 iteration 6: actor=0.007557 critic=-0.665713 reg=0.006809
+2017/08/16 19:19:07 iteration 7: actor=0.008333 critic=-0.628737 reg=0.006808
+2017/08/16 19:19:11 iteration 8: actor=0.009219 critic=-0.594966 reg=0.006805
+2017/08/16 19:19:15 iteration 9: actor=0.010193 critic=-0.565543 reg=0.006801
+2017/08/16 19:19:15 Gathering batch of experience...
+2017/08/16 19:19:48 batch 118: mean=85.357143 count=42 error_margin=12.614636
+2017/08/16 19:19:48 Training on batch...
+2017/08/16 19:19:52 iteration 0: actor=-0.051255 critic=-0.771684 reg=0.006842
+2017/08/16 19:19:55 iteration 1: actor=-0.049809 critic=-0.756817 reg=0.006845
+2017/08/16 19:19:58 iteration 2: actor=-0.048240 critic=-0.713943 reg=0.006821
+2017/08/16 19:20:02 iteration 3: actor=-0.047204 critic=-0.682821 reg=0.006795
+2017/08/16 19:20:05 iteration 4: actor=-0.046095 critic=-0.638429 reg=0.006792
+2017/08/16 19:20:08 iteration 5: actor=-0.044658 critic=-0.597842 reg=0.006783
+2017/08/16 19:20:11 iteration 6: actor=-0.043703 critic=-0.562465 reg=0.006767
+2017/08/16 19:20:15 iteration 7: actor=-0.043008 critic=-0.529231 reg=0.006766
+2017/08/16 19:20:18 iteration 8: actor=-0.042339 critic=-0.498437 reg=0.006771
+2017/08/16 19:20:21 iteration 9: actor=-0.041573 critic=-0.472443 reg=0.006769
+2017/08/16 19:20:21 Gathering batch of experience...
+2017/08/16 19:20:57 batch 119: mean=117.513514 count=37 error_margin=18.556829
+2017/08/16 19:20:57 Training on batch...
+2017/08/16 19:21:02 iteration 0: actor=0.063485 critic=-0.821774 reg=0.006769
+2017/08/16 19:21:05 iteration 1: actor=0.064432 critic=-0.802883 reg=0.006763
+2017/08/16 19:21:08 iteration 2: actor=0.066023 critic=-0.758881 reg=0.006771
+2017/08/16 19:21:12 iteration 3: actor=0.067515 critic=-0.725595 reg=0.006777
+2017/08/16 19:21:15 iteration 4: actor=0.068596 critic=-0.689494 reg=0.006769
+2017/08/16 19:21:18 iteration 5: actor=0.069535 critic=-0.649714 reg=0.006768
+2017/08/16 19:21:22 iteration 6: actor=0.070384 critic=-0.613384 reg=0.006768
+2017/08/16 19:21:25 iteration 7: actor=0.071266 critic=-0.587651 reg=0.006761
+2017/08/16 19:21:28 iteration 8: actor=0.072051 critic=-0.550491 reg=0.006759
+2017/08/16 19:21:32 iteration 9: actor=0.072666 critic=-0.519837 reg=0.006755
+2017/08/16 19:21:32 Gathering batch of experience...
+2017/08/16 19:22:12 batch 120: mean=113.261905 count=42 error_margin=15.551358
+2017/08/16 19:22:12 Training on batch...
+2017/08/16 19:22:17 iteration 0: actor=0.006654 critic=-0.668142 reg=0.006782
+2017/08/16 19:22:20 iteration 1: actor=0.007395 critic=-0.649313 reg=0.006768
+2017/08/16 19:22:24 iteration 2: actor=0.008804 critic=-0.618285 reg=0.006760
+2017/08/16 19:22:27 iteration 3: actor=0.009953 critic=-0.594583 reg=0.006750
+2017/08/16 19:22:31 iteration 4: actor=0.011287 critic=-0.562968 reg=0.006733
+2017/08/16 19:22:34 iteration 5: actor=0.012034 critic=-0.533620 reg=0.006723
+2017/08/16 19:22:38 iteration 6: actor=0.012301 critic=-0.505826 reg=0.006719
+2017/08/16 19:22:42 iteration 7: actor=0.012831 critic=-0.480418 reg=0.006713
+2017/08/16 19:22:45 iteration 8: actor=0.013839 critic=-0.461314 reg=0.006712
+2017/08/16 19:22:49 iteration 9: actor=0.014702 critic=-0.437607 reg=0.006717
+2017/08/16 19:22:49 Gathering batch of experience...
+2017/08/16 19:23:29 batch 121: mean=126.976744 count=43 error_margin=23.524230
+2017/08/16 19:23:29 Training on batch...
+2017/08/16 19:23:35 iteration 0: actor=-0.003782 critic=-0.782130 reg=0.006661
+2017/08/16 19:23:40 iteration 1: actor=-0.003332 critic=-0.768988 reg=0.006671
+2017/08/16 19:23:45 iteration 2: actor=-0.002302 critic=-0.743924 reg=0.006680
+2017/08/16 19:23:50 iteration 3: actor=-0.001180 critic=-0.712884 reg=0.006691
+2017/08/16 19:23:55 iteration 4: actor=-0.000365 critic=-0.684187 reg=0.006705
+2017/08/16 19:24:00 iteration 5: actor=0.000499 critic=-0.652001 reg=0.006716
+2017/08/16 19:24:05 iteration 6: actor=0.001594 critic=-0.622193 reg=0.006726
+2017/08/16 19:24:10 iteration 7: actor=0.002652 critic=-0.592025 reg=0.006734
+2017/08/16 19:24:15 iteration 8: actor=0.003426 critic=-0.562985 reg=0.006737
+2017/08/16 19:24:20 iteration 9: actor=0.003909 critic=-0.534877 reg=0.006742
+2017/08/16 19:24:20 Gathering batch of experience...
+2017/08/16 19:25:03 batch 122: mean=131.769231 count=39 error_margin=27.153773
+2017/08/16 19:25:03 Training on batch...
+2017/08/16 19:25:09 iteration 0: actor=-0.004158 critic=-0.721783 reg=0.006797
+2017/08/16 19:25:14 iteration 1: actor=-0.003321 critic=-0.706927 reg=0.006804
+2017/08/16 19:25:19 iteration 2: actor=-0.002371 critic=-0.682409 reg=0.006799
+2017/08/16 19:25:24 iteration 3: actor=-0.001687 critic=-0.655768 reg=0.006799
+2017/08/16 19:25:29 iteration 4: actor=-0.001144 critic=-0.629804 reg=0.006803
+2017/08/16 19:25:34 iteration 5: actor=-0.000494 critic=-0.602225 reg=0.006798
+2017/08/16 19:25:39 iteration 6: actor=0.000257 critic=-0.573859 reg=0.006795
+2017/08/16 19:25:44 iteration 7: actor=0.000913 critic=-0.547480 reg=0.006796
+2017/08/16 19:25:49 iteration 8: actor=0.001523 critic=-0.522929 reg=0.006793
+2017/08/16 19:25:54 iteration 9: actor=0.002156 critic=-0.498419 reg=0.006791
+2017/08/16 19:25:54 Gathering batch of experience...
+2017/08/16 19:26:37 batch 123: mean=149.342857 count=35 error_margin=25.239617
+2017/08/16 19:26:37 Training on batch...
+2017/08/16 19:26:43 iteration 0: actor=-0.013025 critic=-0.773148 reg=0.006840
+2017/08/16 19:26:48 iteration 1: actor=-0.012153 critic=-0.758823 reg=0.006845
+2017/08/16 19:26:53 iteration 2: actor=-0.011113 critic=-0.732852 reg=0.006844
+2017/08/16 19:26:58 iteration 3: actor=-0.010126 critic=-0.704087 reg=0.006844
+2017/08/16 19:27:03 iteration 4: actor=-0.009137 critic=-0.673840 reg=0.006845
+2017/08/16 19:27:08 iteration 5: actor=-0.008202 critic=-0.644856 reg=0.006839
+2017/08/16 19:27:12 iteration 6: actor=-0.007457 critic=-0.616068 reg=0.006834
+2017/08/16 19:27:17 iteration 7: actor=-0.006978 critic=-0.588612 reg=0.006830
+2017/08/16 19:27:22 iteration 8: actor=-0.006514 critic=-0.562675 reg=0.006827
+2017/08/16 19:27:26 iteration 9: actor=-0.006036 critic=-0.537908 reg=0.006826
+2017/08/16 19:27:26 Gathering batch of experience...
+2017/08/16 19:28:03 batch 124: mean=121.184211 count=38 error_margin=18.684576
+2017/08/16 19:28:03 Training on batch...
+2017/08/16 19:28:08 iteration 0: actor=0.017158 critic=-0.613567 reg=0.006798
+2017/08/16 19:28:12 iteration 1: actor=0.017918 critic=-0.600061 reg=0.006795
+2017/08/16 19:28:16 iteration 2: actor=0.019080 critic=-0.574934 reg=0.006807
+2017/08/16 19:28:20 iteration 3: actor=0.019928 critic=-0.548825 reg=0.006813
+2017/08/16 19:28:24 iteration 4: actor=0.020638 critic=-0.525167 reg=0.006816
+2017/08/16 19:28:28 iteration 5: actor=0.021212 critic=-0.499599 reg=0.006830
+2017/08/16 19:28:32 iteration 6: actor=0.021895 critic=-0.474942 reg=0.006836
+2017/08/16 19:28:36 iteration 7: actor=0.022500 critic=-0.455013 reg=0.006838
+2017/08/16 19:28:39 iteration 8: actor=0.023001 critic=-0.434623 reg=0.006844
+2017/08/16 19:28:43 iteration 9: actor=0.023436 critic=-0.411810 reg=0.006842
+2017/08/16 19:28:44 Gathering batch of experience...
+2017/08/16 19:29:23 batch 125: mean=144.212121 count=33 error_margin=20.297365
+2017/08/16 19:29:23 Training on batch...
+2017/08/16 19:29:29 iteration 0: actor=-0.004860 critic=-0.649846 reg=0.006846
+2017/08/16 19:29:33 iteration 1: actor=-0.003706 critic=-0.628645 reg=0.006849
+2017/08/16 19:29:37 iteration 2: actor=-0.002515 critic=-0.599974 reg=0.006852
+2017/08/16 19:29:41 iteration 3: actor=-0.001782 critic=-0.574218 reg=0.006852
+2017/08/16 19:29:45 iteration 4: actor=-0.000898 critic=-0.547788 reg=0.006851
+2017/08/16 19:29:50 iteration 5: actor=-0.000088 critic=-0.520139 reg=0.006846
+2017/08/16 19:29:54 iteration 6: actor=0.000555 critic=-0.494016 reg=0.006840
+2017/08/16 19:29:58 iteration 7: actor=0.001130 critic=-0.470569 reg=0.006840
+2017/08/16 19:30:02 iteration 8: actor=0.001841 critic=-0.445411 reg=0.006844
+2017/08/16 19:30:06 iteration 9: actor=0.002642 critic=-0.420433 reg=0.006849
+2017/08/16 19:30:06 Gathering batch of experience...
+2017/08/16 19:30:50 batch 126: mean=100.540000 count=50 error_margin=19.244079
+2017/08/16 19:30:50 Training on batch...
+2017/08/16 19:30:56 iteration 0: actor=-0.020124 critic=-0.788880 reg=0.006882
+2017/08/16 19:31:01 iteration 1: actor=-0.018336 critic=-0.770331 reg=0.006904
+2017/08/16 19:31:05 iteration 2: actor=-0.017497 critic=-0.741854 reg=0.006917
+2017/08/16 19:31:10 iteration 3: actor=-0.016624 critic=-0.708875 reg=0.006924
+2017/08/16 19:31:14 iteration 4: actor=-0.015613 critic=-0.673594 reg=0.006933
+2017/08/16 19:31:19 iteration 5: actor=-0.014876 critic=-0.640419 reg=0.006940
+2017/08/16 19:31:24 iteration 6: actor=-0.014082 critic=-0.610098 reg=0.006940
+2017/08/16 19:31:28 iteration 7: actor=-0.013227 critic=-0.580122 reg=0.006941
+2017/08/16 19:31:33 iteration 8: actor=-0.012392 critic=-0.551582 reg=0.006942
+2017/08/16 19:31:37 iteration 9: actor=-0.011821 critic=-0.525783 reg=0.006940
+2017/08/16 19:31:38 Gathering batch of experience...
+2017/08/16 19:32:20 batch 127: mean=120.558140 count=43 error_margin=19.879880
+2017/08/16 19:32:20 Training on batch...
+2017/08/16 19:32:25 iteration 0: actor=0.029965 critic=-0.679040 reg=0.006895
+2017/08/16 19:32:30 iteration 1: actor=0.030788 critic=-0.665848 reg=0.006878
+2017/08/16 19:32:34 iteration 2: actor=0.031827 critic=-0.642579 reg=0.006868
+2017/08/16 19:32:38 iteration 3: actor=0.032906 critic=-0.616858 reg=0.006862
+2017/08/16 19:32:43 iteration 4: actor=0.033835 critic=-0.589826 reg=0.006848
+2017/08/16 19:32:47 iteration 5: actor=0.034667 critic=-0.565584 reg=0.006840
+2017/08/16 19:32:51 iteration 6: actor=0.035740 critic=-0.540699 reg=0.006847
+2017/08/16 19:32:55 iteration 7: actor=0.036577 critic=-0.518036 reg=0.006855
+2017/08/16 19:33:00 iteration 8: actor=0.037236 critic=-0.494727 reg=0.006865
+2017/08/16 19:33:04 iteration 9: actor=0.037680 critic=-0.472177 reg=0.006882
+2017/08/16 19:33:04 Gathering batch of experience...
+2017/08/16 19:33:48 batch 128: mean=190.093750 count=32 error_margin=30.055397
+2017/08/16 19:33:48 Training on batch...
+2017/08/16 19:33:55 iteration 0: actor=0.019107 critic=-0.559150 reg=0.006954
+2017/08/16 19:34:00 iteration 1: actor=0.019466 critic=-0.544256 reg=0.006961
+2017/08/16 19:34:05 iteration 2: actor=0.019932 critic=-0.520949 reg=0.006974
+2017/08/16 19:34:11 iteration 3: actor=0.020541 critic=-0.503546 reg=0.006978
+2017/08/16 19:34:16 iteration 4: actor=0.021219 critic=-0.480126 reg=0.006984
+2017/08/16 19:34:22 iteration 5: actor=0.021692 critic=-0.456859 reg=0.006992
+2017/08/16 19:34:27 iteration 6: actor=0.022111 critic=-0.439348 reg=0.006987
+2017/08/16 19:34:32 iteration 7: actor=0.022779 critic=-0.417901 reg=0.006980
+2017/08/16 19:34:38 iteration 8: actor=0.023540 critic=-0.396950 reg=0.006971
+2017/08/16 19:34:43 iteration 9: actor=0.024113 critic=-0.378177 reg=0.006952
+2017/08/16 19:34:43 Gathering batch of experience...
+2017/08/16 19:35:23 batch 129: mean=139.837838 count=37 error_margin=24.576278
+2017/08/16 19:35:23 Training on batch...
+2017/08/16 19:35:29 iteration 0: actor=-0.006705 critic=-0.822639 reg=0.006873
+2017/08/16 19:35:33 iteration 1: actor=-0.005546 critic=-0.785611 reg=0.006859
+2017/08/16 19:35:38 iteration 2: actor=-0.004392 critic=-0.750090 reg=0.006841
+2017/08/16 19:35:42 iteration 3: actor=-0.003543 critic=-0.731614 reg=0.006818
+2017/08/16 19:35:47 iteration 4: actor=-0.002297 critic=-0.695173 reg=0.006802
+2017/08/16 19:35:51 iteration 5: actor=-0.001179 critic=-0.651589 reg=0.006789
+2017/08/16 19:35:55 iteration 6: actor=-0.000660 critic=-0.622589 reg=0.006769
+2017/08/16 19:36:00 iteration 7: actor=-0.000286 critic=-0.601396 reg=0.006760
+2017/08/16 19:36:04 iteration 8: actor=0.000451 critic=-0.570181 reg=0.006767
+2017/08/16 19:36:08 iteration 9: actor=0.001167 critic=-0.538676 reg=0.006771
+2017/08/16 19:36:09 Gathering batch of experience...
+2017/08/16 19:36:49 batch 130: mean=113.292683 count=41 error_margin=19.670796
+2017/08/16 19:36:49 Training on batch...
+2017/08/16 19:36:55 iteration 0: actor=-0.056814 critic=-0.716935 reg=0.006740
+2017/08/16 19:36:59 iteration 1: actor=-0.056160 critic=-0.702656 reg=0.006767
+2017/08/16 19:37:04 iteration 2: actor=-0.054465 critic=-0.664695 reg=0.006762
+2017/08/16 19:37:08 iteration 3: actor=-0.052849 critic=-0.635552 reg=0.006761
+2017/08/16 19:37:12 iteration 4: actor=-0.051926 critic=-0.611230 reg=0.006776
+2017/08/16 19:37:17 iteration 5: actor=-0.050833 critic=-0.582266 reg=0.006768
+2017/08/16 19:37:21 iteration 6: actor=-0.049866 critic=-0.547519 reg=0.006762
+2017/08/16 19:37:25 iteration 7: actor=-0.049171 critic=-0.523209 reg=0.006762
+2017/08/16 19:37:30 iteration 8: actor=-0.048528 critic=-0.497507 reg=0.006752
+2017/08/16 19:37:34 iteration 9: actor=-0.047911 critic=-0.469547 reg=0.006749
+2017/08/16 19:37:34 Gathering batch of experience...
+2017/08/16 19:38:10 batch 131: mean=119.351351 count=37 error_margin=15.006559
+2017/08/16 19:38:10 Training on batch...
+2017/08/16 19:38:15 iteration 0: actor=0.058546 critic=-0.680578 reg=0.006806
+2017/08/16 19:38:18 iteration 1: actor=0.059829 critic=-0.676650 reg=0.006775
+2017/08/16 19:38:22 iteration 2: actor=0.060958 critic=-0.638797 reg=0.006780
+2017/08/16 19:38:25 iteration 3: actor=0.061526 critic=-0.613458 reg=0.006785
+2017/08/16 19:38:29 iteration 4: actor=0.062553 critic=-0.582491 reg=0.006769
+2017/08/16 19:38:32 iteration 5: actor=0.063461 critic=-0.545807 reg=0.006777
+2017/08/16 19:38:36 iteration 6: actor=0.064174 critic=-0.524034 reg=0.006796
+2017/08/16 19:38:39 iteration 7: actor=0.064877 critic=-0.494536 reg=0.006793
+2017/08/16 19:38:43 iteration 8: actor=0.065582 critic=-0.462764 reg=0.006796
+2017/08/16 19:38:46 iteration 9: actor=0.066174 critic=-0.442523 reg=0.006807
+2017/08/16 19:38:46 Gathering batch of experience...
+2017/08/16 19:39:36 batch 132: mean=180.972973 count=37 error_margin=29.538908
+2017/08/16 19:39:36 Training on batch...
+2017/08/16 19:39:44 iteration 0: actor=-0.002985 critic=-0.593264 reg=0.006858
+2017/08/16 19:39:50 iteration 1: actor=-0.001978 critic=-0.573875 reg=0.006861
+2017/08/16 19:39:56 iteration 2: actor=-0.001085 critic=-0.551436 reg=0.006879
+2017/08/16 19:40:02 iteration 3: actor=-0.000702 critic=-0.535241 reg=0.006890
+2017/08/16 19:40:08 iteration 4: actor=-0.000051 critic=-0.506313 reg=0.006903
+2017/08/16 19:40:14 iteration 5: actor=0.000803 critic=-0.484511 reg=0.006915
+2017/08/16 19:40:20 iteration 6: actor=0.001237 critic=-0.466353 reg=0.006924
+2017/08/16 19:40:25 iteration 7: actor=0.001732 critic=-0.442923 reg=0.006933
+2017/08/16 19:40:31 iteration 8: actor=0.002234 critic=-0.424180 reg=0.006931
+2017/08/16 19:40:37 iteration 9: actor=0.002621 critic=-0.405001 reg=0.006926
+2017/08/16 19:40:38 Gathering batch of experience...
+2017/08/16 19:41:22 batch 133: mean=169.675676 count=37 error_margin=31.247803
+2017/08/16 19:41:22 Training on batch...
+2017/08/16 19:41:29 iteration 0: actor=0.013914 critic=-0.537820 reg=0.006906
+2017/08/16 19:41:35 iteration 1: actor=0.014800 critic=-0.521525 reg=0.006899
+2017/08/16 19:41:41 iteration 2: actor=0.015247 critic=-0.497177 reg=0.006877
+2017/08/16 19:41:47 iteration 3: actor=0.015626 critic=-0.478324 reg=0.006855
+2017/08/16 19:41:53 iteration 4: actor=0.016324 critic=-0.454799 reg=0.006845
+2017/08/16 19:41:59 iteration 5: actor=0.017212 critic=-0.435545 reg=0.006837
+2017/08/16 19:42:05 iteration 6: actor=0.017866 critic=-0.415827 reg=0.006826
+2017/08/16 19:42:11 iteration 7: actor=0.018239 critic=-0.397699 reg=0.006824
+2017/08/16 19:42:17 iteration 8: actor=0.018517 critic=-0.377546 reg=0.006830
+2017/08/16 19:42:22 iteration 9: actor=0.019035 critic=-0.362789 reg=0.006832
+2017/08/16 19:42:23 Gathering batch of experience...
+2017/08/16 19:43:09 batch 134: mean=202.000000 count=33 error_margin=32.528945
+2017/08/16 19:43:09 Training on batch...
+2017/08/16 19:43:17 iteration 0: actor=-0.033385 critic=-0.516447 reg=0.006818
+2017/08/16 19:43:23 iteration 1: actor=-0.032624 critic=-0.509292 reg=0.006832
+2017/08/16 19:43:29 iteration 2: actor=-0.031957 critic=-0.489545 reg=0.006824
+2017/08/16 19:43:35 iteration 3: actor=-0.031782 critic=-0.467867 reg=0.006831
+2017/08/16 19:43:41 iteration 4: actor=-0.031476 critic=-0.452251 reg=0.006828
+2017/08/16 19:43:47 iteration 5: actor=-0.030458 critic=-0.435780 reg=0.006813
+2017/08/16 19:43:53 iteration 6: actor=-0.029777 critic=-0.416473 reg=0.006816
+2017/08/16 19:43:59 iteration 7: actor=-0.029345 critic=-0.398408 reg=0.006806
+2017/08/16 19:44:06 iteration 8: actor=-0.029157 critic=-0.384770 reg=0.006796
+2017/08/16 19:44:12 iteration 9: actor=-0.028542 critic=-0.370433 reg=0.006808
+2017/08/16 19:44:12 Gathering batch of experience...
+2017/08/16 19:44:48 batch 135: mean=147.718750 count=32 error_margin=23.145103
+2017/08/16 19:44:48 Training on batch...
+2017/08/16 19:44:53 iteration 0: actor=-0.048806 critic=-0.684866 reg=0.006874
+2017/08/16 19:44:58 iteration 1: actor=-0.047325 critic=-0.665348 reg=0.006887
+2017/08/16 19:45:02 iteration 2: actor=-0.045423 critic=-0.635133 reg=0.006875
+2017/08/16 19:45:06 iteration 3: actor=-0.044907 critic=-0.608466 reg=0.006862
+2017/08/16 19:45:10 iteration 4: actor=-0.044809 critic=-0.580203 reg=0.006867
+2017/08/16 19:45:15 iteration 5: actor=-0.044453 critic=-0.549155 reg=0.006854
+2017/08/16 19:45:19 iteration 6: actor=-0.043535 critic=-0.523498 reg=0.006847
+2017/08/16 19:45:23 iteration 7: actor=-0.042464 critic=-0.499008 reg=0.006858
+2017/08/16 19:45:28 iteration 8: actor=-0.041902 critic=-0.471983 reg=0.006857
+2017/08/16 19:45:32 iteration 9: actor=-0.041509 critic=-0.447039 reg=0.006862
+2017/08/16 19:45:32 Gathering batch of experience...
+2017/08/16 19:46:16 batch 136: mean=208.464286 count=28 error_margin=40.494283
+2017/08/16 19:46:16 Training on batch...
+2017/08/16 19:46:23 iteration 0: actor=0.098035 critic=-0.573595 reg=0.006802
+2017/08/16 19:46:29 iteration 1: actor=0.098843 critic=-0.571659 reg=0.006783
+2017/08/16 19:46:34 iteration 2: actor=0.099671 critic=-0.533683 reg=0.006819
+2017/08/16 19:46:40 iteration 3: actor=0.100116 critic=-0.513828 reg=0.006841
+2017/08/16 19:46:45 iteration 4: actor=0.100427 critic=-0.494344 reg=0.006835
+2017/08/16 19:46:51 iteration 5: actor=0.100908 critic=-0.471916 reg=0.006862
+2017/08/16 19:46:56 iteration 6: actor=0.101563 critic=-0.444787 reg=0.006873
+2017/08/16 19:47:02 iteration 7: actor=0.102409 critic=-0.426572 reg=0.006867
+2017/08/16 19:47:07 iteration 8: actor=0.103125 critic=-0.412379 reg=0.006873
+2017/08/16 19:47:13 iteration 9: actor=0.103416 critic=-0.388373 reg=0.006865
+2017/08/16 19:47:13 Gathering batch of experience...
+2017/08/16 19:47:48 batch 137: mean=154.066667 count=30 error_margin=22.088355
+2017/08/16 19:47:48 Training on batch...
+2017/08/16 19:47:53 iteration 0: actor=0.001528 critic=-0.550358 reg=0.006936
+2017/08/16 19:47:57 iteration 1: actor=0.002093 critic=-0.531740 reg=0.006929
+2017/08/16 19:48:00 iteration 2: actor=0.002888 critic=-0.506818 reg=0.006916
+2017/08/16 19:48:04 iteration 3: actor=0.003607 critic=-0.481743 reg=0.006902
+2017/08/16 19:48:08 iteration 4: actor=0.004355 critic=-0.456461 reg=0.006897
+2017/08/16 19:48:12 iteration 5: actor=0.005125 critic=-0.431791 reg=0.006889
+2017/08/16 19:48:16 iteration 6: actor=0.005651 critic=-0.404534 reg=0.006885
+2017/08/16 19:48:19 iteration 7: actor=0.006228 critic=-0.381043 reg=0.006892
+2017/08/16 19:48:23 iteration 8: actor=0.006925 critic=-0.359236 reg=0.006904
+2017/08/16 19:48:27 iteration 9: actor=0.007669 critic=-0.337109 reg=0.006920
+2017/08/16 19:48:27 Gathering batch of experience...
+2017/08/16 19:49:11 batch 138: mean=185.705882 count=34 error_margin=31.255990
+2017/08/16 19:49:11 Training on batch...
+2017/08/16 19:49:18 iteration 0: actor=-0.016153 critic=-0.551907 reg=0.006959
+2017/08/16 19:49:24 iteration 1: actor=-0.015763 critic=-0.541757 reg=0.006991
+2017/08/16 19:49:30 iteration 2: actor=-0.015033 critic=-0.522634 reg=0.007000
+2017/08/16 19:49:36 iteration 3: actor=-0.014307 critic=-0.506473 reg=0.007007
+2017/08/16 19:49:42 iteration 4: actor=-0.013651 critic=-0.487583 reg=0.007023
+2017/08/16 19:49:48 iteration 5: actor=-0.012907 critic=-0.468608 reg=0.007023
+2017/08/16 19:49:54 iteration 6: actor=-0.012230 critic=-0.449555 reg=0.007019
+2017/08/16 19:50:01 iteration 7: actor=-0.011543 critic=-0.433175 reg=0.007019
+2017/08/16 19:50:07 iteration 8: actor=-0.010943 critic=-0.414455 reg=0.007016
+2017/08/16 19:50:13 iteration 9: actor=-0.010485 critic=-0.400222 reg=0.007015
+2017/08/16 19:50:13 Gathering batch of experience...
+2017/08/16 19:50:54 batch 139: mean=160.852941 count=34 error_margin=23.767295
+2017/08/16 19:50:54 Training on batch...
+2017/08/16 19:51:00 iteration 0: actor=0.010696 critic=-0.566909 reg=0.007006
+2017/08/16 19:51:04 iteration 1: actor=0.011541 critic=-0.552881 reg=0.006997
+2017/08/16 19:51:09 iteration 2: actor=0.012792 critic=-0.529734 reg=0.006999
+2017/08/16 19:51:14 iteration 3: actor=0.013768 critic=-0.505929 reg=0.006999
+2017/08/16 19:51:18 iteration 4: actor=0.014433 critic=-0.480695 reg=0.006988
+2017/08/16 19:51:23 iteration 5: actor=0.014904 critic=-0.455363 reg=0.006987
+2017/08/16 19:51:28 iteration 6: actor=0.015332 critic=-0.431433 reg=0.006992
+2017/08/16 19:51:32 iteration 7: actor=0.015707 critic=-0.407840 reg=0.006991
+2017/08/16 19:51:37 iteration 8: actor=0.016131 critic=-0.387584 reg=0.006993
+2017/08/16 19:51:41 iteration 9: actor=0.016633 critic=-0.365815 reg=0.007001
+2017/08/16 19:51:42 Gathering batch of experience...
+2017/08/16 19:52:21 batch 140: mean=163.617647 count=34 error_margin=24.918379
+2017/08/16 19:52:21 Training on batch...
+2017/08/16 19:52:28 iteration 0: actor=-0.009612 critic=-0.598384 reg=0.006996
+2017/08/16 19:52:32 iteration 1: actor=-0.009048 critic=-0.584164 reg=0.006997
+2017/08/16 19:52:37 iteration 2: actor=-0.008069 critic=-0.558677 reg=0.006992
+2017/08/16 19:52:41 iteration 3: actor=-0.007187 critic=-0.536383 reg=0.006988
+2017/08/16 19:52:46 iteration 4: actor=-0.006403 critic=-0.512822 reg=0.006984
+2017/08/16 19:52:51 iteration 5: actor=-0.005734 critic=-0.492216 reg=0.006975
+2017/08/16 19:52:55 iteration 6: actor=-0.005014 critic=-0.469484 reg=0.006974
+2017/08/16 19:53:00 iteration 7: actor=-0.004304 critic=-0.446942 reg=0.006980
+2017/08/16 19:53:04 iteration 8: actor=-0.003775 critic=-0.426610 reg=0.006985
+2017/08/16 19:53:09 iteration 9: actor=-0.003313 critic=-0.404655 reg=0.006993
+2017/08/16 19:53:09 Gathering batch of experience...
+2017/08/16 19:53:59 batch 141: mean=203.617647 count=34 error_margin=33.686218
+2017/08/16 19:53:59 Training on batch...
+2017/08/16 19:54:07 iteration 0: actor=0.005871 critic=-0.516341 reg=0.006999
+2017/08/16 19:54:14 iteration 1: actor=0.006233 critic=-0.503418 reg=0.007010
+2017/08/16 19:54:20 iteration 2: actor=0.006918 critic=-0.486838 reg=0.007017
+2017/08/16 19:54:27 iteration 3: actor=0.007419 critic=-0.472030 reg=0.007022
+2017/08/16 19:54:33 iteration 4: actor=0.007985 critic=-0.454790 reg=0.007032
+2017/08/16 19:54:40 iteration 5: actor=0.008625 critic=-0.436321 reg=0.007035
+2017/08/16 19:54:46 iteration 6: actor=0.009272 critic=-0.419595 reg=0.007031
+2017/08/16 19:54:53 iteration 7: actor=0.009731 critic=-0.402611 reg=0.007028
+2017/08/16 19:54:59 iteration 8: actor=0.010069 critic=-0.384677 reg=0.007020
+2017/08/16 19:55:06 iteration 9: actor=0.010500 critic=-0.367118 reg=0.007004
+2017/08/16 19:55:06 Gathering batch of experience...
+2017/08/16 19:55:48 batch 142: mean=196.333333 count=30 error_margin=31.856112
+2017/08/16 19:55:48 Training on batch...
+2017/08/16 19:55:55 iteration 0: actor=0.016629 critic=-0.457408 reg=0.007006
+2017/08/16 19:56:00 iteration 1: actor=0.017340 critic=-0.446812 reg=0.006993
+2017/08/16 19:56:05 iteration 2: actor=0.017993 critic=-0.429779 reg=0.006991
+2017/08/16 19:56:10 iteration 3: actor=0.018497 critic=-0.412387 reg=0.006986
+2017/08/16 19:56:16 iteration 4: actor=0.019173 critic=-0.394261 reg=0.006977
+2017/08/16 19:56:21 iteration 5: actor=0.019981 critic=-0.375252 reg=0.006975
+2017/08/16 19:56:26 iteration 6: actor=0.020692 critic=-0.358763 reg=0.006972
+2017/08/16 19:56:32 iteration 7: actor=0.021296 critic=-0.343834 reg=0.006967
+2017/08/16 19:56:37 iteration 8: actor=0.021847 critic=-0.328820 reg=0.006970
+2017/08/16 19:56:42 iteration 9: actor=0.022343 critic=-0.313965 reg=0.006974
+2017/08/16 19:56:42 Gathering batch of experience...
+2017/08/16 19:57:26 batch 143: mean=166.562500 count=32 error_margin=29.220736
+2017/08/16 19:57:26 Training on batch...
+2017/08/16 19:57:33 iteration 0: actor=-0.044253 critic=-0.471761 reg=0.006977
+2017/08/16 19:57:38 iteration 1: actor=-0.043802 critic=-0.464477 reg=0.006995
+2017/08/16 19:57:44 iteration 2: actor=-0.043247 critic=-0.444854 reg=0.006990
+2017/08/16 19:57:49 iteration 3: actor=-0.042624 critic=-0.428883 reg=0.006989
+2017/08/16 19:57:54 iteration 4: actor=-0.041723 critic=-0.411974 reg=0.006997
+2017/08/16 19:58:00 iteration 5: actor=-0.040729 critic=-0.393557 reg=0.006990
+2017/08/16 19:58:05 iteration 6: actor=-0.040051 critic=-0.375239 reg=0.006983
+2017/08/16 19:58:10 iteration 7: actor=-0.039638 critic=-0.359699 reg=0.006985
+2017/08/16 19:58:16 iteration 8: actor=-0.039056 critic=-0.343334 reg=0.006981
+2017/08/16 19:58:21 iteration 9: actor=-0.038407 critic=-0.326509 reg=0.006983
+2017/08/16 19:58:21 Gathering batch of experience...
+2017/08/16 19:59:01 batch 144: mean=170.656250 count=32 error_margin=25.839635
+2017/08/16 19:59:01 Training on batch...
+2017/08/16 19:59:08 iteration 0: actor=0.030306 critic=-0.475180 reg=0.006953
+2017/08/16 19:59:13 iteration 1: actor=0.031009 critic=-0.459008 reg=0.006947
+2017/08/16 19:59:18 iteration 2: actor=0.031895 critic=-0.436282 reg=0.006950
+2017/08/16 19:59:22 iteration 3: actor=0.032699 critic=-0.418316 reg=0.006952
+2017/08/16 19:59:27 iteration 4: actor=0.033343 critic=-0.398814 reg=0.006945
+2017/08/16 19:59:32 iteration 5: actor=0.033960 critic=-0.374600 reg=0.006944
+2017/08/16 19:59:37 iteration 6: actor=0.034499 critic=-0.352528 reg=0.006948
+2017/08/16 19:59:42 iteration 7: actor=0.034952 critic=-0.335711 reg=0.006947
+2017/08/16 19:59:47 iteration 8: actor=0.035338 critic=-0.317643 reg=0.006949
+2017/08/16 19:59:52 iteration 9: actor=0.035754 critic=-0.299628 reg=0.006953
+2017/08/16 19:59:52 Gathering batch of experience...
+2017/08/16 20:00:36 batch 145: mean=206.483871 count=31 error_margin=34.009911
+2017/08/16 20:00:36 Training on batch...
+2017/08/16 20:00:44 iteration 0: actor=0.000134 critic=-0.422020 reg=0.007040
+2017/08/16 20:00:50 iteration 1: actor=0.000719 critic=-0.413929 reg=0.007042
+2017/08/16 20:00:56 iteration 2: actor=0.001610 critic=-0.401128 reg=0.007048
+2017/08/16 20:01:03 iteration 3: actor=0.002282 critic=-0.386614 reg=0.007055
+2017/08/16 20:01:09 iteration 4: actor=0.002882 critic=-0.372641 reg=0.007059
+2017/08/16 20:01:15 iteration 5: actor=0.003527 critic=-0.359149 reg=0.007062
+2017/08/16 20:01:21 iteration 6: actor=0.004120 critic=-0.343538 reg=0.007065
+2017/08/16 20:01:28 iteration 7: actor=0.004678 critic=-0.327873 reg=0.007067
+2017/08/16 20:01:34 iteration 8: actor=0.005080 critic=-0.312296 reg=0.007066
+2017/08/16 20:01:40 iteration 9: actor=0.005441 critic=-0.297942 reg=0.007065
+2017/08/16 20:01:40 Gathering batch of experience...
+2017/08/16 20:02:27 batch 146: mean=187.823529 count=34 error_margin=32.721972
+2017/08/16 20:02:27 Training on batch...
+2017/08/16 20:02:35 iteration 0: actor=0.015346 critic=-0.532221 reg=0.007050
+2017/08/16 20:02:41 iteration 1: actor=0.016023 critic=-0.523863 reg=0.007046
+2017/08/16 20:02:47 iteration 2: actor=0.016810 critic=-0.509335 reg=0.007045
+2017/08/16 20:02:52 iteration 3: actor=0.017250 critic=-0.493138 reg=0.007039
+2017/08/16 20:02:58 iteration 4: actor=0.017692 critic=-0.475377 reg=0.007030
+2017/08/16 20:03:04 iteration 5: actor=0.018376 critic=-0.456464 reg=0.007025
+2017/08/16 20:03:10 iteration 6: actor=0.019135 critic=-0.438469 reg=0.007016
+2017/08/16 20:03:16 iteration 7: actor=0.019852 critic=-0.420406 reg=0.007009
+2017/08/16 20:03:22 iteration 8: actor=0.020411 critic=-0.403643 reg=0.007007
+2017/08/16 20:03:28 iteration 9: actor=0.020931 critic=-0.387302 reg=0.007001
+2017/08/16 20:03:28 Gathering batch of experience...
+2017/08/16 20:04:13 batch 147: mean=197.531250 count=32 error_margin=30.583741
+2017/08/16 20:04:13 Training on batch...
+2017/08/16 20:04:20 iteration 0: actor=-0.007902 critic=-0.453668 reg=0.006969
+2017/08/16 20:04:26 iteration 1: actor=-0.007289 critic=-0.443228 reg=0.006975
+2017/08/16 20:04:31 iteration 2: actor=-0.006430 critic=-0.428819 reg=0.006977
+2017/08/16 20:04:37 iteration 3: actor=-0.005875 critic=-0.415792 reg=0.006983
+2017/08/16 20:04:43 iteration 4: actor=-0.005499 critic=-0.399389 reg=0.006997
+2017/08/16 20:04:48 iteration 5: actor=-0.005109 critic=-0.381169 reg=0.007004
+2017/08/16 20:04:54 iteration 6: actor=-0.004692 critic=-0.364257 reg=0.007008
+2017/08/16 20:05:00 iteration 7: actor=-0.004283 critic=-0.348515 reg=0.007016
+2017/08/16 20:05:05 iteration 8: actor=-0.003818 critic=-0.332838 reg=0.007018
+2017/08/16 20:05:11 iteration 9: actor=-0.003317 critic=-0.317079 reg=0.007016
+2017/08/16 20:05:11 Gathering batch of experience...
+2017/08/16 20:05:52 batch 148: mean=201.777778 count=27 error_margin=25.564536
+2017/08/16 20:05:52 Training on batch...
+2017/08/16 20:05:59 iteration 0: actor=-0.057255 critic=-0.414331 reg=0.007047
+2017/08/16 20:06:04 iteration 1: actor=-0.056815 critic=-0.412365 reg=0.007060
+2017/08/16 20:06:09 iteration 2: actor=-0.056241 critic=-0.391499 reg=0.007040
+2017/08/16 20:06:14 iteration 3: actor=-0.055716 critic=-0.379268 reg=0.007029
+2017/08/16 20:06:19 iteration 4: actor=-0.055184 critic=-0.365982 reg=0.007036
+2017/08/16 20:06:24 iteration 5: actor=-0.054594 critic=-0.347002 reg=0.007023
+2017/08/16 20:06:29 iteration 6: actor=-0.053862 critic=-0.328005 reg=0.007015
+2017/08/16 20:06:34 iteration 7: actor=-0.053159 critic=-0.313497 reg=0.007021
+2017/08/16 20:06:40 iteration 8: actor=-0.052606 critic=-0.299547 reg=0.007017
+2017/08/16 20:06:45 iteration 9: actor=-0.052157 critic=-0.284301 reg=0.007013
+2017/08/16 20:06:45 Gathering batch of experience...
+2017/08/16 20:07:27 batch 149: mean=157.062500 count=32 error_margin=22.722035
+2017/08/16 20:07:27 Training on batch...
+2017/08/16 20:07:34 iteration 0: actor=0.049112 critic=-0.489900 reg=0.006957
+2017/08/16 20:07:38 iteration 1: actor=0.049798 critic=-0.494567 reg=0.006939
+2017/08/16 20:07:43 iteration 2: actor=0.050904 critic=-0.474875 reg=0.006947
+2017/08/16 20:07:47 iteration 3: actor=0.052010 critic=-0.438980 reg=0.006938
+2017/08/16 20:07:52 iteration 4: actor=0.053028 critic=-0.422907 reg=0.006920
+2017/08/16 20:07:57 iteration 5: actor=0.053736 critic=-0.413160 reg=0.006924
+2017/08/16 20:08:01 iteration 6: actor=0.054374 critic=-0.382885 reg=0.006913
+2017/08/16 20:08:06 iteration 7: actor=0.054922 critic=-0.354113 reg=0.006903
+2017/08/16 20:08:11 iteration 8: actor=0.055475 critic=-0.342577 reg=0.006901
+2017/08/16 20:08:15 iteration 9: actor=0.056028 critic=-0.327346 reg=0.006893
+2017/08/16 20:08:15 Gathering batch of experience...
+2017/08/16 20:09:05 batch 150: mean=312.000000 count=26 error_margin=42.311503
+2017/08/16 20:09:05 Training on batch...
+2017/08/16 20:09:14 iteration 0: actor=0.065343 critic=-0.426638 reg=0.006983
+2017/08/16 20:09:22 iteration 1: actor=0.065676 critic=-0.414785 reg=0.006964
+2017/08/16 20:09:29 iteration 2: actor=0.066185 critic=-0.398923 reg=0.006981
+2017/08/16 20:09:36 iteration 3: actor=0.066452 critic=-0.390665 reg=0.006979
+2017/08/16 20:09:44 iteration 4: actor=0.066826 critic=-0.377240 reg=0.006963
+2017/08/16 20:09:51 iteration 5: actor=0.067205 critic=-0.359366 reg=0.006975
+2017/08/16 20:09:58 iteration 6: actor=0.067654 critic=-0.346021 reg=0.006964
+2017/08/16 20:10:06 iteration 7: actor=0.067972 critic=-0.334686 reg=0.006955
+2017/08/16 20:10:13 iteration 8: actor=0.068342 critic=-0.323838 reg=0.006960
+2017/08/16 20:10:20 iteration 9: actor=0.068722 critic=-0.310344 reg=0.006949
+2017/08/16 20:10:20 Gathering batch of experience...
+2017/08/16 20:11:00 batch 151: mean=190.407407 count=27 error_margin=28.334629
+2017/08/16 20:11:00 Training on batch...
+2017/08/16 20:11:06 iteration 0: actor=0.003798 critic=-0.451224 reg=0.006869
+2017/08/16 20:11:10 iteration 1: actor=0.004520 critic=-0.439566 reg=0.006875
+2017/08/16 20:11:15 iteration 2: actor=0.005559 critic=-0.417788 reg=0.006867
+2017/08/16 20:11:19 iteration 3: actor=0.005996 critic=-0.399664 reg=0.006872
+2017/08/16 20:11:24 iteration 4: actor=0.006712 critic=-0.380543 reg=0.006875
+2017/08/16 20:11:29 iteration 5: actor=0.007631 critic=-0.356140 reg=0.006870
+2017/08/16 20:11:33 iteration 6: actor=0.008450 critic=-0.335874 reg=0.006876
+2017/08/16 20:11:38 iteration 7: actor=0.008828 critic=-0.321234 reg=0.006880
+2017/08/16 20:11:42 iteration 8: actor=0.009165 critic=-0.303352 reg=0.006881
+2017/08/16 20:11:47 iteration 9: actor=0.009620 critic=-0.286373 reg=0.006889
+2017/08/16 20:11:47 Gathering batch of experience...
+2017/08/16 20:12:32 batch 152: mean=202.666667 count=33 error_margin=33.112566
+2017/08/16 20:12:32 Training on batch...
+2017/08/16 20:12:40 iteration 0: actor=-0.013738 critic=-0.452613 reg=0.006935
+2017/08/16 20:12:47 iteration 1: actor=-0.013182 critic=-0.446671 reg=0.006941
+2017/08/16 20:12:53 iteration 2: actor=-0.012766 critic=-0.429463 reg=0.006938
+2017/08/16 20:12:59 iteration 3: actor=-0.012214 critic=-0.411810 reg=0.006941
+2017/08/16 20:13:06 iteration 4: actor=-0.011669 critic=-0.395821 reg=0.006939
+2017/08/16 20:13:12 iteration 5: actor=-0.011002 critic=-0.378768 reg=0.006934
+2017/08/16 20:13:18 iteration 6: actor=-0.010377 critic=-0.361023 reg=0.006938
+2017/08/16 20:13:25 iteration 7: actor=-0.009795 critic=-0.345822 reg=0.006935
+2017/08/16 20:13:31 iteration 8: actor=-0.009439 critic=-0.333178 reg=0.006933
+2017/08/16 20:13:37 iteration 9: actor=-0.009065 critic=-0.318916 reg=0.006938
+2017/08/16 20:13:37 Gathering batch of experience...
+2017/08/16 20:14:18 batch 153: mean=204.821429 count=28 error_margin=25.354681
+2017/08/16 20:14:18 Training on batch...
+2017/08/16 20:14:24 iteration 0: actor=-0.016961 critic=-0.436817 reg=0.006961
+2017/08/16 20:14:29 iteration 1: actor=-0.016306 critic=-0.426958 reg=0.006959
+2017/08/16 20:14:34 iteration 2: actor=-0.015313 critic=-0.410743 reg=0.006957
+2017/08/16 20:14:39 iteration 3: actor=-0.014425 critic=-0.393470 reg=0.006945
+2017/08/16 20:14:44 iteration 4: actor=-0.013656 critic=-0.376338 reg=0.006934
+2017/08/16 20:14:49 iteration 5: actor=-0.012929 critic=-0.358293 reg=0.006922
+2017/08/16 20:14:53 iteration 6: actor=-0.012292 critic=-0.341084 reg=0.006904
+2017/08/16 20:14:58 iteration 7: actor=-0.011799 critic=-0.326574 reg=0.006888
+2017/08/16 20:15:03 iteration 8: actor=-0.011306 critic=-0.312536 reg=0.006882
+2017/08/16 20:15:08 iteration 9: actor=-0.010706 critic=-0.298204 reg=0.006875
+2017/08/16 20:15:08 Gathering batch of experience...
+2017/08/16 20:15:53 batch 154: mean=201.151515 count=33 error_margin=29.240591
+2017/08/16 20:15:53 Training on batch...
+2017/08/16 20:16:01 iteration 0: actor=0.022113 critic=-0.506318 reg=0.006790
+2017/08/16 20:16:06 iteration 1: actor=0.022869 critic=-0.503665 reg=0.006786
+2017/08/16 20:16:12 iteration 2: actor=0.023515 critic=-0.488748 reg=0.006797
+2017/08/16 20:16:17 iteration 3: actor=0.024308 critic=-0.467886 reg=0.006791
+2017/08/16 20:16:23 iteration 4: actor=0.025137 critic=-0.451432 reg=0.006792
+2017/08/16 20:16:29 iteration 5: actor=0.025980 critic=-0.436183 reg=0.006802
+2017/08/16 20:16:34 iteration 6: actor=0.026678 critic=-0.416411 reg=0.006797
+2017/08/16 20:16:40 iteration 7: actor=0.026991 critic=-0.397303 reg=0.006802
+2017/08/16 20:16:45 iteration 8: actor=0.027186 critic=-0.383095 reg=0.006807
+2017/08/16 20:16:51 iteration 9: actor=0.027540 critic=-0.368859 reg=0.006801
+2017/08/16 20:16:51 Gathering batch of experience...
+2017/08/16 20:17:32 batch 155: mean=201.827586 count=29 error_margin=29.068743
+2017/08/16 20:17:32 Training on batch...
+2017/08/16 20:17:39 iteration 0: actor=0.022592 critic=-0.445125 reg=0.006869
+2017/08/16 20:17:44 iteration 1: actor=0.023313 critic=-0.433106 reg=0.006866
+2017/08/16 20:17:50 iteration 2: actor=0.024007 critic=-0.419124 reg=0.006860
+2017/08/16 20:17:55 iteration 3: actor=0.024542 critic=-0.399285 reg=0.006864
+2017/08/16 20:18:00 iteration 4: actor=0.025257 critic=-0.376416 reg=0.006855
+2017/08/16 20:18:05 iteration 5: actor=0.026059 critic=-0.359634 reg=0.006851
+2017/08/16 20:18:10 iteration 6: actor=0.026663 critic=-0.346037 reg=0.006854
+2017/08/16 20:18:15 iteration 7: actor=0.027138 critic=-0.329120 reg=0.006846
+2017/08/16 20:18:21 iteration 8: actor=0.027622 critic=-0.313896 reg=0.006851
+2017/08/16 20:18:26 iteration 9: actor=0.028170 critic=-0.302158 reg=0.006856
+2017/08/16 20:18:26 Gathering batch of experience...
+2017/08/16 20:19:10 batch 156: mean=232.851852 count=27 error_margin=41.014257
+2017/08/16 20:19:10 Training on batch...
+2017/08/16 20:19:18 iteration 0: actor=0.012517 critic=-0.432467 reg=0.006843
+2017/08/16 20:19:24 iteration 1: actor=0.013019 critic=-0.424007 reg=0.006840
+2017/08/16 20:19:30 iteration 2: actor=0.013763 critic=-0.409277 reg=0.006859
+2017/08/16 20:19:36 iteration 3: actor=0.014323 critic=-0.393345 reg=0.006858
+2017/08/16 20:19:41 iteration 4: actor=0.014953 critic=-0.370263 reg=0.006860
+2017/08/16 20:19:47 iteration 5: actor=0.015526 critic=-0.350410 reg=0.006864
+2017/08/16 20:19:53 iteration 6: actor=0.016110 critic=-0.335182 reg=0.006862
+2017/08/16 20:19:59 iteration 7: actor=0.016621 critic=-0.316670 reg=0.006869
+2017/08/16 20:20:05 iteration 8: actor=0.016959 critic=-0.299153 reg=0.006865
+2017/08/16 20:20:11 iteration 9: actor=0.017309 critic=-0.285674 reg=0.006868
+2017/08/16 20:20:11 Gathering batch of experience...
+2017/08/16 20:20:55 batch 157: mean=255.296296 count=27 error_margin=46.867025
+2017/08/16 20:20:55 Training on batch...
+2017/08/16 20:21:03 iteration 0: actor=-0.004345 critic=-0.429896 reg=0.006873
+2017/08/16 20:21:10 iteration 1: actor=-0.003886 critic=-0.424853 reg=0.006886
+2017/08/16 20:21:16 iteration 2: actor=-0.003329 critic=-0.411005 reg=0.006870
+2017/08/16 20:21:23 iteration 3: actor=-0.002663 critic=-0.390829 reg=0.006884
+2017/08/16 20:21:29 iteration 4: actor=-0.002214 critic=-0.372119 reg=0.006895
+2017/08/16 20:21:35 iteration 5: actor=-0.001928 critic=-0.359240 reg=0.006898
+2017/08/16 20:21:42 iteration 6: actor=-0.001411 critic=-0.345601 reg=0.006918
+2017/08/16 20:21:48 iteration 7: actor=-0.000910 critic=-0.329964 reg=0.006926
+2017/08/16 20:21:55 iteration 8: actor=-0.000500 critic=-0.316934 reg=0.006936
+2017/08/16 20:22:01 iteration 9: actor=-0.000492 critic=-0.306478 reg=0.006946
+2017/08/16 20:22:01 Gathering batch of experience...
+2017/08/16 20:22:50 batch 158: mean=230.656250 count=32 error_margin=37.281934
+2017/08/16 20:22:50 Training on batch...
+2017/08/16 20:22:59 iteration 0: actor=-0.020577 critic=-0.464353 reg=0.006951
+2017/08/16 20:23:06 iteration 1: actor=-0.019839 critic=-0.453449 reg=0.006953
+2017/08/16 20:23:13 iteration 2: actor=-0.019122 critic=-0.438456 reg=0.006960
+2017/08/16 20:23:19 iteration 3: actor=-0.018607 critic=-0.419493 reg=0.006951
+2017/08/16 20:23:26 iteration 4: actor=-0.018273 critic=-0.397955 reg=0.006951
+2017/08/16 20:23:33 iteration 5: actor=-0.017895 critic=-0.378931 reg=0.006952
+2017/08/16 20:23:40 iteration 6: actor=-0.017393 critic=-0.363767 reg=0.006946
+2017/08/16 20:23:46 iteration 7: actor=-0.016851 critic=-0.348791 reg=0.006945
+2017/08/16 20:23:53 iteration 8: actor=-0.016297 critic=-0.332627 reg=0.006945
+2017/08/16 20:24:00 iteration 9: actor=-0.015912 critic=-0.319124 reg=0.006946
+2017/08/16 20:24:00 Gathering batch of experience...
+2017/08/16 20:24:42 batch 159: mean=178.766667 count=30 error_margin=24.810512
+2017/08/16 20:24:42 Training on batch...
+2017/08/16 20:24:48 iteration 0: actor=-0.028445 critic=-0.414069 reg=0.006954
+2017/08/16 20:24:53 iteration 1: actor=-0.027984 critic=-0.407852 reg=0.006964
+2017/08/16 20:24:59 iteration 2: actor=-0.026998 critic=-0.391180 reg=0.006945
+2017/08/16 20:25:04 iteration 3: actor=-0.026111 critic=-0.375096 reg=0.006935
+2017/08/16 20:25:09 iteration 4: actor=-0.025542 critic=-0.356070 reg=0.006932
+2017/08/16 20:25:14 iteration 5: actor=-0.024924 critic=-0.337829 reg=0.006912
+2017/08/16 20:25:19 iteration 6: actor=-0.024313 critic=-0.322595 reg=0.006898
+2017/08/16 20:25:24 iteration 7: actor=-0.023743 critic=-0.304244 reg=0.006890
+2017/08/16 20:25:29 iteration 8: actor=-0.023188 critic=-0.289123 reg=0.006877
+2017/08/16 20:25:35 iteration 9: actor=-0.022712 critic=-0.276803 reg=0.006867
+2017/08/16 20:25:35 Gathering batch of experience...
+2017/08/16 20:26:15 batch 160: mean=182.935484 count=31 error_margin=27.167915
+2017/08/16 20:26:15 Training on batch...
+2017/08/16 20:26:22 iteration 0: actor=0.003946 critic=-0.398537 reg=0.006877
+2017/08/16 20:26:28 iteration 1: actor=0.004408 critic=-0.393553 reg=0.006877
+2017/08/16 20:26:33 iteration 2: actor=0.005349 critic=-0.382318 reg=0.006887
+2017/08/16 20:26:39 iteration 3: actor=0.006098 critic=-0.366332 reg=0.006894
+2017/08/16 20:26:44 iteration 4: actor=0.006700 critic=-0.352585 reg=0.006906
+2017/08/16 20:26:50 iteration 5: actor=0.007259 critic=-0.339806 reg=0.006917
+2017/08/16 20:26:55 iteration 6: actor=0.007781 critic=-0.322762 reg=0.006922
+2017/08/16 20:27:01 iteration 7: actor=0.008397 critic=-0.306301 reg=0.006932
+2017/08/16 20:27:06 iteration 8: actor=0.008922 critic=-0.293309 reg=0.006938
+2017/08/16 20:27:12 iteration 9: actor=0.009223 critic=-0.278132 reg=0.006941
+2017/08/16 20:27:12 Gathering batch of experience...
+2017/08/16 20:27:54 batch 161: mean=245.076923 count=26 error_margin=30.097471
+2017/08/16 20:27:54 Training on batch...
+2017/08/16 20:28:01 iteration 0: actor=0.023036 critic=-0.406608 reg=0.006948
+2017/08/16 20:28:07 iteration 1: actor=0.023756 critic=-0.398926 reg=0.006946
+2017/08/16 20:28:12 iteration 2: actor=0.024586 critic=-0.384174 reg=0.006958
+2017/08/16 20:28:17 iteration 3: actor=0.025139 critic=-0.368189 reg=0.006972
+2017/08/16 20:28:23 iteration 4: actor=0.025424 critic=-0.351378 reg=0.006974
+2017/08/16 20:28:28 iteration 5: actor=0.025768 critic=-0.334271 reg=0.006992
+2017/08/16 20:28:33 iteration 6: actor=0.026244 critic=-0.319534 reg=0.007010
+2017/08/16 20:28:39 iteration 7: actor=0.026819 critic=-0.304935 reg=0.007016
+2017/08/16 20:28:44 iteration 8: actor=0.027367 critic=-0.289689 reg=0.007033
+2017/08/16 20:28:49 iteration 9: actor=0.027884 critic=-0.276119 reg=0.007044
+2017/08/16 20:28:49 Gathering batch of experience...
+2017/08/16 20:29:34 batch 162: mean=195.781250 count=32 error_margin=33.500225
+2017/08/16 20:29:34 Training on batch...
+2017/08/16 20:29:42 iteration 0: actor=-0.031477 critic=-0.414402 reg=0.006973
+2017/08/16 20:29:48 iteration 1: actor=-0.031066 critic=-0.402573 reg=0.006985
+2017/08/16 20:29:54 iteration 2: actor=-0.030196 critic=-0.386090 reg=0.006995
+2017/08/16 20:30:00 iteration 3: actor=-0.029447 critic=-0.373469 reg=0.007000
+2017/08/16 20:30:06 iteration 4: actor=-0.028842 critic=-0.357760 reg=0.007016
+2017/08/16 20:30:11 iteration 5: actor=-0.028231 critic=-0.340489 reg=0.007025
+2017/08/16 20:30:17 iteration 6: actor=-0.027640 critic=-0.324412 reg=0.007033
+2017/08/16 20:30:23 iteration 7: actor=-0.027120 critic=-0.307857 reg=0.007047
+2017/08/16 20:30:29 iteration 8: actor=-0.026696 critic=-0.292759 reg=0.007050
+2017/08/16 20:30:35 iteration 9: actor=-0.026350 critic=-0.277982 reg=0.007054
+2017/08/16 20:30:36 Gathering batch of experience...
+2017/08/16 20:31:20 batch 163: mean=240.678571 count=28 error_margin=45.348201
+2017/08/16 20:31:20 Training on batch...
+2017/08/16 20:31:29 iteration 0: actor=0.043456 critic=-0.450304 reg=0.007100
+2017/08/16 20:31:35 iteration 1: actor=0.044445 critic=-0.433947 reg=0.007091
+2017/08/16 20:31:41 iteration 2: actor=0.044947 critic=-0.414475 reg=0.007093
+2017/08/16 20:31:47 iteration 3: actor=0.045385 critic=-0.400510 reg=0.007090
+2017/08/16 20:31:53 iteration 4: actor=0.046122 critic=-0.383266 reg=0.007086
+2017/08/16 20:32:00 iteration 5: actor=0.046971 critic=-0.364254 reg=0.007085
+2017/08/16 20:32:06 iteration 6: actor=0.047625 critic=-0.348689 reg=0.007084
+2017/08/16 20:32:12 iteration 7: actor=0.048128 critic=-0.333149 reg=0.007088
+2017/08/16 20:32:18 iteration 8: actor=0.048468 critic=-0.316839 reg=0.007093
+2017/08/16 20:32:25 iteration 9: actor=0.048696 critic=-0.303447 reg=0.007100
+2017/08/16 20:32:25 Gathering batch of experience...
+2017/08/16 20:33:12 batch 164: mean=186.542857 count=35 error_margin=34.345504
+2017/08/16 20:33:12 Training on batch...
+2017/08/16 20:33:20 iteration 0: actor=-0.008068 critic=-0.393214 reg=0.007160
+2017/08/16 20:33:26 iteration 1: actor=-0.007607 critic=-0.380378 reg=0.007166
+2017/08/16 20:33:32 iteration 2: actor=-0.006804 critic=-0.365269 reg=0.007161
+2017/08/16 20:33:38 iteration 3: actor=-0.006158 critic=-0.355265 reg=0.007164
+2017/08/16 20:33:44 iteration 4: actor=-0.005523 critic=-0.341987 reg=0.007169
+2017/08/16 20:33:50 iteration 5: actor=-0.004751 critic=-0.324701 reg=0.007171
+2017/08/16 20:33:57 iteration 6: actor=-0.004083 critic=-0.309361 reg=0.007182
+2017/08/16 20:34:03 iteration 7: actor=-0.003611 critic=-0.294866 reg=0.007185
+2017/08/16 20:34:09 iteration 8: actor=-0.003198 critic=-0.279442 reg=0.007182
+2017/08/16 20:34:15 iteration 9: actor=-0.002768 critic=-0.266750 reg=0.007180
+2017/08/16 20:34:15 Gathering batch of experience...
+2017/08/16 20:34:50 batch 165: mean=160.866667 count=30 error_margin=19.842420
+2017/08/16 20:34:50 Training on batch...
+2017/08/16 20:34:56 iteration 0: actor=-0.024205 critic=-0.389051 reg=0.007243
+2017/08/16 20:35:00 iteration 1: actor=-0.023675 critic=-0.378975 reg=0.007253
+2017/08/16 20:35:04 iteration 2: actor=-0.022859 critic=-0.357620 reg=0.007246
+2017/08/16 20:35:08 iteration 3: actor=-0.022146 critic=-0.339540 reg=0.007249
+2017/08/16 20:35:12 iteration 4: actor=-0.021407 critic=-0.324167 reg=0.007255
+2017/08/16 20:35:16 iteration 5: actor=-0.020667 critic=-0.304238 reg=0.007243
+2017/08/16 20:35:20 iteration 6: actor=-0.020046 critic=-0.284873 reg=0.007243
+2017/08/16 20:35:25 iteration 7: actor=-0.019405 critic=-0.271130 reg=0.007248
+2017/08/16 20:35:29 iteration 8: actor=-0.018857 critic=-0.258334 reg=0.007246
+2017/08/16 20:35:33 iteration 9: actor=-0.018440 critic=-0.242789 reg=0.007253
+2017/08/16 20:35:33 Gathering batch of experience...
+2017/08/16 20:36:15 batch 166: mean=128.500000 count=40 error_margin=23.184289
+2017/08/16 20:36:15 Training on batch...
+2017/08/16 20:36:22 iteration 0: actor=-0.022906 critic=-0.504775 reg=0.007192
+2017/08/16 20:36:27 iteration 1: actor=-0.022039 critic=-0.496074 reg=0.007196
+2017/08/16 20:36:33 iteration 2: actor=-0.020786 critic=-0.473652 reg=0.007180
+2017/08/16 20:36:38 iteration 3: actor=-0.019964 critic=-0.453107 reg=0.007169
+2017/08/16 20:36:44 iteration 4: actor=-0.019148 critic=-0.430459 reg=0.007168
+2017/08/16 20:36:49 iteration 5: actor=-0.018307 critic=-0.405634 reg=0.007157
+2017/08/16 20:36:55 iteration 6: actor=-0.017665 critic=-0.381644 reg=0.007154
+2017/08/16 20:37:00 iteration 7: actor=-0.017243 critic=-0.357603 reg=0.007160
+2017/08/16 20:37:06 iteration 8: actor=-0.016783 critic=-0.336142 reg=0.007157
+2017/08/16 20:37:11 iteration 9: actor=-0.016288 critic=-0.314841 reg=0.007157
+2017/08/16 20:37:11 Gathering batch of experience...
+2017/08/16 20:37:56 batch 167: mean=229.777778 count=27 error_margin=37.041901
+2017/08/16 20:37:56 Training on batch...
+2017/08/16 20:38:03 iteration 0: actor=0.038760 critic=-0.456261 reg=0.007218
+2017/08/16 20:38:09 iteration 1: actor=0.039504 critic=-0.453117 reg=0.007202
+2017/08/16 20:38:15 iteration 2: actor=0.040235 critic=-0.438905 reg=0.007216
+2017/08/16 20:38:21 iteration 3: actor=0.040846 critic=-0.417630 reg=0.007208
+2017/08/16 20:38:27 iteration 4: actor=0.041580 critic=-0.397274 reg=0.007202
+2017/08/16 20:38:33 iteration 5: actor=0.042282 critic=-0.380816 reg=0.007204
+2017/08/16 20:38:39 iteration 6: actor=0.042866 critic=-0.364822 reg=0.007191
+2017/08/16 20:38:45 iteration 7: actor=0.043413 critic=-0.344341 reg=0.007185
+2017/08/16 20:38:51 iteration 8: actor=0.043810 critic=-0.323612 reg=0.007174
+2017/08/16 20:38:57 iteration 9: actor=0.044178 critic=-0.309009 reg=0.007168
+2017/08/16 20:38:57 Gathering batch of experience...
