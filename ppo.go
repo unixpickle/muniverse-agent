@@ -8,7 +8,6 @@ import (
 	"sync"
 
 	"github.com/unixpickle/anydiff/anyseq"
-	"github.com/unixpickle/anynet"
 	"github.com/unixpickle/anynet/anysgd"
 	"github.com/unixpickle/anyrl"
 	"github.com/unixpickle/anyrl/anypg"
@@ -162,8 +161,7 @@ func gatherPPORollouts(flags *PPOFlags, spec *EnvSpec,
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			creator := anynet.AllParameters(roller.Block)[0].Vector.Creator()
-			env := NewEnv(creator, &flags.TrainingFlags, spec)
+			env := NewEnv(&flags.TrainingFlags, spec)
 			defer env.RawEnv.Close()
 			for _ = range requests {
 				rollout, err := roller.Rollout(env)

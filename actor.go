@@ -4,7 +4,6 @@ import (
 	"math"
 
 	"github.com/unixpickle/anyrl"
-	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse/chrome"
 )
@@ -39,13 +38,13 @@ type Actor interface {
 
 	// Events converts a sampled action vector to
 	// muniverse events.
-	Events(actVec anyvec.Vector) []interface{}
+	Events(actVec []float64) []interface{}
 
 	// Vectorize performs the pseudo-inverse of Events.
 	// If no action vector could produce the events, a
 	// reasonable vector should be chosen which would
 	// produce some of the events.
-	Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector
+	Vectorize(events []interface{}) []float64
 }
 
 // KeyActor is an Actor which produces keyboard events
@@ -85,14 +84,11 @@ func (k *KeyActor) Reset() {
 }
 
 // Events generates key events.
-func (k *KeyActor) Events(vec anyvec.Vector) []interface{} {
+func (k *KeyActor) Events(vec []float64) []interface{} {
 	var events []interface{}
 
-	ops := vec.Creator().NumOps()
-	thresh := vec.Creator().MakeNumeric(0.5)
-
 	for i, keyName := range k.Keys {
-		press := ops.Greater(anyvec.Sum(vec.Slice(i, i+1)), thresh)
+		press := vec[i] > 0.5
 		if k.NoHold && press {
 			evt := chrome.KeyEvents[keyName]
 			evt1 := evt
@@ -115,7 +111,7 @@ func (k *KeyActor) Events(vec anyvec.Vector) []interface{} {
 }
 
 // Vectorize generates a vector for the key events.
-func (k *KeyActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector {
+func (k *KeyActor) Vectorize(events []interface{}) []float64 {
 	if k.NoHold {
 		k.pressed = map[string]bool{}
 	}
@@ -141,7 +137,7 @@ func (k *KeyActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vect
 			}
 		}
 	}
-	return c.MakeVectorData(c.MakeNumericList(vector))
+	return vector
 }
 
 // TapActor is an Actor which allows the agent to tap the
@@ -174,12 +170,10 @@ func (t *TapActor) Reset() {
 }
 
 // Events generates mouse events.
-func (t *TapActor) Events(vec anyvec.Vector) []interface{} {
+func (t *TapActor) Events(vec []float64) []interface{} {
 	var events []interface{}
 
-	ops := vec.Creator().NumOps()
-	thresh := vec.Creator().MakeNumeric(0.5)
-	press := ops.Greater(anyvec.Sum(vec.Slice(0, 1)), thresh)
+	press := vec[0] > 0.5
 
 	if t.NoHold && press {
 		evt := chrome.MouseEvent{
@@ -211,7 +205,7 @@ func (t *TapActor) Events(vec anyvec.Vector) []interface{} {
 }
 
 // Vectorize generates a vector for the mouse events.
-func (t *TapActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector {
+func (t *TapActor) Vectorize(events []interface{}) []float64 {
 	if t.NoHold {
 		t.pressed = false
 	}
@@ -232,7 +226,7 @@ func (t *TapActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vect
 	if t.pressed {
 		vec[0] = 1
 	}
-	return c.MakeVectorData(c.MakeNumericList(vec))
+	return vec
 }
 
 // MouseActor is an Actor which allows the agent to make
@@ -296,13 +290,11 @@ func (m *MouseActor) Reset() {
 }
 
 // Events generates mouse events.
-func (m *MouseActor) Events(vec anyvec.Vector) []interface{} {
+func (m *MouseActor) Events(vec []float64) []interface{} {
 	var events []interface{}
 
-	ops := vec.Creator().NumOps()
-	thresh := vec.Creator().MakeNumeric(0.5)
-	press := ops.Greater(anyvec.Sum(vec.Slice(0, 1)), thresh)
-	x, y := m.mouseCoords(vec.Slice(1, vec.Len()))
+	press := vec[0] > 0.5
+	x, y := m.mouseCoords(vec[1:])
 
 	if m.NoHold && press {
 		evt := chrome.MouseEvent{
@@ -349,7 +341,7 @@ func (m *MouseActor) Events(vec anyvec.Vector) []interface{} {
 }
 
 // Vectorize generates a vector for the mouse events.
-func (m *MouseActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Vector {
+func (m *MouseActor) Vectorize(events []interface{}) []float64 {
 	newX := m.lastX
 	newY := m.lastY
 	for _, event := range events {
@@ -384,25 +376,21 @@ func (m *MouseActor) Vectorize(c anyvec.Creator, events []interface{}) anyvec.Ve
 	if m.pressed {
 		vec[0] = 1
 	}
-	return c.MakeVectorData(c.MakeNumericList(vec))
+	return vec
 }
 
-func (m *MouseActor) mouseCoords(vec anyvec.Vector) (x, y int) {
+func (m *MouseActor) mouseCoords(vec []float64) (x, y int) {
 	if m.Discrete {
-		idx := anyvec.MaxIndex(vec)
-		offset := m.options()[idx]
-		x = m.lastX + offset[0]
-		y = m.lastY + offset[1]
-	} else {
-		var fx, fy float64
-		switch data := vec.Data().(type) {
-		case []float32:
-			fx, fy = float64(data[0]), float64(data[1])
-		case []float64:
-			fx, fy = data[0], data[1]
-		default:
-			panic("unsupported numeric type")
+		for i, val := range vec {
+			if val != 0 {
+				offset := m.options()[i]
+				x = m.lastX + offset[0]
+				y = m.lastY + offset[1]
+				break
+			}
 		}
+	} else {
+		fx, fy := vec[0], vec[1]
 		x = m.lastX + int(essentials.Round(float64(m.Width)*fx/4))
 		y = m.lastY + int(essentials.Round(float64(m.Height)*fy/4))
 	}

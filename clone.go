@@ -184,8 +184,8 @@ func (t *Trainer) Fetch(s anysgd.SampleList) (batch anysgd.Batch, err error) {
 		obsJoiners[i] = &ObsJoiner{HistorySize: t.Spec.HistorySize}
 	}
 	for i := 0; true; i++ {
-		var inVecs []anyvec.Vector
-		var outVecs []anyvec.Vector
+		var inVecs []float64
+		var outVecs []float64
 		var present []bool
 		for j, recording := range recordings {
 			pres := i < recording.NumSteps()
@@ -201,26 +201,26 @@ func (t *Trainer) Fetch(s anysgd.SampleList) (batch anysgd.Batch, err error) {
 			if err != nil {
 				return nil, err
 			}
-			vec, err := t.Spec.Observer.ObsVec(t.creator(), obs)
+			vec, err := t.Spec.Observer.ObsVec(obs)
 			if err != nil {
 				return nil, err
 			}
 			if i == 0 {
 				obsJoiners[j].Reset(vec)
 			}
-			inVecs = append(inVecs, obsJoiners[j].Step(vec))
-			vec = actors[j].Vectorize(t.creator(), step.Events)
-			outVecs = append(outVecs, vec)
+			inVecs = append(inVecs, obsJoiners[j].Step(vec)...)
+			vec = actors[j].Vectorize(step.Events)
+			outVecs = append(outVecs, vec...)
 		}
 		if len(inVecs) == 0 {
 			break
 		}
 		inWriter <- &anyseq.Batch{
-			Packed:  t.creator().Concat(inVecs...),
+			Packed:  anyvec.Make(t.creator(), inVecs),
 			Present: present,
 		}
 		outWriter <- &anyseq.Batch{
-			Packed:  t.creator().Concat(outVecs...),
+			Packed:  anyvec.Make(t.creator(), outVecs),
 			Present: present,
 		}
 	}

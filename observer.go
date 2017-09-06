@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
 )
@@ -12,8 +11,8 @@ type Observer interface {
 	// ObsSize returns the output tensor size.
 	ObsSize() (width, height, depth int)
 
-	// ObsVec creates a packed tensor.
-	ObsVec(c anyvec.Creator, obs muniverse.Obs) (anyvec.Vector, error)
+	// ObsVec vectorizes the observation.
+	ObsVec(obs muniverse.Obs) ([]float64, error)
 }
 
 // A DownsampleObserver downsamples an image and converts
@@ -47,8 +46,7 @@ func (d *DownsampleObserver) ObsSize() (width, height, depth int) {
 
 // ObsVec downsamples the image and converts it to a
 // tensor.
-func (d *DownsampleObserver) ObsVec(c anyvec.Creator,
-	obs muniverse.Obs) (anyvec.Vector, error) {
+func (d *DownsampleObserver) ObsVec(obs muniverse.Obs) ([]float64, error) {
 	buffer, _, _, err := muniverse.RGB(obs)
 	if err != nil {
 		return nil, err
@@ -71,7 +69,7 @@ func (d *DownsampleObserver) ObsVec(c anyvec.Creator,
 			}
 		}
 	}
-	return c.MakeVectorData(c.MakeNumericList(data)), nil
+	return data, nil
 }
 
 // An AverageObserver scales down observation images by
@@ -100,8 +98,7 @@ func (a *AverageObserver) ObsSize() (width, height, depth int) {
 
 // ObsVec downsamples the image and converts it to a
 // tensor.
-func (a *AverageObserver) ObsVec(c anyvec.Creator,
-	obs muniverse.Obs) (anyvec.Vector, error) {
+func (a *AverageObserver) ObsVec(obs muniverse.Obs) ([]float64, error) {
 	buffer, _, _, err := muniverse.RGB(obs)
 	if err != nil {
 		return nil, err
@@ -140,39 +137,42 @@ func (a *AverageObserver) ObsVec(c anyvec.Creator,
 			}
 		}
 	}
-	return c.MakeVectorData(c.MakeNumericList(data)), nil
+	return data, nil
 }
 
 // An ObsJoiner joins together a history of observations.
 type ObsJoiner struct {
 	HistorySize int
 
-	hist []anyvec.Vector
+	hist [][]float64
 }
 
 // Reset fills the history with the given frame.
-func (o *ObsJoiner) Reset(obs anyvec.Vector) {
-	o.hist = make([]anyvec.Vector, o.HistorySize)
+func (o *ObsJoiner) Reset(obs []float64) {
+	o.hist = make([][]float64, o.HistorySize)
 	for i := range o.hist {
-		o.hist[i] = obs.Copy()
+		o.hist[i] = append([]float64{}, obs...)
 	}
 }
 
 // Step updates the history with the new observation and
 // returns the latest joined observation.
-func (o *ObsJoiner) Step(obs anyvec.Vector) anyvec.Vector {
+func (o *ObsJoiner) Step(obs []float64) []float64 {
 	joined := joinFrames(o.hist, obs)
 	if len(o.hist) > 0 {
 		copy(o.hist, o.hist[1:])
-		o.hist[len(o.hist)-1] = obs.Copy()
+		o.hist[len(o.hist)-1] = append([]float64{}, obs...)
 	}
 	return joined
 }
 
-func joinFrames(hist []anyvec.Vector, current anyvec.Vector) anyvec.Vector {
-	allFrames := append(append([]anyvec.Vector{}, hist...), current)
-	joined := current.Creator().Concat(allFrames...)
-	res := joined.Creator().MakeVector(joined.Len())
-	anyvec.Transpose(joined, res, len(allFrames))
+func joinFrames(hist [][]float64, current []float64) []float64 {
+	allFrames := append(append([][]float64{}, hist...), current)
+	var res []float64
+	for idx := range current {
+		for _, frame := range allFrames {
+			res = append(res, frame[idx])
+		}
+	}
 	return res
 }

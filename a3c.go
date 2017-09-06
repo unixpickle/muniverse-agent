@@ -49,7 +49,7 @@ func A3C(c anyvec.Creator, args []string) {
 	log.Println("Initializing environments...")
 	var environments []anyrl.Env
 	for i := 0; i < flags.NumParallel; i++ {
-		e := NewEnv(c, &flags.TrainingFlags, spec)
+		e := NewEnv(&flags.TrainingFlags, spec)
 		defer e.RawEnv.Close()
 		environments = append(environments, e)
 	}
@@ -59,6 +59,7 @@ func A3C(c anyvec.Creator, args []string) {
 	defer paramServer.Close()
 
 	a3c := &anya3c.A3C{
+		Creator:     c,
 		ParamServer: paramServer,
 		Logger: &anya3c.AvgLogger{
 			Creator: c,

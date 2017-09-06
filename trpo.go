@@ -111,8 +111,7 @@ func gatherTRPORollouts(flags *TrainingFlags, spec *EnvSpec,
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			creator := anynet.AllParameters(roller.Block)[0].Vector.Creator()
-			env := NewEnv(creator, flags, spec)
+			env := NewEnv(flags, spec)
 			defer env.RawEnv.Close()
 			for _ = range requests {
 				rollout, err := roller.Rollout(env)

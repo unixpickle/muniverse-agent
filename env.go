@@ -3,14 +3,12 @@ package main
 import (
 	"time"
 
-	"github.com/unixpickle/anyvec"
 	"github.com/unixpickle/essentials"
 	"github.com/unixpickle/muniverse"
 )
 
 // An Env is an anyrl.Env which wraps a muniverse.Env.
 type Env struct {
-	Creator     anyvec.Creator
 	RawEnv      muniverse.Env
 	Actor       Actor
 	Observer    Observer
@@ -28,7 +26,7 @@ type Env struct {
 //
 // It is the caller's responsibility to close RawEnv once
 // it is done using the environment.
-func NewEnv(c anyvec.Creator, flags *TrainingFlags, spec *EnvSpec) *Env {
+func NewEnv(flags *TrainingFlags, spec *EnvSpec) *Env {
 	opts := &muniverse.Options{}
 	if flags.ImageName != "" {
 		opts.CustomImage = flags.ImageName
@@ -54,7 +52,6 @@ func NewEnv(c anyvec.Creator, flags *TrainingFlags, spec *EnvSpec) *Env {
 		env = muniverse.RecordEnv(env, flags.RecordDir)
 	}
 	return &Env{
-		Creator:     c,
 		RawEnv:      env,
 		Actor:       spec.MakeActor(),
 		Observer:    spec.Observer,
@@ -66,7 +63,7 @@ func NewEnv(c anyvec.Creator, flags *TrainingFlags, spec *EnvSpec) *Env {
 }
 
 // Reset resets the environment.
-func (e *Env) Reset() (obs anyvec.Vector, err error) {
+func (e *Env) Reset() (obs []float64, err error) {
 	defer essentials.AddCtxTo("reset", &err)
 
 	e.Actor.Reset()
@@ -81,7 +78,7 @@ func (e *Env) Reset() (obs anyvec.Vector, err error) {
 	if err != nil {
 		return
 	}
-	obsVec, err := e.Observer.ObsVec(e.Creator, rawObs)
+	obsVec, err := e.Observer.ObsVec(rawObs)
 	if err != nil {
 		return
 	}
@@ -92,7 +89,7 @@ func (e *Env) Reset() (obs anyvec.Vector, err error) {
 }
 
 // Step takes a step in the environment.
-func (e *Env) Step(action anyvec.Vector) (obs anyvec.Vector, reward float64,
+func (e *Env) Step(action []float64) (obs []float64, reward float64,
 	done bool, err error) {
 	events := e.Actor.Events(action)
 	reward, done, err = e.RawEnv.Step(e.FrameTime, events...)
@@ -107,7 +104,7 @@ func (e *Env) Step(action anyvec.Vector) (obs anyvec.Vector, reward float64,
 	if err != nil {
 		return
 	}
-	obsVec, err := e.Observer.ObsVec(e.Creator, rawObs)
+	obsVec, err := e.Observer.ObsVec(rawObs)
 	if err != nil {
 		return
 	}
