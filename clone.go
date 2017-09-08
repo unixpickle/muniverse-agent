@@ -239,8 +239,8 @@ func (t *Trainer) Fetch(s anysgd.SampleList) (batch anysgd.Batch, err error) {
 // for actions in the *Batch.
 func (t *Trainer) TotalCost(batch anysgd.Batch) anydiff.Res {
 	b := batch.(*Batch)
-	inSeq := lazyseq.TapeRereader(t.creator(), b.Observations)
-	desired := lazyseq.TapeRereader(t.creator(), b.Actions)
+	inSeq := lazyseq.TapeRereader(b.Observations)
+	desired := lazyseq.TapeRereader(b.Actions)
 	actual := t.Policy(inSeq)
 	space := t.Spec.MakeActor().ActionSpace()
 	logLikelihood := lazyseq.MapN(func(n int, v ...anydiff.Res) anydiff.Res {
