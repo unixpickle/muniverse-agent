@@ -36,8 +36,8 @@ func TRPO(c anyvec.Creator, args []string) {
 		// Compress the input frames as we store them.
 		// If we used a ReferenceTape for the input, the
 		// program would use way too much memory.
-		MakeInputTape: func() (lazyseq.Tape, chan<- *anyseq.Batch) {
-			return lazyseq.CompressedUint8Tape(flate.DefaultCompression)
+		MakeInputTape: func(c anyvec.Creator) (lazyseq.Tape, chan<- *anyseq.Batch) {
+			return lazyseq.CompressedUint8Tape(c, flate.DefaultCompression)
 		},
 	}
 
@@ -70,7 +70,7 @@ func TRPO(c anyvec.Creator, args []string) {
 
 			// Join the rollouts into one set.
 			rollouts := gatherTRPORollouts(flags, spec, roller)
-			r := anyrl.PackRolloutSets(rollouts)
+			r := anyrl.PackRolloutSets(c, rollouts)
 
 			// Print the stats for the batch.
 			log.Printf("batch %d: mean=%f stddev=%f", batchIdx,

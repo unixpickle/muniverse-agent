@@ -62,8 +62,8 @@ func PPO(c anyvec.Creator, args []string) {
 		// Compress the input frames as we store them.
 		// This may not be necessary with relatively small
 		// batch sizes.
-		MakeInputTape: func() (lazyseq.Tape, chan<- *anyseq.Batch) {
-			return lazyseq.CompressedUint8Tape(flate.DefaultCompression)
+		MakeInputTape: func(c anyvec.Creator) (lazyseq.Tape, chan<- *anyseq.Batch) {
+			return lazyseq.CompressedUint8Tape(c, flate.DefaultCompression)
 		},
 	}
 
@@ -108,7 +108,7 @@ func PPO(c anyvec.Creator, args []string) {
 
 			// Join the rollouts into one set.
 			rollouts := gatherPPORollouts(flags, spec, roller)
-			r := anyrl.PackRolloutSets(rollouts)
+			r := anyrl.PackRolloutSets(c, rollouts)
 
 			// Print the stats for the batch.
 			log.Printf("batch %d: mean=%f count=%d error_margin=%f", batchIdx,

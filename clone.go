@@ -163,6 +163,7 @@ func (t *Trainer) Fetch(s anysgd.SampleList) (batch anysgd.Batch, err error) {
 	if s.Len() == 0 {
 		return nil, errors.New("empty batch")
 	}
+
 	recordingDirs := s.(SampleList)
 	actors := make([]Actor, s.Len())
 	recordings := make([]*muniverse.Recording, s.Len())
@@ -175,14 +176,18 @@ func (t *Trainer) Fetch(s anysgd.SampleList) (batch anysgd.Batch, err error) {
 		actors[i] = t.Spec.MakeActor()
 		actors[i].Reset()
 	}
-	inTape, inWriter := lazyseq.CompressedUint8Tape(flate.DefaultCompression)
-	outTape, outWriter := lazyseq.ReferenceTape()
+
+	inTape, inWriter := lazyseq.CompressedUint8Tape(t.creator(),
+		flate.DefaultCompression)
+	outTape, outWriter := lazyseq.ReferenceTape(t.creator())
 	defer close(inWriter)
 	defer close(outWriter)
+
 	obsJoiners := make([]*ObsJoiner, s.Len())
 	for i := range obsJoiners {
 		obsJoiners[i] = &ObsJoiner{HistorySize: t.Spec.HistorySize}
 	}
+
 	for i := 0; true; i++ {
 		var inVecs []float64
 		var outVecs []float64
