@@ -45,12 +45,14 @@ func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
 	markup := fmt.Sprintf(`
 		Input(w=%d, h=%d, d=%d)
 		Linear(scale=0.01)
-		Conv(w=4, h=4, n=16, sx=2, sy=2)
-		Tanh
-		Conv(w=4, h=4, n=32, sx=2, sy=2)
-		Tanh
-		FC(out=256)
-		Tanh
+		Conv(w=8, h=8, n=32, sx=4, sy=4)
+		ReLU
+		Conv(w=4, h=4, n=64, sx=2, sy=2)
+		ReLU
+		Conv(w=3, h=3, n=64, sx=1, sy=1)
+		ReLU
+		FC(out=512)
+		ReLU
 	`, w, h, d*(1+e.HistorySize))
 	convNet, err := anyconv.FromMarkup(c, markup)
 	if err != nil {
