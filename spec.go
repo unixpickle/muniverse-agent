@@ -80,6 +80,7 @@ var EnvSpecs = []*EnvSpec{
 	WithRewardScale(StandardMouseSpec("ClickThemAll-v0", true, 0.98, time.Second/10,
 		2048), 1.0/1000),
 	Colorize(StandardMouseSpec("Colorpop-v0", false, 0.99, time.Second/10, 512)),
+	Colorize(StandardKeySpec("Spacecraft-v0", false, 0.99, time.Second/10, 2048)),
 }
 
 // SpecForName finds a specification in EnvSpecs.
