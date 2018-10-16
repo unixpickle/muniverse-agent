@@ -62,7 +62,7 @@ func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
 		&anyrnn.LayerBlock{
 			Layer: append(
 				setupVisionLayers(convNet.(anynet.Net)),
-				anynet.NewFCZero(c, 256, e.MakeActor().ParamLen()),
+				anynet.NewFCZero(c, 512, e.MakeActor().ParamLen()),
 			),
 		},
 	}
@@ -71,7 +71,7 @@ func MakePolicy(c anyvec.Creator, e *EnvSpec) anyrnn.Block {
 // MakeCritic creates a critic block for A3C.
 func MakeCritic(c anyvec.Creator) anyrnn.Block {
 	return &anyrnn.LayerBlock{
-		Layer: anynet.NewFC(c, 256, 1),
+		Layer: anynet.NewFC(c, 512, 1),
 	}
 }
 
