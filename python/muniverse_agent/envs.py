@@ -2,12 +2,25 @@
 anyrl environments that use the muniverse bindings.
 """
 
-from anyrl.envs import AsyncEnv
+from anyrl.envs import AsyncEnv, BatchedAsyncEnv
+from anyrl.envs.wrappers import BatchedFrameStack, DownsampleEnv, ObsWrapperBatcher
 import gym
 import muniverse
 
 from queue import Queue
 from threading import Thread
+
+
+def create_env(name, num_envs, num_sub_batches):
+    assert not num_envs % num_sub_batches, 'sub-batches must divide env count'
+    return BatchedAsyncEnv([[KeyboardEnv(name) for _ in range(num_envs // num_sub_batches)]
+                            for _ in range(num_sub_batches)])
+
+
+def wrap_env(env):
+    env = ObsWrapperBatcher(env, DownsampleEnv, 4)
+    env = BatchedFrameStack(env, num_images=4, concat=False)
+    return env
 
 
 class KeyboardEnv(AsyncEnv):
