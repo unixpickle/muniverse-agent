@@ -29,9 +29,10 @@ class KeyboardEnv(AsyncEnv):
     muniverse environment.
     """
 
-    def __init__(self, name, frame_time=0.1):
+    def __init__(self, name, fps=10, max_timesteps=3000):
         self.name = name
-        self.frame_time = frame_time
+        self.fps = fps
+        self.max_timesteps = max_timesteps
 
         self.spec = muniverse.spec_for_name(name)
         if self.spec is None:
@@ -66,20 +67,27 @@ class KeyboardEnv(AsyncEnv):
 
     def _bg_thread(self):
         key_actions = _KeyActions(self.spec['KeyWhitelist'])
+        timestep = 0
         while True:
             cmd = self._cmds.get()
             if cmd is None:
                 return
             name = cmd[0]
             if name == 'reset':
+                timestep = 0
                 self.env.reset()
                 key_actions.reset()
                 self._responses.put(self.env.observe())
             elif name == 'step':
                 actions = key_actions.actions(cmd[1])
-                reward, done = self.env.step(self.frame_time, *actions)
+                reward, done = self.env.step(1.0 / self.fps, *actions)
+                timestep += 1
+                if timestep >= self.max_timesteps:
+                    done = True
                 if done:
+                    timestep = 0
                     self.env.reset()
+                    key_actions.reset()
                 self._responses.put((self.env.observe(), reward, done, {}))
 
 
