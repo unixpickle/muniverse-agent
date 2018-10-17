@@ -12,7 +12,7 @@ import tensorflow as tf
 def main():
     args = arg_parser().parse_args()
     print('Creating environments...')
-    env = create_env(args.env, 1, 1)
+    env = create_env(args.env, 1, 1, args.fps, args.max_timesteps)
     env = ObsInInfo(env)
     env = wrap_env(env)
     try:
@@ -56,6 +56,9 @@ def arg_parser():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--path', help='path to movie file', default='video.mp4')
     parser.add_argument('--env', help='environment ID', default='Knightower-v0')
+    parser.add_argument('--fps', help='timesteps per second', default=10, type=int)
+    parser.add_argument('--max-timesteps', help='maximum timesteps per episode',
+                        default=3000, type=int)
     parser.add_argument('--save-path', help='path to trained agent', default='ppo_agent.pkl')
     return parser
 

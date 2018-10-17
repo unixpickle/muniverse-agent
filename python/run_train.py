@@ -10,7 +10,7 @@ import tensorflow as tf
 def main():
     args = arg_parser().parse_args()
     print('Creating environments...')
-    env = create_env(args.env, args.num_envs, args.num_sub_batches)
+    env = create_env(args.env, args.num_envs, args.num_sub_batches, args.fps, args.max_timesteps)
     env = wrap_env(env)
     try:
         print('Creating session...')
@@ -32,6 +32,9 @@ def arg_parser():
                         default=32, type=int)
     parser.add_argument('--num-sub-batches', help='number of batches of environments',
                         default=2, type=int)
+    parser.add_argument('--fps', help='timesteps per second', default=10, type=int)
+    parser.add_argument('--max-timesteps', help='maximum timesteps per episode',
+                        default=3000, type=int)
     ppo_cli_args(parser)
     return parser
 

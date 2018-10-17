@@ -11,9 +11,10 @@ from queue import Queue
 from threading import Thread
 
 
-def create_env(name, num_envs, num_sub_batches):
+def create_env(name, num_envs, num_sub_batches, fps, max_timesteps):
     assert not num_envs % num_sub_batches, 'sub-batches must divide env count'
-    return BatchedAsyncEnv([[KeyboardEnv(name) for _ in range(num_envs // num_sub_batches)]
+    return BatchedAsyncEnv([[KeyboardEnv(name, fps=fps, max_timesteps=max_timesteps)
+                             for _ in range(num_envs // num_sub_batches)]
                             for _ in range(num_sub_batches)])
 
 
