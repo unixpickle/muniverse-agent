@@ -50,7 +50,7 @@ def padded_height(height):
 
 def pad_height(obs):
     if obs.shape[0] % 2:
-        return np.concatenate([obs, np.zeros_like(obs[0])], axis=0)
+        return np.concatenate([obs, np.zeros_like(obs[0])[None]], axis=0)
     return obs
 
 
