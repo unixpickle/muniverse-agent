@@ -39,7 +39,8 @@ def main():
                     if dones[0]:
                         return
             spec = muniverse.spec_for_name(args.env)
-            export_video(args.path, spec['Width'], padded_height(spec['Height']), 10, run_episode())
+            export_video(args.path, spec['Width'], padded_height(spec['Height']), args.fps,
+                         run_episode())
     finally:
         env.close()
 
