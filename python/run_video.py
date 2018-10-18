@@ -6,6 +6,7 @@ from anyrl.utils.ffmpeg import export_video
 from anyrl.utils.tf_state import load_vars
 import muniverse
 from muniverse_agent import IMPALAModel, create_env, wrap_env
+import numpy as np
 import tensorflow as tf
 
 
@@ -34,14 +35,23 @@ def main():
                     env.step_start(outputs['actions'])
                     obses, _, dones, infos = env.step_wait()
                     states = outputs['states']
-                    yield infos[0]['old_obs']
+                    yield pad_height(infos[0]['old_obs'])
                     if dones[0]:
                         return
-
             spec = muniverse.spec_for_name(args.env)
-            export_video(args.path, spec['Width'], spec['Height'], 10, run_episode())
+            export_video(args.path, spec['Width'], padded_height(spec['Height']), 10, run_episode())
     finally:
         env.close()
+
+
+def padded_height(height):
+    return height + (height % 2)
+
+
+def pad_height(obs):
+    if obs.shape[0] % 2:
+        return np.concatenate([obs, np.zeros_like(obs[0])], axis=0)
+    return obs
 
 
 class ObsInInfo(BatchedWrapper):
