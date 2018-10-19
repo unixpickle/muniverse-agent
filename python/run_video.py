@@ -35,23 +35,25 @@ def main():
                     env.step_start(outputs['actions'])
                     obses, _, dones, infos = env.step_wait()
                     states = outputs['states']
-                    yield pad_height(infos[0]['old_obs'])
+                    yield pad_dims(infos[0]['old_obs'])
                     if dones[0]:
                         return
             spec = muniverse.spec_for_name(args.env)
-            export_video(args.path, spec['Width'], padded_height(spec['Height']), args.fps,
+            export_video(args.path, padded_dim(spec['Width']), padded_dim(spec['Height']), args.fps,
                          run_episode())
     finally:
         env.close()
 
 
-def padded_height(height):
+def padded_dim(height):
     return height + (height % 2)
 
 
-def pad_height(obs):
+def pad_dims(obs):
     if obs.shape[0] % 2:
-        return np.concatenate([obs, np.zeros_like(obs[0])[None]], axis=0)
+        obs = np.concatenate([obs, np.zeros_like(obs[0:1])], axis=0)
+    if obs.shape[1] % 2:
+        obs = np.concatenate([obs, np.zeros_like(obs[:, 0:1])], axis=1)
     return obs
 
 
