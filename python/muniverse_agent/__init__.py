@@ -2,7 +2,7 @@
 Helpers for training agents on muniverse.
 """
 
-from .envs import KeyboardEnv, create_env, wrap_env
+from .envs import MuniverseEnv, create_env, wrap_env
 from .models import IMPALAModel
 
-__all__ = ['IMPALAModel', 'KeyboardEnv', 'create_env', 'wrap_env']
+__all__ = ['IMPALAModel', 'MuniverseEnv', 'create_env', 'wrap_env']
